@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Git 命令</title>
+      <link href="/archives/b51d9f8e.html"/>
+      <url>/archives/b51d9f8e.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Git-三大区域">Git 三大区域</h2><h3 id="工作区">工作区</h3><ol><li>已管理起来的文件</li><li>新的文件(<mark class="hl-label red">红色</mark> )<ul><li>通过<code>git add 文件名</code>命令提交到暂存区<code>git add .</code>表示提交所有新文件(git 工具自动检测新文件)</li><li>通过<code>git checkout -- 文件名</code>命令使文件回到之前的状态(已管理起来)</li></ul></li></ol><h3 id="暂存区-swig￼1">暂存区(<mark class="hl-label green">绿色</mark> )</h3><ol><li>暂时保存，以待回滚到工作区或提交到版本库<ul><li>通过<code>git commit -m &quot;版本描述信息&quot;</code>命令提交到版本库</li><li>通过<code>git reset --hard &quot;要重新提交的版本库的版本号&quot;</code>(通过<code>git reflog</code>命令查看从版本库回滚到暂存区的版本号)</li><li>通过<code>git reset HEAD 文件名</code>命令使文件从暂存区回到工作区(<mark class="hl-label red">红色</mark> )</li></ul></li></ol><h3 id="版本库">版本库</h3><ol><li>不同版本的库<ul><li>通过<code>git reset --hard 要回滚的版本号</code> (通过<code>git log</code>命令查看已提交的版本号)</li></ul></li></ol><h2 id="Git-常用命令">Git 常用命令</h2><ul><li><code>git init</code></li></ul><blockquote><p>将当前所在目录用git工具管理起来</p></blockquote><ul><li><code>git add file</code></li></ul><blockquote><p>将file提交到暂存区，file为<code>.</code>时表示提交所有未被git管理起来的文件</p></blockquote><ul><li><code>git commit -m &quot;提交信息&quot;</code></li></ul><blockquote><p>将暂存区的文件提交到版本库</p></blockquote><ul><li><code>git remote add origin 远程仓库</code></li></ul><blockquote><p>给远程仓库起别名（origin）</p></blockquote><ul><li><code>git chechout &lt;分支&gt;</code></li></ul><blockquote><p>切换分支</p></blockquote><ul><li><code>git push -u origin &lt;分支&gt;</code></li></ul><blockquote><p>推送指定分支到远程仓库（origin）</p></blockquote><ul><li><code>git fetch origin &lt;分支&gt;</code></li></ul><blockquote><p>将远程仓库分支拉取到本地仓库，此时本地仓库多了一个远程分支（origin/&lt;分支&gt;)</p></blockquote><ul><li><code>git merge &lt;分支&gt;</code></li></ul><blockquote><p>合并指定分支到当前所在分支</p></blockquote><ul><li><code>git pull  origin &lt;分支&gt;</code></li></ul><blockquote><p>拉取远程仓库分支到本地并合并<br>相当于执行了<code>git fetch origin &lt;分支&gt;</code>和<code>git merge origin/&lt;分支&gt;</code>命令</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VComputer</title>
+      <link href="/archives/d98d36cb.html"/>
+      <url>/archives/d98d36cb.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Vcomputer-机器的结构和指令">Vcomputer 机器的结构和指令</h2><blockquote><p>Vcomputer 共有 256 个主存单元（其地址分别用十六进制 00~FF 表示)，6 个通用寄存器<br>（分别用 R0~R5 表示），1 个程序计数器和 1 个指令寄存器。<br>机器的指令共有 9 条，每条指令的长度均为 2 个字节（用十六进制表示共 4 位）。指令<br>的第 1 个十六进制数字为操作码，指令的后 3 个十六进制数字为操作数</p></blockquote><h3 id="Vcomputer-机器的指令集">Vcomputer 机器的指令集</h3><table><thead><tr><th style="text-align:center">操作码</th><th style="text-align:center">操作数</th><th>描述</th></tr></thead><tbody><tr><td style="text-align:center">1</td><td style="text-align:center">RXY</td><td>将主存 XY 单元中的数取出，存入寄存器 R 中。如 1543，将主存 43 单元中的数取出，存入寄存器 5 中</td></tr><tr><td style="text-align:center">2</td><td style="text-align:center">RXY</td><td>将数 XY 存入寄存器 R 中。如 2543，将 43（十六进制数）存入寄存器 5 中</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">RXY</td><td>将寄存器 R 中的数取出，存入内存地址为 XY 的单元中</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">0RS</td><td>将寄存器 R 中的数存入寄存器 S 中</td></tr><tr><td style="text-align:center">5</td><td style="text-align:center">RST</td><td>将寄存器 S 与寄存器 T 中用补码表示的数相加，结果存入寄存器 R 中</td></tr><tr><td style="text-align:center">6</td><td style="text-align:center">R0X</td><td>将寄存器 R 中的数左移 X 位（先将 R 中的十六进制数转换为二进制数，再左移 X 位），移位后，用 0 填充腾空的位</td></tr><tr><td style="text-align:center">7</td><td style="text-align:center">R00</td><td>将寄存器 R 中的数按位取反。如 7100，将寄存器 1 中的数按位取反，将结果存入寄存器 1 中</td></tr><tr><td style="text-align:center">8</td><td style="text-align:center">RXY</td><td>若寄存器 R 与寄存器 0 中的值相同，则将数据 XY（转移地址）存入程序计数器；否则，程序按原来的顺序继续执行</td></tr><tr><td style="text-align:center">9</td><td style="text-align:center">000</td><td>停机，9000</td></tr></tbody></table><h2 id="Vcomputer-机器上的汇编指令集">Vcomputer 机器上的汇编指令集</h2><table><thead><tr><th style="text-align:center">操作码</th><th style="text-align:center">操作数</th><th style="text-align:center">汇编指令</th><th>描述</th></tr></thead><tbody><tr><td style="text-align:center">1</td><td style="text-align:center">RXY</td><td style="text-align:center">Load R,[XY]</td><td>[R]:=[XY]</td></tr><tr><td style="text-align:center">2</td><td style="text-align:center">RXY</td><td style="text-align:center">Load R,XY</td><td>[R]:=XY</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center">RXY</td><td style="text-align:center">Store R,[XY]</td><td>[XY]:=[R]</td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">0RS</td><td style="text-align:center">Mov R,S</td><td>[S]:=[R]</td></tr><tr><td style="text-align:center">5</td><td style="text-align:center">RST</td><td style="text-align:center">Add R,S,T</td><td>[R]:=[S]+[T]</td></tr><tr><td style="text-align:center">6</td><td style="text-align:center">R0X</td><td style="text-align:center">Shl R,X</td><td>[R]:=[R]左移 X 位，移位后，用 0 填充腾空的位</td></tr><tr><td style="text-align:center">7</td><td style="text-align:center">R00</td><td style="text-align:center">Not R</td><td>[R]:=[R]中的值按位取反</td></tr><tr><td style="text-align:center">8</td><td style="text-align:center">RXY</td><td style="text-align:center">Jmp R,XY</td><td>程序计数器[PC]:=XY, IF [R]=[R0]; else [PC]:=[PC]+2</td></tr><tr><td style="text-align:center">9</td><td style="text-align:center">000</td><td style="text-align:center">Halt</td><td>停机</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> assembly </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>测试</title>
+      <link href="/archives/9daba997.html"/>
+      <url>/archives/9daba997.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>九九乘法表</title>
+      <link href="/archives/78e48626.html"/>
+      <url>/archives/78e48626.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="C语言">C语言</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; ++i) <span class="comment">// 9行</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= i; ++j) <span class="comment">// i列</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d * %d = %d&quot;</span>, j, i, i * j);</span><br><span class="line">            <span class="keyword">if</span> (i &lt; <span class="number">5</span> &amp;&amp; j == <span class="number">2</span>) <span class="built_in">putchar</span>(<span class="number">32</span>); <span class="comment">// 对齐</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="number">10</span>); <span class="comment">// 换行</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Python">Python</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程练习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>8086</title>
+      <link href="/archives/7d86c998.html"/>
+      <url>/archives/7d86c998.html</url>
+      
+        <content type="html"><![CDATA[<h1>x86 汇编语言</h1><h2 id="寄存器">寄存器</h2><table><thead><tr><th style="text-align:center">寄存器</th><th>描述</th></tr></thead><tbody><tr><td style="text-align:center">AX</td><td>累加结果数据</td></tr><tr><td style="text-align:center">BX</td><td>数据段数据指针</td></tr><tr><td style="text-align:center">CX</td><td>字符串和循环计数器</td></tr><tr><td style="text-align:center">DX</td><td>I/O指针</td></tr><tr><td style="text-align:center">DI</td><td>目的数据指针</td></tr><tr><td style="text-align:center">SI</td><td>源数据指针</td></tr><tr><td style="text-align:center">SP</td><td>栈指针</td></tr><tr><td style="text-align:center">BP</td><td>栈数据指针</td></tr></tbody></table><table><thead><tr><th style="text-align:center">寄存器</th><th style="text-align:center">高八位</th><th style="text-align:center">低八位</th></tr></thead><tbody><tr><td style="text-align:center">AX</td><td style="text-align:center">AH</td><td style="text-align:center">AL</td></tr><tr><td style="text-align:center">BX</td><td style="text-align:center">BH</td><td style="text-align:center">BL</td></tr><tr><td style="text-align:center">CX</td><td style="text-align:center">CH</td><td style="text-align:center">CL</td></tr><tr><td style="text-align:center">DX</td><td style="text-align:center">DH</td><td style="text-align:center">DL</td></tr></tbody></table><h2 id="段寄存器">段寄存器</h2><table><thead><tr><th style="text-align:center">段寄存器</th><th>描述</th></tr></thead><tbody><tr><td style="text-align:center">CS</td><td>代码段寄存器</td></tr><tr><td style="text-align:center">DS</td><td>数据段寄存器</td></tr><tr><td style="text-align:center">SS</td><td>栈段寄存器</td></tr><tr><td style="text-align:center">ES</td><td>扩展寄存器</td></tr></tbody></table><h2 id="其它寄存器">其它寄存器</h2><p>IP：指令指针寄存器<br>FLAG/PSW：标志寄存器（程序状态字）</p><h2 id="标志寄存器FLAG">标志寄存器FLAG</h2><table><thead><tr><th style="text-align:center">11</th><th style="text-align:center">10</th><th style="text-align:center">9</th><th style="text-align:center">8</th><th style="text-align:center">7</th><th style="text-align:center">6</th><th style="text-align:center">5</th><th style="text-align:center">4</th><th style="text-align:center">3</th><th style="text-align:center">2</th><th style="text-align:center">1</th><th style="text-align:center">0</th></tr></thead><tbody><tr><td style="text-align:center">OF</td><td style="text-align:center">DF</td><td style="text-align:center">IF</td><td style="text-align:center">TF</td><td style="text-align:center">SF</td><td style="text-align:center">ZF</td><td style="text-align:center"></td><td style="text-align:center">AF</td><td style="text-align:center"></td><td style="text-align:center">PF</td><td style="text-align:center"></td><td style="text-align:center">CF</td></tr></tbody></table><table><thead><tr><th style="text-align:center">位</th><th style="text-align:center">标志</th><th>描述</th><th>英文全拼</th></tr></thead><tbody><tr><td style="text-align:center">0</td><td style="text-align:center">CF</td><td>进位标志</td><td>carry</td></tr><tr><td style="text-align:center">1</td><td style="text-align:center"></td><td></td><td></td></tr><tr><td style="text-align:center">2</td><td style="text-align:center">PF</td><td>奇偶标志</td><td>parity</td></tr><tr><td style="text-align:center">3</td><td style="text-align:center"></td><td></td><td></td></tr><tr><td style="text-align:center">4</td><td style="text-align:center">AF</td><td>辅助进位标志</td><td>auxiliary</td></tr><tr><td style="text-align:center">5</td><td style="text-align:center"></td><td></td><td></td></tr><tr><td style="text-align:center">6</td><td style="text-align:center">ZF</td><td>零标志</td><td>zero</td></tr><tr><td style="text-align:center">7</td><td style="text-align:center">SF</td><td>符号标志</td><td>sign</td></tr><tr><td style="text-align:center">8</td><td style="text-align:center">TF</td><td>陷阱标志</td><td>trap</td></tr><tr><td style="text-align:center">9</td><td style="text-align:center">IF</td><td>中断允许标志</td><td>interrupt</td></tr><tr><td style="text-align:center">10</td><td style="text-align:center">DF</td><td>方向标志</td><td>direction</td></tr><tr><td style="text-align:center">11</td><td style="text-align:center">OF</td><td>溢出标志</td><td>overflow</td></tr></tbody></table><h2 id="8086寻址方式">8086寻址方式</h2><blockquote><p>物理地址 = 段地址 × 16 + 偏移地址</p><p>8086CPU有20根地址线，总共可以访问 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>20</mn></msup><mo>=</mo><mn>1</mn><mi>M</mi></mrow><annotation encoding="application/x-tex">2^{20} = 1M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">20</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 的内存<br>寄存器最大16位，可以表示的最大地址为: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>=</mo><mn>64</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">2^{16} = 64K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">16</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">64</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span></p></blockquote><h3 id="直接寻址">直接寻址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov byte [offset], 0x10 ;offset为常量</span><br><span class="line">mov word [offset], 0x10</span><br><span class="line">mov dword [offset], 0x10</span><br></pre></td></tr></table></figure><h3 id="基址寻址">基址寻址</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov ax, [bx] ;段寄存器ds</span><br><span class="line">mov ax, [bp] ;段寄存器ss</span><br><span class="line">mov ax, [si] ;段寄存器ds</span><br><span class="line">mov ax, [di] ;段寄存器ds</span><br></pre></td></tr></table></figure><h2 id="指令">指令</h2><table><thead><tr><th style="text-align:center">指令</th><th>描述</th><th>操作数</th><th>示例</th><th>英文全拼</th></tr></thead><tbody><tr><td style="text-align:center">db</td><td>定义一个字节</td><td></td><td>db 0x20</td><td>define byte</td></tr><tr><td style="text-align:center">dw</td><td>定义一个字(两个字节)</td><td></td><td>dw 0x55aa</td><td>define word</td></tr><tr><td style="text-align:center">dd</td><td>定义两个字(四个字节)</td><td></td><td>dd 0x12345678</td><td>define dobbleword</td></tr><tr><td style="text-align:center">equ</td><td>伪指令，不占用内存，相当于C语言的#define</td><td></td><td></td><td>equal</td></tr><tr><td style="text-align:center">mov</td><td>赋值指令</td><td></td><td>mov ax, 5 (ax = 5)</td><td>move</td></tr><tr><td style="text-align:center">add</td><td>加法指令</td><td></td><td>add ax, 5 (ax = ax + 5)</td><td>addition</td></tr><tr><td style="text-align:center">sub</td><td>减法指令</td><td></td><td>sub ax, 5 (ax = ax - 5)</td><td>subtraction</td></tr><tr><td style="text-align:center">mul</td><td>乘法指令</td><td></td><td></td><td>multiplication</td></tr><tr><td style="text-align:center">div</td><td>除法指令</td><td></td><td></td><td>division</td></tr></tbody></table><h3 id="转移指令">转移指令</h3><blockquote><p><strong>jmp</strong><br>jmp short<br>jmp near<br>jmp far</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 8086 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C++</title>
+      <link href="/archives/5751eea2.html"/>
+      <url>/archives/5751eea2.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>正则表达式</title>
+      <link href="/archives/2f57a694.html"/>
+      <url>/archives/2f57a694.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="正则表达式分类">正则表达式分类</h2><p><strong>基本正则表达式</strong></p><blockquote><p><strong>符号</strong>: <code>^ $ . [] *</code></p></blockquote><table><thead><tr><th style="text-align:center">符号</th><th>含义</th></tr></thead><tbody><tr><td style="text-align:center">^</td><td>匹配以什么开头的内容，如^abc表示匹配以abc开头的内容</td></tr><tr><td style="text-align:center">$</td><td>匹配以什么结尾的内容，如abc$表示匹配以abc结尾的内容</td></tr><tr><td style="text-align:center">^$</td><td>匹配空行</td></tr><tr><td style="text-align:center">.</td><td>匹配一个字符</td></tr><tr><td style="text-align:center">*</td><td>匹配某个字符0次或多次，如a*表示匹配字符a字符0次或多次</td></tr><tr><td style="text-align:center">.*</td><td>匹配所有内容</td></tr><tr><td style="text-align:center">\</td><td>转义字符，让正则表达式符号不表示匹配，只表示原字符</td></tr><tr><td style="text-align:center">[abc]</td><td>匹配方括号里的字符集合，[a-z]表示小写字母集合</td></tr><tr><td style="text-align:center">[^abc]</td><td>匹配不包括方括号里的字符集的字符</td></tr></tbody></table><p><strong>扩展正则表达式</strong></p><blockquote><p><strong>符号</strong>: <code>() &#123;&#125; ? + |</code>等</p></blockquote><table><thead><tr><th style="text-align:center">符号</th><th>含义</th></tr></thead><tbody><tr><td style="text-align:center">+</td><td>匹配前一个字符一次或多次</td></tr><tr><td style="text-align:center">?</td><td>匹配前一个字符0次或1次</td></tr><tr><td style="text-align:center">竖线</td><td>表示或者的意思</td></tr><tr><td style="text-align:center">()</td><td>括起来的内容表示一个整体</td></tr><tr><td style="text-align:center">{n,m}</td><td>匹配前一个字符最少n次，最多m次</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RegExp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux常用命令</title>
+      <link href="/archives/d0edc1ed.html"/>
+      <url>/archives/d0edc1ed.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Linux-常用命令">Linux 常用命令</h2><p><strong>命令名字</strong>: <code>ls</code><br><strong>命令功能</strong>: <em>列出指定目录的内容，默认为当前目录</em><br><strong>命令格式</strong>: <code>ls [option] [files]</code></p><table><thead><tr><th style="text-align:center">option</th><th>参数功能</th></tr></thead><tbody><tr><td style="text-align:center">-a</td><td>列出所有项</td></tr><tr><td style="text-align:center">-l</td><td>以长列表格式输出</td></tr></tbody></table><p><strong>命令名字</strong>: <code>grep</code><br><strong>命令功能</strong>: <em>根据用户需要查找的内容（可以使用正则表达式匹配）在指定文本文件中查找，并列出匹配到的项</em><br><strong>命令格式</strong>: <code>grep [option] [pattern] file</code> pattern表示要匹配的内容</p><table><thead><tr><th style="text-align:center">option</th><th>参数功能</th></tr></thead><tbody><tr><td style="text-align:center">-i</td><td>忽略大小写</td></tr><tr><td style="text-align:center">-o</td><td>只显示所匹配到的内容，默认会打印文件路径</td></tr><tr><td style="text-align:center">-v</td><td>不显示匹配到的内容所在行，即反选的意思</td></tr><tr><td style="text-align:center">-E</td><td>支持扩展正则表达式符号</td></tr><tr><td style="text-align:center">-q</td><td>不输出内容</td></tr><tr><td style="text-align:center">-c</td><td>只输出匹配到的行数</td></tr><tr><td style="text-align:center">-n</td><td>输出时打印行号</td></tr><tr><td style="text-align:center">–color=auto</td><td>高亮匹配到的内容</td></tr></tbody></table><p><strong>命令名字</strong>: <code>sed</code><br><strong>命令功能</strong>: <em>根据用户匹配的内容进行过滤和替换等操作</em><br><strong>命令格式</strong>: <code>sed [option] [pattern] file</code></p><table><thead><tr><th style="text-align:center">option</th><th>参数功能</th></tr></thead><tbody><tr><td style="text-align:center">-n</td><td>默认会输出没有匹配到的内容，-n表示只输出匹配内容所在行</td></tr><tr><td style="text-align:center">-i</td><td>把处理后的数据写回文件</td></tr><tr><td style="text-align:center">-e</td><td>多次过滤，相当于使用管道符号</td></tr><tr><td style="text-align:center">-r</td><td>支持正则表达式</td></tr></tbody></table><table><thead><tr><th style="text-align:center">sed内置option(pattern)</th><th>参数功能</th></tr></thead><tbody><tr><td style="text-align:center">a</td><td>在匹配行后追加内容</td></tr><tr><td style="text-align:center">d</td><td>删除匹配到的行</td></tr><tr><td style="text-align:center">i</td><td>在匹配到的行前插入内容</td></tr><tr><td style="text-align:center">p</td><td>打印匹配到的行</td></tr><tr><td style="text-align:center">s/匹配内容/替换内容/g</td><td>匹配后替换</td></tr><tr><td style="text-align:center">s#匹配内容#替换内容#g</td><td>匹配后替换</td></tr><tr><td style="text-align:center">s@匹配内容@替换内容@g</td><td>匹配后替换</td></tr></tbody></table><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">实例：输出IPv4地址</span><br><span class="line">ifconfig | sed  -e <span class="string">&quot;s/^.*inet //&quot;</span> -e <span class="string">&quot;s/ net.*$//p&quot;</span> -n</span><br></pre></td></tr></table></figure><p><strong>命令名字</strong>: <code>awk</code><br><strong>命令功能</strong>: <em>对匹配到的内容进行格式化操作</em><br><strong>命令格式</strong>: <code>awk [option] &#123;action&#125; file</code></p><table><thead><tr><th style="text-align:center">option</th><th>参数功能</th></tr></thead><tbody><tr><td style="text-align:center">-f</td><td>从指定文件读取awk命令</td></tr></tbody></table><table><thead><tr><th style="text-align:center">内置变量</th><th>含义</th></tr></thead><tbody><tr><td style="text-align:center">$0</td><td>代表所有列</td></tr><tr><td style="text-align:center">$n</td><td>n大于0, 表示第n列</td></tr><tr><td style="text-align:center">NF</td><td>表示列数</td></tr><tr><td style="text-align:center">NR</td><td>表示行数</td></tr><tr><td style="text-align:center">FS</td><td>表示分隔符，默认为空格</td></tr><tr><td style="text-align:center">OFS</td><td>表示输出时分隔符</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一次写代码</title>
+      <link href="/archives/b7e8f4c8.html"/>
+      <url>/archives/b7e8f4c8.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="hello-world">hello world</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;hello world\n&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>诗词赏析</title>
+      <link href="/archives/5c2fafc7.html"/>
+      <url>/archives/5c2fafc7.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="诗词赏析">诗词赏析</h2><p>《咏鹅》<br>　　<strong>唐·骆宾王</strong></p><p>鹅鹅鹅，曲项向天歌。<br>　　白毛浮绿水，红掌拨清波。</p><ul><li><strong>注释</strong>：</li></ul><p>1、咏：用诗、词来叙述或描写某一事物。《咏鹅》是骆宾王七岁时写的诗。<br>2、项：颈的后部。<br>3、掌：诗中指鹅的脚掌。</p><ul><li><strong>赏析</strong>：</li></ul><p>这首诗从一个七岁儿童的眼光看鹅游水嬉戏的神态，写得极为生动活泼。</p><p>首句连用三个“鹅”字，表达了诗人对鹅十分喜爱之情。这三个“鹅”字，可以理解为孩子听到鹅叫了三声，也可以理解为孩子看到鹅在水中嬉戏，十分欣喜，高兴地连呼三声“鹅、鹅、鹅”。</p><p>次句“曲项向天歌”，描写鹅鸣叫的神态。“曲项”二字形容鹅向天高歌之态，十分确切。鹅的高歌与鸡鸣不同，鸡是引颈长鸣，鹅是曲项高歌。</p><p>三、四句写鹅游水嬉戏的情景：“白毛浮绿水，红掌拨清波。”“浮”“拨”两个动词生动地表现了鹅游水嬉戏的姿态。“白毛”“红掌”“绿水”等几个色彩鲜艳的词组给人以鲜明的视觉形象。鹅白毛红掌，浮在清水绿波之上，两下互相映衬，构成一幅美丽的“白鹅嬉水图”，表现出儿童时代的骆宾王善于观察事物的能力。</p><p>骆宾王与王勃、杨炯、卢照邻齐名，被称为“初唐四杰”。徐敬业起兵讨伐武则天时，骆宾王代他写《讨武檄》。檄文罗列了武后的罪状，写得极感人。当武后读到“一抔土之未干，六尺之孤安在”两句时，极为震动，责问宰相为何不早重用此人。徐敬业兵败后，骆宾王下落不明，有被杀、自杀、逃匿不知所终等传说.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 诗词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
