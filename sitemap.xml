@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://lingllqs.github.io/math/index.html</loc>
+    <loc>https://lingllqs.github.io/linux/index.html</loc>
     
     <lastmod>2022-12-09</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://lingllqs.github.io/linux/index.html</loc>
+    <loc>https://lingllqs.github.io/math/index.html</loc>
     
     <lastmod>2022-12-09</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://lingllqs.github.io/tags/index.html</loc>
+    <loc>https://lingllqs.github.io/program/index.html</loc>
     
     <lastmod>2022-12-09</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://lingllqs.github.io/program/index.html</loc>
+    <loc>https://lingllqs.github.io/tags/index.html</loc>
     
     <lastmod>2022-12-09</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://lingllqs.github.io/archives/2f57a694.html</loc>
+    <loc>https://lingllqs.github.io/archives/78e48626.html</loc>
     
     <lastmod>2022-12-09</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://lingllqs.github.io/archives/78e48626.html</loc>
+    <loc>https://lingllqs.github.io/archives/2f57a694.html</loc>
     
     <lastmod>2022-12-09</lastmod>
     
@@ -193,7 +193,7 @@
 
   <url>
     <loc>https://lingllqs.github.io/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -201,56 +201,56 @@
   
   <url>
     <loc>https://lingllqs.github.io/tags/8086/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/C/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/assembly/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/Git/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/Linux%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/%E8%AF%97%E8%AF%8D/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/RegExp/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -259,49 +259,49 @@
   
   <url>
     <loc>https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/categories/%E8%AF%97%E8%AF%8D/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/categories/C/</loc>
-    <lastmod>2022-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lingllqs.github.io/categories/Linux/</loc>
-    <lastmod>2022-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://lingllqs.github.io/categories/%E5%AD%A6%E7%A7%91/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://lingllqs.github.io/categories/%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0/</loc>
-    <lastmod>2022-12-13</lastmod>
+    <lastmod>2022-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lingllqs.github.io/categories/Linux/</loc>
+    <lastmod>2022-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lingllqs.github.io/categories/%E5%AD%A6%E7%A7%91/</loc>
+    <lastmod>2022-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
