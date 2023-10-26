@@ -7,12 +7,13 @@ tags = ['ArchLinux']
 +++
 
 ## 下载 archlinux 镜像
-
+到中科大等国内镜像站下载`https://mirrors.ustc.edu.cn/archlinux/iso/`
 
 ## 制作启动盘
 
 ```bash
-sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress
+windows: rufus 工具
+linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress
 ```
 
 ## 进入 live 环境开始安装
@@ -133,3 +134,7 @@ exit 或者 ctrl + d                          # 回到 live 环境
 umount -R /mnt                              # 卸载
 reboot                                      # 重启
 ```
+
+## 安装 Hyprland
+
+配置参考: https://github.com/lingllqs/dotfiles
