@@ -73,7 +73,7 @@
   # FixIt 0.2.0 | NEW date format
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
-  images = []
+  images = ["/images/wallpaper/1.jpg"]
   # FixIt 0.2.12 | NEW enable PWA
   enablePWA = false
   # FixIt 0.2.14 | NEW whether to add external Icon for external links automatically
@@ -101,13 +101,13 @@
 
   # FixIt 0.2.0 | NEW Search config
   [params.search]
-    enable = false
+    enable = true
     # type of search engine ["lunr", "algolia", "fuse"]
     type = "lunr"
     # max index length of the chunked content
     contentLength = 4000
     # placeholder of the search bar
-    placeholder = ""
+    placeholder = "搜索"
     # FixIt 0.2.1 | NEW max number of results length
     maxResultLength = 10
     # FixIt 0.2.3 | NEW snippet length of the result
@@ -135,21 +135,21 @@
   # Header config
   [params.header]
     # FixIt 0.2.13 | CHANGED desktop header mode ["sticky", "normal", "auto"]
-    desktopMode = "sticky"
+    desktopMode = "auto"
     # FixIt 0.2.13 | CHANGED mobile header mode ["sticky", "normal", "auto"]
     mobileMode = "auto"
     # FixIt 0.2.0 | NEW Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "/fixit.min.svg"
+      logo = "/images/wallpaper/1.jpg"
       # title name
       name = "王源中路封个烟"
       # you can add extra information before the name (HTML format is supported), such as icons
-      pre = ""
+      pre = "/svg/滑稽.svg"
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
       # FixIt 0.2.5 | NEW whether to use typeit animation for title name
-      typeit = false
+      typeit = true
     # FixIt 0.2.12 | NEW Header subtitle config
     [params.header.subtitle]
       # subtitle name
@@ -238,7 +238,7 @@
     rss = 10
     # Home page profile
     [params.home.profile]
-      enable = false
+      enable = true
       # Gravatar Email for preferred avatar in home page
       gravatarEmail = ""
       # URL of avatar shown in home page
@@ -246,9 +246,9 @@
       # FixIt 0.2.17 | NEW identifier of avatar menu link
       avatarMenu = ""
       # FixIt 0.2.7 | CHANGED title shown in home page (HTML format is supported)
-      title = ""
+      title = "技术文章"
       # subtitle shown in home page
-      subtitle = ""
+      subtitle = "窗前明月光\n疑似地上霜"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -263,7 +263,7 @@
 
   # FixIt 0.2.16 | CHANGED Social config about the author
   [params.social]
-    GitHub = ""
+    GitHub = "lingllqs"
     Linkedin = ""
     Twitter = ""
     Instagram = ""
@@ -474,8 +474,8 @@
     # FixIt 0.2.0 | CHANGED social share links in post page
     [params.page.share]
       enable = true
-      Twitter = true
-      Facebook = true
+      Twitter = false
+      Facebook = false
       Linkedin = false
       Whatsapp = false
       Pinterest = false
@@ -492,7 +492,7 @@
       Weibo = true
       Myspace = false
       Blogger = false
-      Baidu = false
+      Baidu = true
       Odnoklassniki = false
       Evernote = false
       Skype = false
@@ -500,7 +500,7 @@
       Mix = false
     # FixIt 0.2.15 | CHANGED Comment config
     [params.page.comment]
-      enable = false
+      enable = true
       # FixIt 0.2.13 | NEW Artalk comment config (https://artalk.js.org/)
       [params.page.comment.artalk]
         enable = false
@@ -539,9 +539,9 @@
         clientSecret = ""
       # Valine comment config (https://github.com/xCss/Valine)
       [params.page.comment.valine]
-        enable = false
-        appId = ""
-        appKey = ""
+        enable = true
+        appId = "ZtaCuooNxUcOqZ44oEeRZvpa-gzGzoHsz"
+        appKey = "ZQm92JiXmMQqpk6hi7Zqoi0w"
         placeholder = ""
         avatar = "mp"
         meta = ""
@@ -677,7 +677,7 @@
   # FixIt 0.2.12 | NEW PanguJS config
   [params.pangu]
     # For Chinese writing
-    enable = false
+    enable = true
     selector = "article" # FixIt 0.2.17 | NEW
 
   # FixIt 0.2.12 | NEW Watermark config
@@ -788,7 +788,7 @@
 
   # FixIt 0.2.16 | NEW Reading progress bar
   [params.readingProgress]
-    enable = false
+    enable = true
     # Available values: ["left", "right"]
     start = "left"
     # Available values: ["top", "bottom"]
@@ -801,10 +801,10 @@
   # FixIt 0.2.17 | NEW Progress bar in the top during page loading.
   # For more information: https://github.com/CodeByZach/pace
   [params.pace]
-    enable = false
+    enable = true
     # All available colors:
     # ["black", "blue", "green", "orange", "pink", "purple", "red", "silver", "white", "yellow"]
-    color = "blue"
+    color = "orange"
     # All available themes:
     # ["barber-shop", "big-counter", "bounce", "center-atom", "center-circle", "center-radar", "center-simple",
     # "corner-indicator", "fill-left", "flash", "flat-top", "loading-bar", "mac-osx", "material", "minimal"]
