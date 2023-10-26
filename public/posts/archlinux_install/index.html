@@ -7,12 +7,12 @@
     <meta name="robots" content="noodp" />
     <title>ArchLinux安装 - My New Hugo Site</title><meta name="author" content="">
 <meta name="author-link" content="">
-<meta name="description" content="" /><meta name="keywords" content='ArchLinux' /><meta itemprop="name" content="ArchLinux安装">
-<meta itemprop="description" content=""><meta itemprop="datePublished" content="2023-10-26T12:08:52+08:00" />
+<meta name="description" content="下载 archlinux 镜像 制作启动盘 sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 cfdisk /dev/nvme0n1 分两个区 /dev/nvme0n1p1 # efi 分区 /dev/nvme0n1p2 # linux system 分区格式化分区 mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 ----- 使用 `lsblk -f` 命令查看分区信息创建 btrfs 子卷 挂载系统分区 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr &#43;C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root挂载分区准备安装 mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi ----- mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定正式安装前先配置好网络 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用 ----- 输入 iwctl 命令进入 iw 工具的命令行 device list # 列出可用网卡 station wlan0 scan # 扫描可用网络 station wlan0 get-network # 获取可用 wifi station wlan0 connect wifi名 wifi密码 # 连接 wifi，没有密码可以不用输入 ----- ctrl &#43; d # 退出 iw 工具命令行 ping -c 3 t." /><meta name="keywords" content='ArchLinux' /><meta itemprop="name" content="ArchLinux安装">
+<meta itemprop="description" content="下载 archlinux 镜像 制作启动盘 sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 cfdisk /dev/nvme0n1 分两个区 /dev/nvme0n1p1 # efi 分区 /dev/nvme0n1p2 # linux system 分区格式化分区 mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 ----- 使用 `lsblk -f` 命令查看分区信息创建 btrfs 子卷 挂载系统分区 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr &#43;C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root挂载分区准备安装 mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi ----- mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定正式安装前先配置好网络 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用 ----- 输入 iwctl 命令进入 iw 工具的命令行 device list # 列出可用网卡 station wlan0 scan # 扫描可用网络 station wlan0 get-network # 获取可用 wifi station wlan0 connect wifi名 wifi密码 # 连接 wifi，没有密码可以不用输入 ----- ctrl &#43; d # 退出 iw 工具命令行 ping -c 3 t."><meta itemprop="datePublished" content="2023-10-26T12:08:52+08:00" />
 <meta itemprop="dateModified" content="2023-10-26T12:08:52+08:00" />
-<meta itemprop="wordCount" content="0"><meta itemprop="image" content="https://example.org/images/wallpaper/1.jpg"/>
+<meta itemprop="wordCount" content="218"><meta itemprop="image" content="https://example.org/images/wallpaper/1.jpg"/>
 <meta itemprop="keywords" content="ArchLinux," /><meta property="og:title" content="ArchLinux安装" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="下载 archlinux 镜像 制作启动盘 sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 cfdisk /dev/nvme0n1 分两个区 /dev/nvme0n1p1 # efi 分区 /dev/nvme0n1p2 # linux system 分区格式化分区 mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 ----- 使用 `lsblk -f` 命令查看分区信息创建 btrfs 子卷 挂载系统分区 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr &#43;C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root挂载分区准备安装 mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi ----- mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定正式安装前先配置好网络 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用 ----- 输入 iwctl 命令进入 iw 工具的命令行 device list # 列出可用网卡 station wlan0 scan # 扫描可用网络 station wlan0 get-network # 获取可用 wifi station wlan0 connect wifi名 wifi密码 # 连接 wifi，没有密码可以不用输入 ----- ctrl &#43; d # 退出 iw 工具命令行 ping -c 3 t." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://example.org/posts/archlinux_install/" /><meta property="og:image" content="https://example.org/images/wallpaper/1.jpg"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-10-26T12:08:52+08:00" />
@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://example.org/images/wallpaper/1.jpg"/>
 
 <meta name="twitter:title" content="ArchLinux安装"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="下载 archlinux 镜像 制作启动盘 sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 cfdisk /dev/nvme0n1 分两个区 /dev/nvme0n1p1 # efi 分区 /dev/nvme0n1p2 # linux system 分区格式化分区 mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 ----- 使用 `lsblk -f` 命令查看分区信息创建 btrfs 子卷 挂载系统分区 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr &#43;C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root挂载分区准备安装 mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi ----- mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定正式安装前先配置好网络 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用 ----- 输入 iwctl 命令进入 iw 工具的命令行 device list # 列出可用网卡 station wlan0 scan # 扫描可用网络 station wlan0 get-network # 获取可用 wifi station wlan0 connect wifi名 wifi密码 # 连接 wifi，没有密码可以不用输入 ----- ctrl &#43; d # 退出 iw 工具命令行 ping -c 3 t."/>
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/example.org\/posts\/archlinux_install\/"
-    },"genre": "posts","keywords": "ArchLinux","wordcount":  0 ,
+    },"genre": "posts","keywords": "ArchLinux","wordcount":  218 ,
     "url": "https:\/\/example.org\/posts\/archlinux_install\/","datePublished": "2023-10-26T12:08:52+08:00","dateModified": "2023-10-26T12:08:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -139,7 +139,8 @@
   </div>
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-  </div><main class="container"><aside class="toc" id="toc-auto"></aside>
+  </div><main class="container"><aside class="toc" id="toc-auto"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside>
 
   <aside class="aside-custom">
     </aside>
@@ -150,12 +151,85 @@
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Anonymous</span></span>
           <span class="post-category">included in <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 教程</a></span></div>
-      <div class="post-meta-line"><span title="published on 2023-10-26 12:08:52"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-10-26">2023-10-26</time></span>&nbsp;<span title="Updated on 2023-10-26 12:08:52"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-10-26">2023-10-26</time></span>&nbsp;<span title="0 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>0 minutes</span>&nbsp;<span id="/posts/archlinux_install/" class="leancloud_visitors comment-visitors" data-flag-title="ArchLinux安装">
+      <div class="post-meta-line"><span title="published on 2023-10-26 12:08:52"><i class="fa-regular fa-calendar-alt fa-fw me-1" aria-hidden="true"></i><time datetime="2023-10-26">2023-10-26</time></span>&nbsp;<span title="Updated on 2023-10-26 12:08:52"><i class="fa-regular fa-edit fa-fw me-1" aria-hidden="true"></i><time datetime="2023-10-26">2023-10-26</time></span>&nbsp;<span title="218 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;<span id="/posts/archlinux_install/" class="leancloud_visitors comment-visitors" data-flag-title="ArchLinux安装">
               <i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;views
             </span>&nbsp;<span class="comment-count" data-flag-title="ArchLinux安装">
               <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/archlinux_install/" class="valine-comment-count">-</span>&nbsp;comments
             </span>&nbsp;</div>
-    </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#下载-archlinux-镜像">下载 archlinux 镜像</a></li>
+    <li><a href="#制作启动盘">制作启动盘</a></li>
+    <li><a href="#进入-live-环境开始安装">进入 live 环境开始安装</a>
+      <ul>
+        <li><a href="#分区">分区</a></li>
+        <li><a href="#格式化分区">格式化分区</a></li>
+        <li><a href="#创建-btrfs-子卷">创建 btrfs 子卷</a></li>
+        <li><a href="#挂载分区准备安装">挂载分区准备安装</a></li>
+        <li><a href="#正式安装前先配置好网络">正式安装前先配置好网络</a></li>
+        <li><a href="#换源">换源</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="下载-archlinux-镜像">下载 archlinux 镜像</h2>
+<h2 id="制作启动盘">制作启动盘</h2>
+<div class="highlight" id="id-1"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/xxx.iso of<span style="color:#f92672">=</span>/dev/nvme0n1 bs<span style="color:#f92672">=</span>4M oflag<span style="color:#f92672">=</span>sync status<span style="color:#f92672">=</span>progress</span></span></code></pre></div><h2 id="进入-live-环境开始安装">进入 live 环境开始安装</h2>
+<h3 id="分区">分区</h3>
+<div class="highlight" id="id-2"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cfdisk /dev/nvme0n1
+</span></span><span style="display:flex;"><span>分两个区
+</span></span><span style="display:flex;"><span>/dev/nvme0n1p1 <span style="color:#75715e"># efi 分区</span>
+</span></span><span style="display:flex;"><span>/dev/nvme0n1p2 <span style="color:#75715e"># linux system 分区</span></span></span></code></pre></div><h3 id="格式化分区">格式化分区</h3>
+<div class="highlight" id="id-3"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.efi -F <span style="color:#ae81ff">32</span> /dev/nvme0n1p1
+</span></span><span style="display:flex;"><span>mkfs.btrfs -L ARCH /dev/nvme0n1p2
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>使用 <span style="color:#e6db74">`</span>lsblk -f<span style="color:#e6db74">`</span> 命令查看分区信息</span></span></code></pre></div><h3 id="创建-btrfs-子卷">创建 btrfs 子卷</h3>
+<div class="highlight" id="id-4"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>挂载系统分区
+</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd /dev/nvme0n1p2 /tmp/btrfs-root
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>创建子卷
+</span></span><span style="display:flex;"><span>btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@     <span style="color:#75715e"># 根目录</span>
+</span></span><span style="display:flex;"><span>btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home <span style="color:#75715e"># 家目录</span>
+</span></span><span style="display:flex;"><span>btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap <span style="color:#75715e"># 交换文件</span>
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>把交换文件子卷写时复制<span style="color:#f92672">(</span>cow<span style="color:#f92672">)</span>功能关闭
+</span></span><span style="display:flex;"><span>chattr +C /tmp/btrfs-root/@swap
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>卸载
+</span></span><span style="display:flex;"><span>umount /tmp/btrfs-root</span></span></code></pre></div><h3 id="挂载分区准备安装">挂载分区准备安装</h3>
+<div class="highlight" id="id-5"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd,subvol<span style="color:#f92672">=</span>@ /dev/nvme0n1p2 /mnt
+</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o subvol<span style="color:#f92672">=</span>@home /dev/nvme0n1p2 /mnt/home
+</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o subvol<span style="color:#f92672">=</span>@swap /dev/nvme0n1p2 /mnt/swap
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>创建交换文件
+</span></span><span style="display:flex;"><span>btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G <span style="color:#75715e"># 大小自行确定</span></span></span></code></pre></div><h3 id="正式安装前先配置好网络">正式安装前先配置好网络</h3>
+<div class="highlight" id="id-6"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip link             <span style="color:#75715e"># 查看网卡信息</span>
+</span></span><span style="display:flex;"><span>rfkill list         <span style="color:#75715e"># 查看蓝牙和 wifi 功能是否被关闭</span>
+</span></span><span style="display:flex;"><span>rfkill unblock wlan <span style="color:#75715e"># 如果 wifi 功能被关闭就启用</span>
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>输入 iwctl 命令进入 iw 工具的命令行
+</span></span><span style="display:flex;"><span>device list                           <span style="color:#75715e"># 列出可用网卡</span>
+</span></span><span style="display:flex;"><span>station wlan0 scan                    <span style="color:#75715e"># 扫描可用网络</span>
+</span></span><span style="display:flex;"><span>station wlan0 get-network             <span style="color:#75715e"># 获取可用 wifi</span>
+</span></span><span style="display:flex;"><span>station wlan0 connect wifi名 wifi密码 <span style="color:#75715e"># 连接 wifi，没有密码可以不用输入</span>
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>ctrl + d       <span style="color:#75715e"># 退出 iw 工具命令行</span>
+</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> t.cn <span style="color:#75715e"># 测试网络是否通畅</span></span></span></code></pre></div><h3 id="换源">换源</h3>
+<div class="highlight" id="id-7"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>自动配置: 使用 Python 脚本工具 reflector 配置源
+</span></span><span style="display:flex;"><span>reflector --country China --latest <span style="color:#ae81ff">5</span> --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+</span></span><span style="display:flex;"><span>systemctl stop reflector <span style="color:#75715e"># 关闭 reflector 服务放置刷新配置</span>
+</span></span><span style="display:flex;"><span>-----
+</span></span><span style="display:flex;"><span>手动配置: 编辑 /etc/pacman.d/mirrorlist 文件
+</span></span><span style="display:flex;"><span>vim /etc/pacman.d/mirrorlist
+</span></span><span style="display:flex;"><span>在最上面一行添加以下内容:
+</span></span><span style="display:flex;"><span>Server <span style="color:#f92672">=</span> https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
