@@ -69,6 +69,7 @@ btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小�
 ### 正式安装前先配置好网络
 
 ```bash
+timedatectl         # 同步系统时间
 ip link             # 查看网卡信息
 rfkill list         # 查看蓝牙和 wifi 功能是否被关闭
 rfkill unblock wlan # 如果 wifi 功能被关闭就启用
@@ -94,4 +95,41 @@ systemctl stop reflector # 关闭 reflector 服务放置刷新配置
 vim /etc/pacman.d/mirrorlist
 在最上面一行添加以下内容:
 Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+-----
+pacman -S archlinux-keyring
+pacman -Syy
+```
+
+### 开始安装
+
+```bash
+pacstrap -K /mnt base linux linux-firmware # 安装基本的工具，内核和驱动
+genfstab -U /mnt >> /mnt/etc/fstab         # 生成 fstab 文件
+arch-chroot /mnt                           # 进入新系统
+-----------------------------------
+pacman -S btrfs-progs base-devel sof-firmware vim grub efibootmgr intel-ucode/amd-ucode firefox networkmanager chcpcd openssh noto-fonts-cjk noto-fonts-emoji nerd-fonts-complete bash-completion # 安装额外的软件和工具
+```
+
+### 配置
+
+```bash
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime                            # 设置时区
+hwclock --systohc                                                                  # 将系统时钟同步到硬件时钟
+sed -i 's/^#\(en_US\.UTF-8\|zh_CN\.UTF-8\)/\1/g' /etc/locale.gen                   # 设置区域信息
+locale-gen && touch /etc/locale.conf && echo "LANG=en_US.UTF-8" > /etc/locale.conf # 生成 locale 信息并设置本地化
+touch /etc/hostname && echo "主机名" > /etc/hostname                               # 设置主机名
+echo -e "127.0.0.1\\tlocalhost\\n::1\\t\\tlocalhost\\n127.0.1.1\\t主机名.domain\\t主机名" >> /etc/hosts
+passwd root                             # 设置管理员用户密码
+useradd -m -G wheel -s /bin/bash 用户名 # 创建普通用户
+passwd 用户名                           # 给新用户设置密码
+编辑 /etc/sudoers 文件把# %wheel ALL=(ALL:ALL) ALL 这一行前面的#去掉
+------------------------------------
+配置 grub
+grub-install --efi-directory=/boot/efi
+grub-mkconfig -o /boot/grub/grub.cfg
+------------------------------------
+systemctl enable NetworkManager sshd dhcpcd # 设置一些开机启动的服务
+exit 或者 ctrl + d                          # 回到 live 环境
+umount -R /mnt                              # 卸载
+reboot                                      # 重启
 ```
