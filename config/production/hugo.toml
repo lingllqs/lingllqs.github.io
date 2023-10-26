@@ -141,11 +141,11 @@
     # FixIt 0.2.0 | NEW Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = "/images/wallpaper/1.jpg"
+      logo = "/svg/滑稽.svg"
       # title name
       name = "王源中路封个烟"
       # you can add extra information before the name (HTML format is supported), such as icons
-      pre = "/svg/滑稽.svg"
+      pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
       # FixIt 0.2.5 | NEW whether to use typeit animation for title name
