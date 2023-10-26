@@ -1,20 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>ArchLinux on My New Hugo Site</title>
+    <title>ArchLinux - Tag - My New Hugo Site</title>
     <link>https://example.org/tags/archlinux/</link>
-    <description>Recent content in ArchLinux on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 26 Oct 2023 12:08:52 +0800</lastBuildDate><atom:link href="https://example.org/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ArchLinux安装</title>
-      <link>https://example.org/posts/archlinux_install/</link>
-      <pubDate>Thu, 26 Oct 2023 12:08:52 +0800</pubDate>
-      
-      <guid>https://example.org/posts/archlinux_install/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+    <description>ArchLinux - Tag - My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
+  <title>ArchLinux安装</title>
+  <link>https://example.org/posts/archlinux_install/</link>
+  <pubDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/archlinux_install/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>
