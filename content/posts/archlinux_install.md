@@ -7,7 +7,8 @@ tags = ['ArchLinux']
 +++
 
 ## 下载 archlinux 镜像
-到中科大等国内镜像站下载`https://mirrors.ustc.edu.cn/archlinux/iso/`
+
+[中科大镜像地址](https://mirrors.ustc.edu.cn/archlinux/iso/)
 
 ## 制作启动盘
 
@@ -137,4 +138,5 @@ reboot                                      # 重启
 
 ## 安装 Hyprland
 
-配置参考: https://github.com/lingllqs/dotfiles
+[我的配置](https://github.com/lingllqs/dotfiles)
+
