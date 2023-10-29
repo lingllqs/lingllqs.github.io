@@ -2,10 +2,13 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   ><url>
+      <loc>https://example.org/categories/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
+      <loc>https://example.org/posts/en_abbrev/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
+      <loc>https://example.org/tags/english/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
+      <loc>https://example.org/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
+      <loc>https://example.org/posts/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
+      <loc>https://example.org/tags/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
+      <loc>https://example.org/categories/%E6%96%87%E6%A1%A3/</loc><lastmod>2023-10-27T22:19:32&#43;08:00</lastmod></url><url>
       <loc>https://example.org/tags/archlinux/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url><url>
       <loc>https://example.org/posts/archlinux_install/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url><url>
-      <loc>https://example.org/categories/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url><url>
-      <loc>https://example.org/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url><url>
-      <loc>https://example.org/posts/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url><url>
-      <loc>https://example.org/tags/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url><url>
       <loc>https://example.org/categories/%E6%95%99%E7%A8%8B/</loc><lastmod>2023-10-26T12:08:52&#43;08:00</lastmod></url></urlset>

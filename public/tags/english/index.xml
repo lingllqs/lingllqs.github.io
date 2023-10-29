@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>English - Tag - My New Hugo Site</title>
+    <link>https://example.org/tags/english/</link>
+    <description>English - Tag - My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/english/" rel="self" type="application/rss+xml" /><item>
+  <title>En_abbrev</title>
+  <link>https://example.org/posts/en_abbrev/</link>
+  <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/en_abbrev/</guid>
+  <description><![CDATA[ 英文缩写 英文全拼 中文描述 TCP Transmission Control Protocol 传输控制协议 ]]></description>
+</item>
+</channel>
+</rss>
