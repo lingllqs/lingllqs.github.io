@@ -7,6 +7,7 @@ tags = ['English']
 +++
 
 
-| 英文缩写 | 英文全拼                      | 中文描述     |
-| :-----:  | :-----:                       | :-----:      |
-| TCP      | Transmission Control Protocol | 传输控制协议 |
+| 英文缩写 | 英文全拼                      | 中文描述       |
+| :-----:  | :-----:                       | :-----:        |
+| TCP      | Transmission Control Protocol | 传输控制协议   |
+| UDP      | User Datagram Protocol        | 用户数据报协议 |
