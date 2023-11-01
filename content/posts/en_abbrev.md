@@ -7,9 +7,10 @@ tags = ['English']
 +++
 
 
-| 英文缩写 | 英文全拼                      | 中文描述         |
-| :-----:  | :-----:                       | :-----:          |
-| BIOS     | Basic Input Output System     | 基本输入输出系统 |
-| CRC      | Cyclic Redundancy Check       | 循环冗余校验     |
-| TCP      | Transmission Control Protocol | 传输控制协议     |
-| UDP      | User Datagram Protocol        | 用户数据报协议   |
+| 英文缩写 | 英文全拼                               | 中文描述         |
+| :-----:  | :-----:                                | :-----:          |
+| BIOS     | Basic Input Output System              | 基本输入输出系统 |
+| CRC      | Cyclic Redundancy Check                | 循环冗余校验     |
+| RAII     | Resource Acquisition Is Initialization | 资源获取即初始化 |
+| TCP      | Transmission Control Protocol          | 传输控制协议     |
+| UDP      | User Datagram Protocol                 | 用户数据报协议   |
