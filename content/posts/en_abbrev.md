@@ -11,6 +11,8 @@ tags = ['English']
 | :-----:  | :-----:                                | :-----:          |
 | BIOS     | Basic Input Output System              | 基本输入输出系统 |
 | CRC      | Cyclic Redundancy Check                | 循环冗余校验     |
+| ISA      | Instruction Set Architecture           | 指令集架构       |
+| ISA      | Independent System Architecture        | 独立系统体系架构 |
 | RAII     | Resource Acquisition Is Initialization | 资源获取即初始化 |
 | TCP      | Transmission Control Protocol          | 传输控制协议     |
 | UDP      | User Datagram Protocol                 | 用户数据报协议   |
