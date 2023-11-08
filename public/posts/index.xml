@@ -3,13 +3,21 @@
     <title>All Posts - My New Hugo Site</title>
     <link>https://example.org/posts/</link>
     <description>All Posts | My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</lastBuildDate><atom:link href="https://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</lastBuildDate><atom:link href="https://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>计算机网络</title>
+  <link>https://example.org/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+  <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+  <description><![CDATA[OSI 模型 物理层 数据链路层 网络层 传输层 会话层 表示层 应用层 ]]></description>
+</item>
+<item>
   <title>英文缩写含义</title>
   <link>https://example.org/posts/en_abbrev/</link>
   <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
   <author>Author</author>
   <guid>https://example.org/posts/en_abbrev/</guid>
-  <description><![CDATA[ 英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ISA Instruction Set Architecture 指令集架构 ISA Independent System Architecture 独立系统体系架构 RAII Resource Acquisition Is Initialization 资源获取即初始化 SIMD Single Instruction Multiple Data 单指令多数据 TCP Transmission Control Protocol 传输控制协议 UDP User Datagram Protocol 用户数据报协议 UEFI Unified Extensible Firmware Interface 统一可扩展固件接口 VGA Video Graphics Array 视频图形阵列 ]]></description>
+  <description><![CDATA[ 英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ISA Instruction Set Architecture 指令集架构 ISA Independent System Architecture 独立系统体系架构 RAII Resource Acquisition Is Initialization 资源获取即初始化 SIMD Single Instruction Multiple Data 单指令多数据 TCP Transmission Control Protocol 传输控制协议 UDP User Datagram Protocol 用户数据报协议 UEFI Unified Extensible Firmware Interface 统一可扩展固件接口 VGA Video Graphics Array 视频图形阵列 VRR Variable Refresh Rate 可变刷新率 ]]></description>
 </item>
 <item>
   <title>ArchLinux安装</title>

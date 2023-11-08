@@ -20,3 +20,4 @@ tags = ['English']
 | UDP      | User Datagram Protocol                 | 用户数据报协议     |
 | UEFI     | Unified Extensible Firmware Interface  | 统一可扩展固件接口 |
 | VGA      | Video Graphics Array                   | 视频图形阵列       |
+| VRR      | Variable Refresh Rate                  | 可变刷新率         |

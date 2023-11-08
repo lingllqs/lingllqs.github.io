@@ -3,7 +3,23 @@
     <title>Tags - Tag - My New Hugo Site</title>
     <link>https://example.org/tags/</link>
     <description>Tags - Tag - My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+  <title>Internet</title>
+  <link>https://example.org/tags/internet/</link>
+  <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/tags/internet/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>计算机网络</title>
+  <link>https://example.org/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+  <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>English</title>
   <link>https://example.org/tags/english/</link>
   <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
