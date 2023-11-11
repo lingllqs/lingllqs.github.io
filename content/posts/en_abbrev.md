@@ -7,18 +7,19 @@ tags = ['English']
 +++
 
 
-| 英文缩写 | 英文全拼                               | 中文描述           |
-| :-----:  | :-----:                                | :-----:            |
-| BIOS     | Basic Input Output System              | 基本输入输出系统   |
-| CRC      | Cyclic Redundancy Check                | 循环冗余校验       |
-| CRT      | C Runtime                              | C 运行时           |
-| ICMP     | Internet Control Message Protocol      | 互联网控制消息协议 |
-| ISA      | Instruction Set Architecture           | 指令集架构         |
-| ISA      | Independent System Architecture        | 独立系统体系架构   |
-| RAII     | Resource Acquisition Is Initialization | 资源获取即初始化   |
-| SIMD     | Single Instruction Multiple Data       | 单指令多数据       |
-| TCP      | Transmission Control Protocol          | 传输控制协议       |
-| UDP      | User Datagram Protocol                 | 用户数据报协议     |
-| UEFI     | Unified Extensible Firmware Interface  | 统一可扩展固件接口 |
-| VGA      | Video Graphics Array                   | 视频图形阵列       |
-| VRR      | Variable Refresh Rate                  | 可变刷新率         |
+| 英文缩写 | 英文全拼                                    | 中文描述           |
+| :-----:  | :-----:                                     | :-----:            |
+| BIOS     | Basic Input Output System                   | 基本输入输出系统   |
+| CRC      | Cyclic Redundancy Check                     | 循环冗余校验       |
+| CRT      | C Runtime                                   | C 运行时           |
+| ICMP     | Internet Control Message Protocol           | 互联网控制消息协议 |
+| ISA      | Instruction Set Architecture                | 指令集架构         |
+| ISA      | Independent System Architecture             | 独立系统体系架构   |
+| RAII     | Resource Acquisition Is Initialization      | 资源获取即初始化   |
+| SIMD     | Single Instruction Multiple Data            | 单指令多数据       |
+| TCP      | Transmission Control Protocol               | 传输控制协议       |
+| UART     | Universal Asynchronous Receiver Transmitter | 通用异步收发器     |
+| UDP      | User Datagram Protocol                      | 用户数据报协议     |
+| UEFI     | Unified Extensible Firmware Interface       | 统一可扩展固件接口 |
+| VGA      | Video Graphics Array                        | 视频图形阵列       |
+| VRR      | Variable Refresh Rate                       | 可变刷新率         |
