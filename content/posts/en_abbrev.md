@@ -12,6 +12,7 @@ tags = ['English']
 | BIOS     | Basic Input Output System                   | 基本输入输出系统   |
 | CRC      | Cyclic Redundancy Check                     | 循环冗余校验       |
 | CRT      | C Runtime                                   | C 运行时           |
+| EGL      | Embeded-System Graphics Library             | 嵌入式系统图形库   |
 | ICMP     | Internet Control Message Protocol           | 互联网控制消息协议 |
 | ISA      | Instruction Set Architecture                | 指令集架构         |
 | ISA      | Independent System Architecture             | 独立系统体系架构   |
