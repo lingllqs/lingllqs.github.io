@@ -15,6 +15,7 @@ tags = ['English']
 | ICMP     | Internet Control Message Protocol           | 互联网控制消息协议 |
 | ISA      | Instruction Set Architecture                | 指令集架构         |
 | ISA      | Independent System Architecture             | 独立系统体系架构   |
+| KMS      | Kernel Mode Setting                         | 内核模式设置       |
 | RAII     | Resource Acquisition Is Initialization      | 资源获取即初始化   |
 | SIMD     | Single Instruction Multiple Data            | 单指令多数据       |
 | TCP      | Transmission Control Protocol               | 传输控制协议       |
