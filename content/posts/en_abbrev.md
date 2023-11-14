@@ -14,6 +14,7 @@ tags = ['English']
 | CRT      | C Runtime                                   | C 运行时           |
 | EGL      | Embeded-System Graphics Library             | 嵌入式系统图形库   |
 | ICMP     | Internet Control Message Protocol           | 互联网控制消息协议 |
+| IGMP     | Internet Group managerment Protocol         | 互联网组管理协议   |
 | ISA      | Instruction Set Architecture                | 指令集架构         |
 | ISA      | Independent System Architecture             | 独立系统体系架构   |
 | KMS      | Kernel Mode Setting                         | 内核模式设置       |
