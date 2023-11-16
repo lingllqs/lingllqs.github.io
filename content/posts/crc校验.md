@@ -6,3 +6,4 @@ categories = ['文档']
 tags = ['计算机网络', 'Internet']
 +++
 
+### CRC 循环冗余校验
