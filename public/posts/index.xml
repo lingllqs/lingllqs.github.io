@@ -4,19 +4,12 @@
     <link>https://example.org/posts/</link>
     <description>All Posts | My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</lastBuildDate><atom:link href="https://example.org/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>计算机网络</title>
-  <link>https://example.org/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+  <title>CRC校验</title>
+  <link>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</link>
   <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>https://example.org/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
-  <description><![CDATA[OSI 模型 物理层 作用
-提供透明比特流传输 特性
-机械特性 接口所有的接线器的形状、尺寸、引脚数和排列等。如: RJ45
-电气特性 接口电缆在各条线上的电压范围
-功能特性 电平的电压的意义
-规程特性 不同功能的各种可能事件的顺序(类似协议)
-信号(数据的电气或电磁表现)
-模拟信号(取值是连续的) 数字信号(取值是离散的) 数据链路层 网络层 传输层 会话层 表示层 应用层 ]]></description>
+  <guid>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
+  <description><![CDATA[]]></description>
 </item>
 <item>
   <title>英文缩写含义</title>
