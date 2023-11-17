@@ -16,11 +16,11 @@ $$
 $$
 
 $$
-因为: x \to \infty$, $(1 + \frac{1}{x})^x \to e
+因为: x \to \infty, (1 + \frac{1}{x})^x \to e
 $$
 
 $$
-所以: x \to \infty$, $\left[(1+\frac{1}{x})^x \right]^x \to e^x
+所以: x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x
 $$
 
 $$
