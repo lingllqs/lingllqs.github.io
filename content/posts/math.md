@@ -6,9 +6,9 @@ categories = ['math']
 tags = ['math']
 +++
 
-### 1.求极限
+### 第一题
 $$
-\lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x}
+求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限
 $$
 
 $$
@@ -24,13 +24,13 @@ $$
 $$
 
 $$
-\lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x}
+所以: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x}
 $$
 
 $$
-e^x \cdot e^{-x} = e^{x-x} = e^0 = 1
+因为: e^x \cdot e^{-x} = e^{x-x} = e^0 = 1
 $$
 
 $$
-所以，当x \to \infty时, \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} = 1
+所以，当x \to \infty时, 原式 = \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} = 1
 $$
