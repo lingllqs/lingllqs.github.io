@@ -16,21 +16,21 @@ $$
 $$
 
 $$
-因为: x \to \infty, (1 + \frac{1}{x})^x \to e
+\because x \to \infty, (1 + \frac{1}{x})^x \to e
 $$
 
 $$
-所以: x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x
+\therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x
 $$
 
 $$
-所以: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x}
+\therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x}
 $$
 
 $$
-因为: e^x \cdot e^{-x} = e^{x-x} = e^0 = 1
+\because e^x \cdot e^{-x} = e^{x-x} = e^0 = 1
 $$
 
 $$
-所以，当x \to \infty时, 原式 = \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} = 1
+\therefore 当x \to \infty时, 原式 = \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} = 1
 $$
