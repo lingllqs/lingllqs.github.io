@@ -10,6 +10,7 @@ tags = ['English']
 | 英文缩写 | 英文全拼                                    | 中文描述           |
 | :-----:  | :-----:                                     | :-----:            |
 | BIOS     | Basic Input Output System                   | 基本输入输出系统   |
+| CIDR     | Classless Inter-Domain Routing              | 无类型域间路由     |
 | CRC      | Cyclic Redundancy Check                     | 循环冗余校验       |
 | CRT      | C Runtime                                   | C 运行时           |
 | EGL      | Embeded-System Graphics Library             | 嵌入式系统图形库   |
