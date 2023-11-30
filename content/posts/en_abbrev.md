@@ -14,6 +14,7 @@ tags = ['English']
 | CRC      | Cyclic Redundancy Check                     | 循环冗余校验       |
 | CRT      | C Runtime                                   | C 运行时           |
 | EGL      | Embeded-System Graphics Library             | 嵌入式系统图形库   |
+| FTP      | File Transfer Protocol                      | 文件传输协议       |
 | ICMP     | Internet Control Message Protocol           | 互联网控制消息协议 |
 | IGMP     | Internet Group managerment Protocol         | 互联网组管理协议   |
 | ISA      | Instruction Set Architecture                | 指令集架构         |
