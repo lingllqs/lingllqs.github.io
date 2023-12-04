@@ -22,6 +22,7 @@ tags = ['English']
 | KMS      | Kernel Mode Setting                         | 内核模式设置       |
 | RAII     | Resource Acquisition Is Initialization      | 资源获取即初始化   |
 | SIMD     | Single Instruction Multiple Data            | 单指令多数据       |
+| SMTP     | Simple Mail Transfer Protocol               | 简单邮件传输协议   |
 | TCP      | Transmission Control Protocol               | 传输控制协议       |
 | UART     | Universal Asynchronous Receiver Transmitter | 通用异步收发器     |
 | UDP      | User Datagram Protocol                      | 用户数据报协议     |
