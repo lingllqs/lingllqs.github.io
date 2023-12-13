@@ -40,14 +40,30 @@ $$
 求 \int_{0}^{1} \frac{\ln(1+x)}{1+x^2}\mathrm{d}x 的积分
 $$
 
-$$
-令 x = \tan t --> {d}x = \sec ^2t{d}t
-\because I = \int_{0}^{\frac{\pi}{4}} \ln(1+\tan t) {d}t
-     = \int_{0}^{\frac{\pi}{4}} \ln(1+\tan (\frac{\pi}{4} - u)) {d}u
-     = \int_{0}^{\frac{\pi}{4}} \ln(1 + \frac{1 - \tan u}{1 + \tan u}) {d}u
-     = \int_{0}^{\frac{\pi}{4}} \ln(\frac{2}{1 + \tan u}) {d}u
-     = \int_{0}^{\frac{\pi}{4}} \ln 2 {d}u - \int_{0}^{\frac{\pi}{4}} \ln (1 + \tan u) {d}u
-
-\therefore  2I = \int_{0}^{\frac{\pi}{4}} \ln 2 {d}u
-\therefore I = \frac{\pi}{8} \ln 2
-$$
+> $$
+> 令 x = \tan t --> {d}x = \sec ^2t{d}t
+> $$
+> $$
+> \because I = \int_{0}^{\frac{\pi}{4}} \ln(1+\tan t) {d}t
+> $$
+> $$
+>      = \int_{0}^{\frac{\pi}{4}} \ln(1+\tan (\frac{\pi}{4} - u)) {d}u
+> $$
+> $$
+>      = \int_{0}^{\frac{\pi}{4}} \ln(1 + \frac{1 - \tan u}{1 + \tan u}) {d}u
+> $$
+> $$
+>      = \int_{0}^{\frac{\pi}{4}} \ln(\frac{2}{1 + \tan u}) {d}u
+> $$
+> $$
+>      = \int_{0}^{\frac{\pi}{4}} \ln 2 {d}u - \int_{0}^{\frac{\pi}{4}} \ln (1 + \tan u) {d}u
+> $$
+> $$
+> 
+> $$
+> $$
+> \therefore  2I = \int_{0}^{\frac{\pi}{4}} \ln 2 {d}u
+> $$
+> $$
+> \therefore I = \frac{\pi}{8} \ln 2
+> $$
