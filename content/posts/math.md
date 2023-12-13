@@ -41,7 +41,7 @@ $$
 $$
 
 > $$
-> 令 x = \tan t --> {d}x = \sec ^2t{d}t
+> 令 x = \tan t 得 {d}x = \sec ^2t{d}t
 > $$
 >
 > $$
