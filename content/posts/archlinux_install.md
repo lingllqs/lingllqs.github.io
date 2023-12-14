@@ -66,6 +66,7 @@ mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap
 -----
 创建交换文件
 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定
+swapon /swap/swapfile # 启用交换文件
 ```
 
 ### 正式安装前先配置好网络
