@@ -139,5 +139,5 @@ reboot                                      # 重启
 
 ## 安装 Hyprland
 
-[我的配置](https://github.com/lingllqs/dotfiles)
+[我的个人配置](https://github.com/lingllqs/dotfiles)
 
