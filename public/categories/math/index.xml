@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Math - 分类 - 我的博客</title>
+    <title>Math - 分类 - LQS的树洞</title>
     <link>https://lingllqs.github.io/categories/math/</link>
-    <description>Math - 分类 | 我的博客</description>
+    <description>Math - 分类 | LQS的树洞</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/categories/math/" rel="self" type="application/rss+xml" /><item>
   <title>数学题</title>
   <link>https://lingllqs.github.io/posts/math/</link>

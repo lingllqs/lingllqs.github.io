@@ -1,6 +1,6 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>我的博客</title>
+    <title>LQS的树洞</title>
     <link>https://lingllqs.github.io/</link>
     <description>lingllqs的分享站</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate>

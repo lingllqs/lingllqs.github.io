@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>教程 - 分类 - 我的博客</title>
+    <title>教程 - 分类 - LQS的树洞</title>
     <link>https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/</link>
-    <description>教程 - 分类 | 我的博客</description>
+    <description>教程 - 分类 | LQS的树洞</description>
     <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
   <title>ArchLinux安装</title>
   <link>https://lingllqs.github.io/posts/archlinux_install/</link>
