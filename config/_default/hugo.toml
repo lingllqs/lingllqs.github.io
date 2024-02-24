@@ -1,4 +1,6 @@
-baseURL = 'https://lingllqs.github.io/'
-languageCode = 'zh-cn'
-title = '我的博客'
-theme = 'FixIt'
+baseURL = "https://lingllqs.github.io/"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+title = "我的博客"
+theme = "FixIt"
