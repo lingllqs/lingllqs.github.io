@@ -158,7 +158,7 @@
 
   # FixIt 0.2.18 | NEW Breadcrumb config
   [params.breadcrumb]
-    enable = false
+    enable = true
     sticky = false
     showHome = false
 
@@ -245,7 +245,7 @@
       # FixIt 0.2.17 | NEW identifier of avatar menu link
       avatarMenu = ""
       # FixIt 0.2.7 | CHANGED title shown in home page (HTML format is supported)
-      title = "技术文章"
+      title = "技术交流"
       # subtitle shown in home page
       subtitle = "窗前明月光\n疑似地上霜"
       # whether to use typeit animation for subtitle
@@ -376,10 +376,10 @@
     # FixIt 0.2.4 | NEW whether to show the full text content in RSS
     rssFullText = false
     # FixIt 0.2.13 | NEW Page style ["narrow", "normal", "wide", ...]
-    pageStyle = "normal"
+    pageStyle = "narrow"
     # FixIt 0.2.17 | CHANGED Auto Bookmark Support
     # If true, save the reading progress when closing the page.
-    autoBookmark = false
+    autoBookmark = true
     # FixIt 0.2.17 | NEW whether to enable wordCount
     wordCount = true
     # FixIt 0.2.17 | NEW whether to enable readingTime
@@ -388,6 +388,8 @@
     endFlag = ""
     # FixIt 0.2.18 | NEW whether to enable instant.page
     instantPage = false
+    collectionList = true
+    collectionNavigation = false
 
     # FixIt 0.2.15 | NEW Repost config
     [params.page.repost]
