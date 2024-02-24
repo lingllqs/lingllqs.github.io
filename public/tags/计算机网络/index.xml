@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>计算机网络 on My New Hugo Site</title>
+    <title>计算机网络 - Tag - My New Hugo Site</title>
     <link>https://example.org/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
-    <description>Recent content in 计算机网络 on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 08 Nov 2023 21:22:11 +0800</lastBuildDate>
-    <atom:link href="https://example.org/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CRC校验</title>
-      <link>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</link>
-      <pubDate>Wed, 08 Nov 2023 21:22:11 +0800</pubDate>
-      <guid>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
-      <description>CRC 循环冗余校验 </description>
-    </item>
-  </channel>
+    <description>计算机网络 - Tag | My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="self" type="application/rss+xml" /><item>
+  <title>CRC校验</title>
+  <link>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</link>
+  <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
+  <description><![CDATA[ CRC 循环冗余校验]]></description>
+</item>
+</channel>
 </rss>

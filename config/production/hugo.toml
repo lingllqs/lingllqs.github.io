@@ -66,7 +66,7 @@
   # site default theme ["light", "dark", "auto"]
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
-  gitRepo = ""
+  gitInfo = ""
   # FixIt 0.1.1 | NEW which hash function used for SRI, when empty, no SRI is used
   # ["sha256", "sha384", "sha512", "md5"]
   fingerprint = ""
@@ -434,13 +434,6 @@
       edit = true
       # the maximum number of lines of displayed code by default
       maxShownLines = 10
-    # FixIt 0.2.14 | NEW Post edit
-    [params.page.edit]
-      enable = false
-      # FixIt 0.2.15 | CHANGED Link for fork & edit
-      # url = "/edit/branch-name/subdirectory-name" # base on `params.gitRepo`
-      # url = "https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name" # full url
-      url = ""
     # FixIt 0.2.0 | NEW Mapbox GL JS config (https://docs.mapbox.com/mapbox-gl-js)
     [params.page.mapbox]
       # access token of Mapbox GL JS

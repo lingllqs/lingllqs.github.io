@@ -1,40 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Posts on My New Hugo Site</title>
+    <title>All Posts - My New Hugo Site</title>
     <link>https://example.org/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 17 Nov 2023 11:52:58 +0800</lastBuildDate>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>数学题</title>
-      <link>https://example.org/posts/math/</link>
-      <pubDate>Fri, 17 Nov 2023 11:52:58 +0800</pubDate>
-      <guid>https://example.org/posts/math/</guid>
-      <description>第一题 $$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$&#xA;$$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$&#xA;$$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$&#xA;$$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$&#xA;$$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$&#xA;$$ \because e^x \cdot e^{-x} = e^{x-x} = e^0 = 1 $$</description>
-    </item>
-    <item>
-      <title>CRC校验</title>
-      <link>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</link>
-      <pubDate>Wed, 08 Nov 2023 21:22:11 +0800</pubDate>
-      <guid>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
-      <description>CRC 循环冗余校验 </description>
-    </item>
-    <item>
-      <title>英文缩写含义</title>
-      <link>https://example.org/posts/en_abbrev/</link>
-      <pubDate>Fri, 27 Oct 2023 22:19:32 +0800</pubDate>
-      <guid>https://example.org/posts/en_abbrev/</guid>
-      <description> 英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 EGL Embeded-System Graphics Library 嵌入式系统图形库 FTP File Transfer Protocol 文件传输协议 ICMP Internet Control Message Protocol 互联网控制消息协议 IGMP Internet Group managerment Protocol 互联网组管理协议 ISA Instruction Set Architecture 指令集架构 ISA Independent System Architecture 独立系统体系架构 KMS Kernel Mode Setting 内核模式设置 RAII Resource Acquisition Is Initialization 资源获取即初始化 SIMD Single Instruction Multiple Data 单指令多数据 SMTP Simple Mail Transfer Protocol 简单邮件传输协议 TCP Transmission Control Protocol 传输控制协议 UART Universal Asynchronous Receiver Transmitter 通用异步收发器 UDP User Datagram Protocol 用户数据报协议 UEFI Unified Extensible Firmware Interface 统一可扩展固件接口 VGA Video Graphics Array 视频图形阵列 VRR Variable Refresh Rate 可变刷新率 </description>
-    </item>
-    <item>
-      <title>ArchLinux安装</title>
-      <link>https://example.org/posts/archlinux_install/</link>
-      <pubDate>Thu, 26 Oct 2023 12:08:52 +0800</pubDate>
-      <guid>https://example.org/posts/archlinux_install/</guid>
-      <description>下载 archlinux 镜像 中科大镜像地址&#xA;制作启动盘 windows: rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress 进入 live 环境开始安装 分区 cfdisk /dev/nvme0n1 分两个区 /dev/nvme0n1p1 # efi 分区 /dev/nvme0n1p2 # linux system 分区 格式化分区 mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 ----- 使用 `lsblk -f` 命令查看分区信息 创建 btrfs 子卷 挂载系统分区 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr +C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root 挂载分区准备安装 mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----- mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi ----- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定 swapon /swap/swapfile # 启用交换文件 正式安装前先配置好网络 timedatectl # 同步系统时间 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用 ----- 输入 iwctl 命令进入 iw 工具的命令行 device list # 列出可用网卡 station wlan0 scan # 扫描可用网络 station wlan0 get-network # 获取可用 wifi station wlan0 connect wifi名 wifi密码 # 连接 wifi，没有密码可以不用输入 ----- ctrl + d # 退出 iw 工具命令行 ping -c 3 t.</description>
-    </item>
-  </channel>
+    <description>All Posts | My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate><atom:link href="https://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>数学题</title>
+  <link>https://example.org/posts/math/</link>
+  <pubDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/math/</guid>
+  <description><![CDATA[第一题$$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$
+$$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$
+$$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$
+$$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$
+$$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$
+$$ \because e^x \cdot e^{-x} = e^{x-x} = e^0 = 1 $$]]></description>
+</item>
+<item>
+  <title>CRC校验</title>
+  <link>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</link>
+  <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
+  <description><![CDATA[ CRC 循环冗余校验]]></description>
+</item>
+<item>
+  <title>英文缩写含义</title>
+  <link>https://example.org/posts/en_abbrev/</link>
+  <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/en_abbrev/</guid>
+  <description><![CDATA[ 英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 EGL Embeded-System Graphics Library 嵌入式系统图形库 FTP File Transfer Protocol 文件传输协议 ICMP Internet Control Message Protocol 互联网控制消息协议 IGMP Internet Group managerment Protocol 互联网组管理协议 ISA Instruction Set Architecture 指令集架构 ISA Independent System Architecture 独立系统体系架构 KMS Kernel Mode Setting 内核模式设置 RAII Resource Acquisition Is Initialization 资源获取即初始化 SIMD Single Instruction Multiple Data 单指令多数据 SMTP Simple Mail Transfer Protocol 简单邮件传输协议 TCP Transmission Control Protocol 传输控制协议 UART Universal Asynchronous Receiver Transmitter 通用异步收发器 UDP User Datagram Protocol 用户数据报协议 UEFI Unified Extensible Firmware Interface 统一可扩展固件接口 VGA Video Graphics Array 视频图形阵列 VRR Variable Refresh Rate 可变刷新率 ]]></description>
+</item>
+<item>
+  <title>ArchLinux安装</title>
+  <link>https://example.org/posts/archlinux_install/</link>
+  <pubDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</pubDate>
+  <author>Author</author>
+  <guid>https://example.org/posts/archlinux_install/</guid>
+  <description><![CDATA[下载 archlinux 镜像中科大镜像地址
+制作启动盘windows: rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress 进入 live 环境开始安装 分区cfdisk /dev/nvme0n1 分两个区 /dev/nvme0n1p1 # efi 分区 /dev/nvme0n1p2 # linux system 分区 格式化分区mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 ----- 使用 `lsblk -f` 命令查看分区信息 创建 btrfs 子卷挂载系统分区 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /dev/nvme0n1p2 /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr +C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root 挂载分区准备安装mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----- mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi ----- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定 swapon /swap/swapfile # 启用交换文件 正式安装前先配置好网络timedatectl # 同步系统时间 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用 ----- 输入 iwctl 命令进入 iw 工具的命令行 device list # 列出可用网卡 station wlan0 scan # 扫描可用网络 station wlan0 get-network # 获取可用 wifi station wlan0 connect wifi名 wifi密码 # 连接 wifi，没有密码可以不用输入 ----- ctrl + d # 退出 iw 工具命令行 ping -c 3 t.]]></description>
+</item>
+</channel>
 </rss>
