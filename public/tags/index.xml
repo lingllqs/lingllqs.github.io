@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>Tags - Tag - My New Hugo Site</title>
+    <title>Tags - Tag - 我的博客</title>
     <link>https://example.org/tags/</link>
-    <description>Tags - Tag | My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <description>Tags - Tag | 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/" rel="self" type="application/rss+xml" /><item>
   <title>Math</title>
   <link>https://example.org/tags/math/</link>
   <pubDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</pubDate>
