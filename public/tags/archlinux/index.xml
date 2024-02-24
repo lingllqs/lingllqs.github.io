@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>ArchLinux - Tag - 我的博客</title>
-    <link>https://example.org/tags/archlinux/</link>
+    <link>https://lingllqs.github.io/tags/archlinux/</link>
     <description>ArchLinux - Tag | 我的博客</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</lastBuildDate><atom:link href="https://example.org/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
   <title>ArchLinux安装</title>
-  <link>https://example.org/posts/archlinux_install/</link>
+  <link>https://lingllqs.github.io/posts/archlinux_install/</link>
   <pubDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</pubDate>
   <author>Author</author>
-  <guid>https://example.org/posts/archlinux_install/</guid>
+  <guid>https://lingllqs.github.io/posts/archlinux_install/</guid>
   <description><![CDATA[下载 archlinux ISO 镜像中科大镜像地址
 制作启动盘windows: 使用 rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress 进入 live 环境开始安装 分区1. 使用 `fdisk -l` 查看硬盘信息 2. 使用 cfdisk 命令进行分区 `cfdisk /dev/nvme0n1` 这里分两个区 /dev/nvme0n1p1 # efi 引导分区(在 cfdisk 工具界面下方选择 type 进入类型选择界面,选择 efi 类型即可) /dev/nvme0n1p2 # linux system 分区 格式化分区mkfs.efi -F 32 /dev/nvme0n1p1 mkfs.btrfs -L ARCH /dev/nvme0n1p2 (-L 表示要指定硬盘标签 ARCH 为标签名,可自行命名) -------------------------------- 使用 `lsblk -f` 命令查看分区信息 创建 btrfs 子卷挂载系统分区进行子卷创建 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root ----- 创建子卷 btrfs subvolume create /tmp/btrfs-root/@ # 根目录 btrfs subvolume create /tmp/btrfs-root/@home # 家目录 btrfs subvolume create /tmp/btrfs-root/@swap # 交换文件 ----- 把交换文件子卷写时复制(cow)功能关闭 chattr +C /tmp/btrfs-root/@swap ----- 卸载 umount /tmp/btrfs-root 挂载分区准备系统安装mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt # 注意要先挂载根目录 mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home # 挂载根目录下的home目录 mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap ----------------------------- mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi # 挂载引导分区目录(注意是 nvme0n1p1) ----------------------------- 创建交换文件 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定 swapon /swap/swapfile # 启用交换文件 正式安装前先配置好网络timedatectl # 同步系统时间 ip link # 查看网卡信息 rfkill list # 查看蓝牙和 wifi 功能是否被关闭 rfkill unblock wlan # 如果 wifi 功能被关闭就启用(或者用`rfkill unblock all`启用所有被关闭功能) --------------------------------- 1.]]></description>
 </item>
