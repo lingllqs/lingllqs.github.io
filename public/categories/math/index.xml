@@ -1,20 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>math - Category - My New Hugo Site</title>
+    <title>Math on My New Hugo Site</title>
     <link>https://example.org/categories/math/</link>
-    <description>math - Category - My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate><atom:link href="https://example.org/categories/math/" rel="self" type="application/rss+xml" /><item>
-  <title>数学题</title>
-  <link>https://example.org/posts/math/</link>
-  <pubDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</pubDate>
-  <author>Author</author>
-  <guid>https://example.org/posts/math/</guid>
-  <description><![CDATA[第一题 $$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$
-$$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$
-$$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$
-$$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$
-$$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$
-$$ \because e^x \cdot e^{-x} = e^{x-x} = e^0 = 1 $$]]></description>
-</item>
-</channel>
+    <description>Recent content in Math on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Nov 2023 11:52:58 +0800</lastBuildDate>
+    <atom:link href="https://example.org/categories/math/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数学题</title>
+      <link>https://example.org/posts/math/</link>
+      <pubDate>Fri, 17 Nov 2023 11:52:58 +0800</pubDate>
+      <guid>https://example.org/posts/math/</guid>
+      <description>第一题 $$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$&#xA;$$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$&#xA;$$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$&#xA;$$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$&#xA;$$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$&#xA;$$ \because e^x \cdot e^{-x} = e^{x-x} = e^0 = 1 $$</description>
+    </item>
+  </channel>
 </rss>

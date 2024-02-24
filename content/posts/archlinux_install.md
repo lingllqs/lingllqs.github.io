@@ -58,11 +58,11 @@ umount /tmp/btrfs-root
 ### 挂载分区准备安装
 
 ```bash
-mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi
------
 mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt
 mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home
 mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap
+-----
+mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi
 -----
 创建交换文件
 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定
