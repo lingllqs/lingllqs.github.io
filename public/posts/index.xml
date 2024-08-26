@@ -3,15 +3,7 @@
     <title>所有文章 - LQS的树洞</title>
     <link>https://lingllqs.github.io/posts/</link>
     <description>所有文章 | LQS的树洞</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 20 Aug 2024 17:04:37 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>英文缩写含义</title>
-  <link>https://lingllqs.github.io/posts/%E8%8B%B1%E6%96%87%E7%BC%A9%E5%86%99%E5%90%AB%E4%B9%89/</link>
-  <pubDate>Tue, 20 Aug 2024 17:04:37 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/%E8%8B%B1%E6%96%87%E7%BC%A9%E5%86%99%E5%90%AB%E4%B9%89/</guid>
-  <description><![CDATA[缩写 全称 描述 BSS Block Started by Symbol ELF Executable and Linking File 可执行和可链接 IDE Integrated Drive Electronic 集成电子驱动]]></description>
-</item>
-<item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/posts/" rel="self" type="application/rss+xml" /><item>
   <title>数学题</title>
   <link>https://lingllqs.github.io/posts/math/</link>
   <pubDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</pubDate>
@@ -33,7 +25,7 @@
   <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
   <author>作者</author>
   <guid>https://lingllqs.github.io/posts/en_abbrev/</guid>
-  <description><![CDATA[英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 EGL Embeded-System Graphics Library 嵌入式系统图形库 FTP File Transfer Protocol 文]]></description>
+  <description><![CDATA[英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 BSS Block Started by Symbol CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ELF Executable and Linking File 可执行和可链接]]></description>
 </item>
 <item>
   <title>ArchLinux安装</title>
