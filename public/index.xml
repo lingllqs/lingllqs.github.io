@@ -3,9 +3,17 @@
     <title>LQS的树洞</title>
     <link>https://lingllqs.github.io/</link>
     <description>lingllqs的分享站</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 27 Aug 2024 21:44:30 &#43;0800</lastBuildDate>
       <atom:link href="https://lingllqs.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Btrfs</title>
+  <link>https://lingllqs.github.io/posts/btrfs/</link>
+  <pubDate>Tue, 27 Aug 2024 21:44:30 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://lingllqs.github.io/posts/btrfs/</guid>
+  <description><![CDATA[给系统做快照sda -sda1 /boot -sda2 / sdb -sdb1 /mnt 目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快照]]></description>
+</item>
+<item>
   <title>数学题</title>
   <link>https://lingllqs.github.io/posts/math/</link>
   <pubDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</pubDate>

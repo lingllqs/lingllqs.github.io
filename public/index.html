@@ -13,8 +13,8 @@
 <meta name="description" content="lingllqs的分享站" /><meta name="keywords" content='Hugo, ArchLinux, 技术, 编程' />
   <meta itemprop="name" content="LQS的树洞">
   <meta itemprop="description" content="lingllqs的分享站">
-  <meta itemprop="datePublished" content="2023-11-17T11:52:58+08:00">
-  <meta itemprop="dateModified" content="2023-11-17T11:52:58+08:00">
+  <meta itemprop="datePublished" content="2024-08-27T21:44:30+08:00">
+  <meta itemprop="dateModified" content="2024-08-27T21:44:30+08:00">
   <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/1.jpg"><meta property="og:url" content="https://lingllqs.github.io/">
   <meta property="og:site_name" content="LQS的树洞">
   <meta property="og:title" content="LQS的树洞">
@@ -141,6 +141,11 @@
         <span id="typeit-profile-subtitle" class="typeit"></span></p><div class="links"><a href="https://github.com/lingllqs" title="GitHub"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-brands fa-github-alt fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/btrfs/">Btrfs</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2024-08-27 21:44:30'>发布于 <time datetime="2024-08-27">2024-08-27</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content">给系统做快照sda -sda1 /boot -sda2 / sdb -sdb1 /mnt 目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快照</div><div class="post-footer">
+    <a href="/posts/btrfs/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/btrfs/' class="post-tag">Btrfs</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/math/">数学题</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-11-17 11:52:58'>发布于 <time datetime="2023-11-17">2023-11-17</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/math/" class="post-category" title="分类 - Math"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Math</a></span></div><div class="content">第一题$$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$ $$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$ $$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$ $$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$ $$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$ $$ \because</div><div class="post-footer">
