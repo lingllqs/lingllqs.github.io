@@ -9,7 +9,7 @@
   <pubDate>Tue, 27 Aug 2024 21:44:30 &#43;0800</pubDate>
   <author>作者</author>
   <guid>https://lingllqs.github.io/posts/btrfs/</guid>
-  <description><![CDATA[给系统做快照sda -sda1 /boot -sda2 / sdb -sdb1 /mnt 目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快照]]></description>
+  <description><![CDATA[给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快]]></description>
 </item>
 <item>
   <title>数学题</title>

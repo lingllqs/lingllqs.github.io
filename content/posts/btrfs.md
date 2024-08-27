@@ -9,12 +9,16 @@ tags = ['btrfs']
 
 ### 给系统做快照
 
-sda
- -sda1  /boot
- -sda2  /
+```bash
+    sda
+      sda1  /boot
+      sda2  /
+``` 
 
-sdb
- -sdb1  /mnt
+```bash
+    sdb
+      sdb1  /mnt
+```
 
 目的: 给 sda2 做快照 --> 保存 sda2 的快照到 sdb1 中
 
