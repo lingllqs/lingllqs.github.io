@@ -700,7 +700,7 @@
     fontFamily = "inherit"
 
   # FixIt 0.2.12 | NEW Busuanzi count
-  [params.ibruce]
+  [params.Busuanzi]
     enable = false
     # Enable in post meta
     enablePost = false

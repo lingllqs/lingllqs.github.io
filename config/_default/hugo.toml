@@ -4,3 +4,4 @@ defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 title = "LQS的树洞"
 theme = "FixIt"
+ignoreLogs = ['warning-dev-version']

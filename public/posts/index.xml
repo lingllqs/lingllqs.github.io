@@ -1,47 +1,52 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>所有文章 - LQS的树洞</title>
     <link>https://lingllqs.github.io/posts/</link>
-    <description>所有文章 | LQS的树洞</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 27 Aug 2024 21:44:30 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-  <title>Btrfs</title>
-  <link>https://lingllqs.github.io/posts/btrfs/</link>
-  <pubDate>Tue, 27 Aug 2024 21:44:30 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/btrfs/</guid>
-  <description><![CDATA[给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快]]></description>
-</item>
-<item>
-  <title>数学题</title>
-  <link>https://lingllqs.github.io/posts/math/</link>
-  <pubDate>Fri, 17 Nov 2023 11:52:58 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/math/</guid>
-  <description><![CDATA[第一题$$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$ $$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$ $$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$ $$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$ $$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$ $$ \because]]></description>
-</item>
-<item>
-  <title>CRC校验</title>
-  <link>https://lingllqs.github.io/posts/crc%E6%A0%A1%E9%AA%8C/</link>
-  <pubDate>Wed, 08 Nov 2023 21:22:11 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
-  <description><![CDATA[CRC 循环冗余校验]]></description>
-</item>
-<item>
-  <title>英文缩写含义</title>
-  <link>https://lingllqs.github.io/posts/en_abbrev/</link>
-  <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/en_abbrev/</guid>
-  <description><![CDATA[英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 BSS Block Started by Symbol CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ELF Executable and Linking File 可执行和可链接]]></description>
-</item>
-<item>
-  <title>ArchLinux安装</title>
-  <link>https://lingllqs.github.io/posts/archlinux_install/</link>
-  <pubDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/archlinux_install/</guid>
-  <description><![CDATA[下载 archlinux ISO 镜像中科大镜像地址 制作启动盘windows: 使用 rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress 进入 live 环境开始安装 分区1. 使用 `fdisk -l` 查看硬盘信息 2. 使用 cfdisk 命令进行]]></description>
-</item>
-</channel>
+    <description>lingllqs的分享站</description>
+    <generator>Hugo 0.133.1 &amp; FixIt v0.3.10-08d4c12c</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 27 Aug 2024 21:44:30 +0800</lastBuildDate>
+    <atom:link href="https://lingllqs.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Btrfs</title>
+      <link>https://lingllqs.github.io/posts/btrfs/</link>
+      <pubDate>Tue, 27 Aug 2024 21:44:30 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/btrfs/</guid>
+      <category domain="https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/">文档</category>
+      <description>给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &amp;ndash;&amp;gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快</description>
+    </item>
+    <item>
+      <title>数学题</title>
+      <link>https://lingllqs.github.io/posts/math/</link>
+      <pubDate>Fri, 17 Nov 2023 11:52:58 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/math/</guid>
+      <category domain="https://lingllqs.github.io/categories/math/">Math</category>
+      <description>第一题 $$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$ $$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$ $$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$ $$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$ $$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$ $$ \because e^x</description>
+    </item>
+    <item>
+      <title>CRC校验</title>
+      <link>https://lingllqs.github.io/posts/crc%E6%A0%A1%E9%AA%8C/</link>
+      <pubDate>Wed, 08 Nov 2023 21:22:11 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/crc%E6%A0%A1%E9%AA%8C/</guid>
+      <category domain="https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/">文档</category>
+      <description>CRC 循环冗余校验</description>
+    </item>
+    <item>
+      <title>英文缩写含义</title>
+      <link>https://lingllqs.github.io/posts/en_abbrev/</link>
+      <pubDate>Fri, 27 Oct 2023 22:19:32 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/en_abbrev/</guid>
+      <category domain="https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/">文档</category>
+      <description>英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 BSS Block Started by Symbol CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ELF Executable and Linking File 可执行和可链接</description>
+    </item>
+    <item>
+      <title>ArchLinux安装</title>
+      <link>https://lingllqs.github.io/posts/archlinux_install/</link>
+      <pubDate>Thu, 26 Oct 2023 12:08:52 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/archlinux_install/</guid>
+      <category domain="https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/">教程</category>
+      <description>下载 archlinux ISO 镜像 中科大镜像地址 制作启动盘 windows: 使用 rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 1. 使用 `fdisk -l` 查看硬盘信息 2. 使</description>
+    </item>
+  </channel>
 </rss>

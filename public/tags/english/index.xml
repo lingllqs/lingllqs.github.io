@@ -1,15 +1,20 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>English - 标签 - LQS的树洞</title>
     <link>https://lingllqs.github.io/tags/english/</link>
-    <description>English - 标签 | LQS的树洞</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/tags/english/" rel="self" type="application/rss+xml" /><item>
-  <title>英文缩写含义</title>
-  <link>https://lingllqs.github.io/posts/en_abbrev/</link>
-  <pubDate>Fri, 27 Oct 2023 22:19:32 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/en_abbrev/</guid>
-  <description><![CDATA[英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 BSS Block Started by Symbol CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ELF Executable and Linking File 可执行和可链接]]></description>
-</item>
-</channel>
+    <description>lingllqs的分享站</description>
+    <generator>Hugo 0.133.1 &amp; FixIt v0.3.10-08d4c12c</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 27 Oct 2023 22:19:32 +0800</lastBuildDate>
+    <atom:link href="https://lingllqs.github.io/tags/english/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>英文缩写含义</title>
+      <link>https://lingllqs.github.io/posts/en_abbrev/</link>
+      <pubDate>Fri, 27 Oct 2023 22:19:32 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/en_abbrev/</guid>
+      <category domain="https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/">文档</category>
+      <description>英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 BSS Block Started by Symbol CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ELF Executable and Linking File 可执行和可链接</description>
+    </item>
+  </channel>
 </rss>

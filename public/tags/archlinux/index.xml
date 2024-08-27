@@ -1,15 +1,20 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ArchLinux - 标签 - LQS的树洞</title>
     <link>https://lingllqs.github.io/tags/archlinux/</link>
-    <description>ArchLinux - 标签 | LQS的树洞</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</lastBuildDate><atom:link href="https://lingllqs.github.io/tags/archlinux/" rel="self" type="application/rss+xml" /><item>
-  <title>ArchLinux安装</title>
-  <link>https://lingllqs.github.io/posts/archlinux_install/</link>
-  <pubDate>Thu, 26 Oct 2023 12:08:52 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://lingllqs.github.io/posts/archlinux_install/</guid>
-  <description><![CDATA[下载 archlinux ISO 镜像中科大镜像地址 制作启动盘windows: 使用 rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress 进入 live 环境开始安装 分区1. 使用 `fdisk -l` 查看硬盘信息 2. 使用 cfdisk 命令进行]]></description>
-</item>
-</channel>
+    <description>lingllqs的分享站</description>
+    <generator>Hugo 0.133.1 &amp; FixIt v0.3.10-08d4c12c</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 26 Oct 2023 12:08:52 +0800</lastBuildDate>
+    <atom:link href="https://lingllqs.github.io/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ArchLinux安装</title>
+      <link>https://lingllqs.github.io/posts/archlinux_install/</link>
+      <pubDate>Thu, 26 Oct 2023 12:08:52 +0800</pubDate>
+      <guid>https://lingllqs.github.io/posts/archlinux_install/</guid>
+      <category domain="https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/">教程</category>
+      <description>下载 archlinux ISO 镜像 中科大镜像地址 制作启动盘 windows: 使用 rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 1. 使用 `fdisk -l` 查看硬盘信息 2. 使</description>
+    </item>
+  </channel>
 </rss>
