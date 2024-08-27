@@ -43,9 +43,9 @@ btrfs send /.newroot | ssh username@remote "btrfs receive /mnt/"
 btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot
 ```
 
-4. 把普通快照文件复制到 sdb1 下的根目录
+4. 把 /mnt/.curroot 快照文件下的内容移动到 sdb1(挂载在/mnt) 下
 ```shell
-mv /mnt/.curroot /mnt/
+mv /mnt/.curroot/* /mnt/
 ```
 
 5. 修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1

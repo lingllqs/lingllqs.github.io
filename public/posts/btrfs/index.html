@@ -11,7 +11,7 @@
   <meta itemprop="description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快">
   <meta itemprop="datePublished" content="2024-08-27T21:44:30+08:00">
   <meta itemprop="dateModified" content="2024-08-27T21:44:30+08:00">
-  <meta itemprop="wordCount" content="241">
+  <meta itemprop="wordCount" content="252">
   <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/1.jpg">
   <meta itemprop="keywords" content="Btrfs"><meta property="og:url" content="https://lingllqs.github.io/posts/btrfs/">
   <meta property="og:site_name" content="LQS的树洞">
@@ -43,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/lingllqs.github.io\/posts\/btrfs\/"
-    },"genre": "posts","keywords": "btrfs","wordcount":  241 ,
+    },"genre": "posts","keywords": "btrfs","wordcount":  252 ,
     "url": "https:\/\/lingllqs.github.io\/posts\/btrfs\/","datePublished": "2024-08-27T21:44:30+08:00","dateModified": "2024-08-27T21:44:30+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -157,7 +157,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Btrfs</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-08-27 21:44:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span title="241 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/btrfs/" class="leancloud_visitors comment-visitors" data-flag-title="Btrfs"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
+      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-08-27 21:44:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span title="252 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/btrfs/" class="leancloud_visitors comment-visitors" data-flag-title="Btrfs"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
           </span>&nbsp;<span class="comment-count" data-flag-title="Btrfs">
               <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/btrfs/" class="valine-comment-count">-</span>&nbsp;条评论
             </span>&nbsp;</div>
@@ -195,9 +195,9 @@
 <li>在 sdb1 上创建一个普通快照(非只读的)</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot</span></span></code></pre></div><ol start="4">
-<li>把普通快照文件复制到 sdb1 下的根目录</li>
+<li>把 /mnt/.curroot 快照文件下的内容移动到 sdb1(挂载在/mnt) 下</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot /mnt/</span></span></code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot/* /mnt/</span></span></code></pre></div><ol start="5">
 <li>
 <p>修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1</p>
 <ul>
