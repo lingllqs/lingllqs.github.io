@@ -48,7 +48,7 @@ btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot
 mv /mnt/.curroot /mnt/
 ```
 
-5. 修改 /etc/fstab 目录以便后续系统启动时挂载的根目录是 sdb1
+5. 修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1
     - 使用 blkid 命令查看 sdb1 的 UUID 
     - 修改 /etc/fstab 里 sda2 的 UUID 为 sdb1 的 UUID
 

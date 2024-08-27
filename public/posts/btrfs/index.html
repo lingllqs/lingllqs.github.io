@@ -199,7 +199,7 @@
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot /mnt/</span></span></code></pre></div><ol start="5">
 <li>
-<p>修改 /etc/fstab 目录以便后续系统启动时挂载的根目录是 sdb1</p>
+<p>修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1</p>
 <ul>
 <li>使用 blkid 命令查看 sdb1 的 UUID</li>
 <li>修改 /etc/fstab 里 sda2 的 UUID 为 sdb1 的 UUID</li>
