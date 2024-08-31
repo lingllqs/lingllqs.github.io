@@ -14,7 +14,7 @@
       <pubDate>Tue, 27 Aug 2024 21:44:30 +0800</pubDate>
       <guid>https://lingllqs.github.io/posts/btrfs/</guid>
       <category domain="https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/">文档</category>
-      <description>给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &amp;ndash;&amp;gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快</description>
+      <description>给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &amp;ndash;&amp;gt; 保存 sda2 的快照到 sdb1 中 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot2. 发送</description>
     </item>
     <item>
       <title>CRC校验</title>

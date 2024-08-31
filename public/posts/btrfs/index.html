@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
     <title>Btrfs - LQS的树洞</title><meta name="author" content="">
-<meta name="description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快"><meta name="keywords" content='btrfs'>
+<meta name="description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot2. 发送"><meta name="keywords" content='btrfs'>
   <meta itemprop="name" content="Btrfs">
-  <meta itemprop="description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快">
+  <meta itemprop="description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot2. 发送">
   <meta itemprop="datePublished" content="2024-08-27T21:44:30+08:00">
   <meta itemprop="dateModified" content="2024-08-27T21:44:30+08:00">
-  <meta itemprop="wordCount" content="252">
+  <meta itemprop="wordCount" content="257">
   <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/1.jpg">
   <meta itemprop="keywords" content="Btrfs"><meta property="og:url" content="https://lingllqs.github.io/posts/btrfs/">
   <meta property="og:site_name" content="LQS的树洞">
   <meta property="og:title" content="Btrfs">
-  <meta property="og:description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快">
+  <meta property="og:description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot2. 发送">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -28,7 +28,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lingllqs.github.io/images/wallpaper/1.jpg">
   <meta name="twitter:title" content="Btrfs">
-  <meta name="twitter:description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot 发送快">
+  <meta name="twitter:description" content="给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 –&gt; 保存 sda2 的快照到 sdb1 中 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot2. 发送">
 <meta name="application-name" content="树洞">
 <meta name="apple-mobile-web-app-title" content="树洞"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -43,7 +43,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/lingllqs.github.io\/posts\/btrfs\/"
-    },"genre": "posts","keywords": "btrfs","wordcount":  252 ,
+    },"genre": "posts","keywords": "btrfs","wordcount":  257 ,
     "url": "https:\/\/lingllqs.github.io\/posts\/btrfs\/","datePublished": "2024-08-27T21:44:30+08:00","dateModified": "2024-08-27T21:44:30+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -157,7 +157,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Btrfs</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-08-27 21:44:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span title="252 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/btrfs/" class="leancloud_visitors comment-visitors" data-flag-title="Btrfs"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
+      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-08-27 21:44:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span title="257 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/btrfs/" class="leancloud_visitors comment-visitors" data-flag-title="Btrfs"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
           </span>&nbsp;<span class="comment-count" data-flag-title="Btrfs">
               <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/btrfs/" class="valine-comment-count">-</span>&nbsp;条评论
             </span>&nbsp;</div>
@@ -183,38 +183,35 @@
 </span></span><span style="display:flex;"><span>      sda1  /boot
 </span></span><span style="display:flex;"><span>      sda2  /</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    sdb
 </span></span><span style="display:flex;"><span>      sdb1  /mnt</span></span></code></pre></div><p>目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中</p>
-<ol>
-<li>给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项)</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot -r / /.newroot</span></span></code></pre></div><ol start="2">
-<li>发送快照 /.newroot 到 sdb1 上</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | btrfs receive /mnt/</span></span></code></pre></div><pre><code>如果要发送到远程计算机上
-</code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | ssh username@remote <span style="color:#e6db74">&#34;btrfs receive /mnt/&#34;</span></span></span></code></pre></div><ol start="3">
-<li>在 sdb1 上创建一个普通快照(非只读的)</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot</span></span></code></pre></div><ol start="4">
-<li>把 /mnt/.curroot 快照文件下的内容移动到 sdb1(挂载在/mnt) 下</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot/* /mnt/</span></span></code></pre></div><ol start="5">
-<li>
-<p>修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1</p>
-<ul>
-<li>使用 blkid 命令查看 sdb1 的 UUID</li>
-<li>修改 /etc/fstab 里 sda2 的 UUID 为 sdb1 的 UUID</li>
-</ul>
-</li>
-<li>
-<p>修改 /boot/grub/grub.cfg 文件将关于 sda2 的 UUID 都替换为 sdb1 的 UUID</p>
-<ul>
-<li>大概修改行的内容为 root=UUID=xxxxxxxxxxxxxxxxxxxxxxxxx</li>
-<li>还有类似的行为 &ndash;set=root xxxxxxxxxxxxxxxxxxxxxxxxx
-注意!!! 其中的 xxxxxxxxxxxxxxxxxxxxxxxx 为 sda2 的 UUID</li>
-</ul>
-</li>
-</ol>
-</div><div class="post-footer" id="post-footer">
+<h4 id="1-给-sda2-做只读快照必须是只读快照才能后续的发送--r-选项" class="heading-element"><span>1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项)</span>
+  <a href="#1-%e7%bb%99-sda2-%e5%81%9a%e5%8f%aa%e8%af%bb%e5%bf%ab%e7%85%a7%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%aa%e8%af%bb%e5%bf%ab%e7%85%a7%e6%89%8d%e8%83%bd%e5%90%8e%e7%bb%ad%e7%9a%84%e5%8f%91%e9%80%81--r-%e9%80%89%e9%a1%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot -r / /.newroot</span></span></code></pre></div><h4 id="2-发送快照-newroot-到-sdb1-上" class="heading-element"><span>2. 发送快照 /.newroot 到 sdb1 上</span>
+  <a href="#2-%e5%8f%91%e9%80%81%e5%bf%ab%e7%85%a7-newroot-%e5%88%b0-sdb1-%e4%b8%8a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | btrfs receive /mnt/</span></span></code></pre></div><p>如果要发送到远程计算机上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | ssh username@remote <span style="color:#e6db74">&#34;btrfs receive /mnt/&#34;</span></span></span></code></pre></div><h4 id="3-在-sdb1-上创建一个普通快照非只读的" class="heading-element"><span>3. 在 sdb1 上创建一个普通快照(非只读的)</span>
+  <a href="#3-%e5%9c%a8-sdb1-%e4%b8%8a%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%99%ae%e9%80%9a%e5%bf%ab%e7%85%a7%e9%9d%9e%e5%8f%aa%e8%af%bb%e7%9a%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot</span></span></code></pre></div><h4 id="4-把-mntcurroot-快照文件下的内容移动到-sdb1挂载在mnt-下" class="heading-element"><span>4. 把 /mnt/.curroot 快照文件下的内容移动到 sdb1(挂载在/mnt) 下</span>
+  <a href="#4-%e6%8a%8a-mntcurroot-%e5%bf%ab%e7%85%a7%e6%96%87%e4%bb%b6%e4%b8%8b%e7%9a%84%e5%86%85%e5%ae%b9%e7%a7%bb%e5%8a%a8%e5%88%b0-sdb1%e6%8c%82%e8%bd%bd%e5%9c%a8mnt-%e4%b8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot/* /mnt/</span></span></code></pre></div><h4 id="5-修改-etcfstab-文件以便后续系统启动时挂载的根目录是-sdb1" class="heading-element"><span>5. 修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1</span>
+  <a href="#5-%e4%bf%ae%e6%94%b9-etcfstab-%e6%96%87%e4%bb%b6%e4%bb%a5%e4%be%bf%e5%90%8e%e7%bb%ad%e7%b3%bb%e7%bb%9f%e5%90%af%e5%8a%a8%e6%97%b6%e6%8c%82%e8%bd%bd%e7%9a%84%e6%a0%b9%e7%9b%ae%e5%bd%95%e6%98%af-sdb1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    - 使用 blkid 命令查看 sdb1 的 UUID
+</span></span><span style="display:flex;"><span>    - 修改 /etc/fstab 里 sda2 的 UUID 为 sdb1 的 UUID</span></span></code></pre></div><h4 id="6-修改-bootgrubgrubcfg-文件将关于-sda2-的-uuid-都替换为-sdb1-的-uuid" class="heading-element"><span>6. 修改 /boot/grub/grub.cfg 文件将关于 sda2 的 UUID 都替换为 sdb1 的 UUID</span>
+  <a href="#6-%e4%bf%ae%e6%94%b9-bootgrubgrubcfg-%e6%96%87%e4%bb%b6%e5%b0%86%e5%85%b3%e4%ba%8e-sda2-%e7%9a%84-uuid-%e9%83%bd%e6%9b%bf%e6%8d%a2%e4%b8%ba-sdb1-%e7%9a%84-uuid" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    - 大概修改行的内容为 root<span style="color:#f92672">=</span>UUID<span style="color:#f92672">=</span>xxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>    - 还有类似的行为 --set<span style="color:#f92672">=</span>root xxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>    注意!!! 其中的 xxxxxxxxxxxxxxxxxxxxxxxx 为 sda2 的 UUID</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
