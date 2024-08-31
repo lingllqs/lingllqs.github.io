@@ -2,6 +2,6 @@ baseURL = "https://lingllqs.github.io/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
-title = "LQS的树洞"
+title = "LQS 的树洞"
 theme = "FixIt"
 ignoreLogs = ['warning-dev-version']
