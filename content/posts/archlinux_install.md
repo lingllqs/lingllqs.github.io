@@ -13,7 +13,7 @@ stick = 1000
 
 ## 制作启动盘
 
-```bash
+```shell
 windows: 使用 rufus 工具
 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress
 ```
@@ -22,7 +22,7 @@ linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progr
 
 ### 分区
 
-```bash
+```shell
 1. 使用 `fdisk -l` 查看硬盘信息
 
 2. 使用 cfdisk 命令进行分区 `cfdisk /dev/nvme0n1`
@@ -33,7 +33,7 @@ linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progr
 
 ### 格式化分区
 
-```bash
+```shell
 mkfs.efi -F 32 /dev/nvme0n1p1
 mkfs.btrfs -L ARCH /dev/nvme0n1p2 (-L 表示要指定硬盘标签 ARCH 为标签名,可自行命名)
 --------------------------------
@@ -42,7 +42,7 @@ mkfs.btrfs -L ARCH /dev/nvme0n1p2 (-L 表示要指定硬盘标签 ARCH 为标签
 
 ### 创建 btrfs 子卷
 
-```bash
+```shell
 挂载系统分区进行子卷创建
 mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root
 -----
@@ -60,7 +60,7 @@ umount /tmp/btrfs-root
 
 ### 挂载分区准备系统安装
 
-```bash
+```shell
 mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt # 注意要先挂载根目录
 mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home      # 挂载根目录下的home目录
 mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap
@@ -74,7 +74,7 @@ swapon /swap/swapfile # 启用交换文件
 
 ### 正式安装前先配置好网络
 
-```bash
+```shell
 timedatectl         # 同步系统时间
 ip link             # 查看网卡信息
 rfkill list         # 查看蓝牙和 wifi 功能是否被关闭
@@ -93,7 +93,7 @@ ping -c 3 t.cn # 测试网络是否通畅
 
 ### 换源
 
-```bash
+```shell
 自动配置: 使用 Python 脚本工具 reflector 配置源
 reflector --country China --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ----------------------------
@@ -109,23 +109,26 @@ pacman -Syy
 
 ### 开始安装
 
-```bash
+```shell
 pacstrap -K /mnt base linux linux-firmware btrfs-progs # 安装基本的工具，内核和驱动
 genfstab -U /mnt >> /mnt/etc/fstab                     # 生成 fstab 文件
 arch-chroot /mnt                                       # 进入新系统
 -----------------------------------
 安装额外的软件和工具
-pacman -S base-devel sof-firmware vim grub efibootmgr intel-ucode/amd-ucode firefox networkmanager chcpcd openssh noto-fonts-cjk noto-fonts-emoji nerd-fonts-complete bash-completion
-注意: inter-ucode 和 amd-ucode 根据电脑的实际CPU选择安装
+pacman -S   base-devel sof-firmware vim
+            grub efibootmgr intel-ucode/amd-ucode
+            firefox networkmanager chcpcd openssh
+            noto-fonts-cjk noto-fonts-emoji nerd-fonts-complete bash-completion
+注意: inter-ucode 和 amd-ucode 根据电脑的实际 CPU 选择安装
 ```
 
 ### 配置
 
-```bash
+```shell
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime                            # 设置时区
 hwclock --systohc                                                                  # 将系统时钟同步到硬件时钟
 sed -i 's/^#\(en_US\.UTF-8\|zh_CN\.UTF-8\)/\1/g' /etc/locale.gen                   # 设置区域信息
-locale-gen && touch /etc/locale.conf && echo "LANG=en_US.UTF-8" > /etc/locale.conf # 生成 locale 信息并设置本地化
+locale-gen && touch /etc/locale.conf && echo "LANG=en_US.UTF-8" > /etc/locale.conf # 生成 locale 信息并设置语言为中文
 touch /etc/hostname && echo "喜欢的主机名" > /etc/hostname                         # 设置主机名
 echo -e "127.0.0.1\\tlocalhost\\n::1\\t\\tlocalhost\\n127.0.1.1\\t主机名.domain\\t主机名" >> /etc/hosts
 passwd root                             # 设置管理员用户密码
