@@ -15,6 +15,8 @@ tags = ['English']
    | CRC      | Cyclic Redundancy Check                     | 循环冗余校验       |
    | CRT      | C Runtime                                   | C 运行时           |
    | ELF      | Executable and Linking File                 | 可执行和可链接     |
+   | .etc     | etcetera                                    | 拉丁语“等等”       |
+   | .e.g     | exempli gratia                              | 拉丁语“例如”的意思 |
    | EGL      | Embeded-System Graphics Library             | 嵌入式系统图形库   |
    | FTP      | File Transfer Protocol                      | 文件传输协议       |
    | ICMP     | Internet Control Message Protocol           | 互联网控制消息协议 |
