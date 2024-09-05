@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-	<meta name="generator" content="Hugo 0.133.1">
+	<meta name="generator" content="Hugo 0.134.0">
     
       <meta name="theme" content='FixIt v0.3.10-08d4c12c'>
     
@@ -141,31 +141,174 @@
     </a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/btrfs/">Btrfs</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2024-08-27 21:44:30'>发布于 <time datetime="2024-08-27">2024-08-27</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content">给系统做快照 sda sda1 /boot sda2 / sdb sdb1 /mnt目的: 给 sda2 做快照 &ndash;&gt; 保存 sda2 的快照到 sdb1 中 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项) btrfs subvolume snapshot -r / /.newroot2. 发送</div><div class="post-footer">
-    <a href="/posts/btrfs/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/btrfs/' class="post-tag">Btrfs</a></div></div>
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2024-08-27 21:44:30'>发布于 <time datetime="2024-08-27">2024-08-27</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content"><h3 id="给系统做快照" class="heading-element"><span>给系统做快照</span>
+  <a href="#%e7%bb%99%e7%b3%bb%e7%bb%9f%e5%81%9a%e5%bf%ab%e7%85%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></pa</div><div class="post-footer">
+    <a href="/posts/btrfs/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/btrfs/' class="post-tag">Btrfs</a><a href='/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/' class="post-tag">系统快照</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/math/">数学题</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-11-17 11:52:58'>发布于 <time datetime="2023-11-17">2023-11-17</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/math/" class="post-category" title="分类 - Math"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Math</a></span></div><div class="content">第一题 $$ 求 \lim_{x \to \infty} \frac{[(1+\frac{1}{x})^x]^x}{e^x} 的极限 $$ $$ 解: 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x \right]^x \cdot e^{-x} $$ $$ \because x \to \infty, (1 + \frac{1}{x})^x \to e $$ $$ \therefore x \to \infty, \left[(1+\frac{1}{x})^x \right]^x \to e^x $$ $$ \therefore 原式 = \lim_{x \to \infty} \left[(1+\frac{1}{x})^x\right]^x \cdot e^{-x} = \lim_{x \to \infty} e^x \cdot e^{-x} $$ $$ \because e^x</div><div class="post-footer">
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-11-17 11:52:58'>发布于 <time datetime="2023-11-17">2023-11-17</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/math/" class="post-category" title="分类 - Math"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Math</a></span></div><div class="content"><h3 id="第一题" class="heading-element"><span>第一题</span>
+  <a href="#%e7%ac%ac%e4%b8%80%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></pa</div><div class="post-footer">
     <a href="/posts/math/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/math/' class="post-tag">Math</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/crc%E6%A0%A1%E9%AA%8C/">CRC校验</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-11-08 21:22:11'>发布于 <time datetime="2023-11-08">2023-11-08</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content">CRC 循环冗余校验</div><div class="post-footer">
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-11-08 21:22:11'>发布于 <time datetime="2023-11-08">2023-11-08</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content"><h3 id="crc-循环冗余校验" class="heading-element"><span>CRC 循环冗余校验</span>
+  <a href="#crc-%e5%be%aa%e7%8e%af%e5%86%97%e4%bd%99%e6%a0%a1%e9%aa%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></pa</div><div class="post-footer">
     <a href="/posts/crc%E6%A0%A1%E9%AA%8C/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' class="post-tag">计算机网络</a><a href='/tags/internet/' class="post-tag">Internet</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/en_abbrev/">英文缩写含义</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-10-27 22:19:32'>发布于 <time datetime="2023-10-27">2023-10-27</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content">英文缩写 英文全拼 中文描述 BIOS Basic Input Output System 基本输入输出系统 BSS Block Started by Symbol CIDR Classless Inter-Domain Routing 无类型域间路由 CRC Cyclic Redundancy Check 循环冗余校验 CRT C Runtime C 运行时 ELF Executable and Linking File 可执行和可链接</div><div class="post-footer">
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-10-27 22:19:32'>发布于 <time datetime="2023-10-27">2023-10-27</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content"><table>
+  <thead>
+      <tr>
+          <th style="text-align: center">英文缩写</th>
+          <th style="text-align: center">英文全拼</th>
+          <th style="text-align: center">中文描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">BIOS</td>
+          <td style="text-align: center">Basic Input Output System</td>
+          <td style="text-align: center">基本输入输出系统</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">BSS</td>
+          <td style="text-align: center">Block Started by Symbol</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">CIDR</td>
+          <td style="text-align: center">Classless Inter-Domain Routing</td>
+          <td style="text-align: center">无类型域间路由</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">CRC</td>
+          <td style="text-align: center">Cyclic Redundancy Check</td>
+          <td style="text-align: center">循环冗余校验</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">CRT</td>
+          <td style="text-align: center">C Runtime</td>
+          <td style="text-align: center">C 运行时</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ELF</td>
+          <td style="text-align: center">Executable and Linking File</td>
+          <td style="text-align: center">可执行和可链接</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">.etc</td>
+          <td style="text-align: center">etcetera</td>
+          <td style="text-align: center">拉丁语“等等”</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">.e.g</td>
+          <td style="text-align: center">exempli gratia</td>
+          <td style="text-align: center">拉丁语“例如”的意思</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">EGL</td>
+          <td style="text-align: center">Embeded-System Graphics Library</td>
+          <td style="text-align: center">嵌入式系统图形库</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">FTP</td>
+          <td style="text-align: center">File Transfer Protocol</td>
+          <td style="text-align: center">文件传输协议</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ICMP</td>
+          <td style="text-align: center">Internet Control Message Protocol</td>
+          <td style="text-align: center">互联网控制消息协议</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">IDE</td>
+          <td style="text-align: center">Integrated Drive Electronic</td>
+          <td style="text-align: center">集成电子驱动</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">IGMP</td>
+          <td style="text-align: center">Internet Group managerment Protocol</td>
+          <td style="text-align: center">互联网组管理协议</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ISA</td>
+          <td style="text-align: center">Instruction Set Architecture</td>
+          <td style="text-align: center">指令集架构</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ISA</td>
+          <td style="text-align: center">Independent System Architecture</td>
+          <td style="text-align: center">独立系统体系架构</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">KMS</td>
+          <td style="text-align: center">Kernel Mode Setting</td>
+          <td style="text-align: center">内核模式设置</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">RAII</td>
+          <td style="text-align: center">Resource Acquisition Is Initialization</td>
+          <td style="text-align: center">资源获取即初始化</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">SIMD</td>
+          <td style="text-align: center">Single Instruction Multiple Data</td>
+          <td style="text-align: center">单指令多数据</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">SMTP</td>
+          <td style="text-align: center">Simple Mail Transfer Protocol</td>
+          <td style="text-align: center">简单邮件传输协议</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">TCP</td>
+          <td style="text-align: center">Transmission Control Protocol</td>
+          <td style="text-align: center">传输控制协议</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">UART</td>
+          <td style="text-align: center">Universal Asynchronous Receiver Transmitter</td>
+          <td style="text-align: center">通用异步收发器</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">UDP</td>
+          <td style="text-align: center">User Datagram Protocol</td>
+          <td style="text-align: center">用户数据报协议</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">UEFI</td>
+          <td style="text-align: center">Unified Extensible Firmware Interface</td>
+          <td style="text-align: center">统一可扩展固件接口</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">VGA</td>
+          <td style="text-align: center">Video Graphics Array</td>
+          <td style="text-align: center">视频图形阵列</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">VRR</td>
+          <td style="text-align: center">Variable Refresh Rate</td>
+          <td style="text-align: center">可变刷新率</td>
+      </tr>
+  </tbody>
+</table></div><div class="post-footer">
     <a href="/posts/en_abbrev/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/english/' class="post-tag">English</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/archlinux_install/">ArchLinux安装</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-10-26 12:08:52'>发布于 <time datetime="2023-10-26">2023-10-26</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" title="分类 - 教程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 教程</a></span></div><div class="content">下载 archlinux ISO 镜像 中科大镜像地址 制作启动盘 windows: 使用 rufus 工具 linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress进入 live 环境开始安装 分区 1. 使用 `fdisk -l` 查看硬盘信息 2. 使</div><div class="post-footer">
+      Anonymous</span></span>&nbsp;<span class="post-publish" title='2023-10-26 12:08:52'>发布于 <time datetime="2023-10-26">2023-10-26</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category" title="分类 - 教程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 教程</a></span></div><div class="content"><h2 id="下载-archlinux-iso-镜像" class="heading-element"><span>下载 archlinux ISO 镜像</span>
+  <a href="#%e4%b8%8b%e8%bd%bd-archlinux-iso-%e9%95%9c%e5%83%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></pa</div><div class="post-footer">
     <a href="/posts/archlinux_install/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/archlinux/' class="post-tag">ArchLinux</a></div></div>
 </article>
 </div></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.133.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
               <a href="/"></a></span></div></div>

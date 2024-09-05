@@ -3,24 +3,26 @@ title = 'Btrfs'
 date = 2024-08-27T21:44:30+08:00
 draft = false
 categories = ['文档']
-tags = ['btrfs']
+tags = ['btrfs', '系统快照']
 +++
 
 
 ### 给系统做快照
 
-``` bash
+目的: 给根目录('/')做快照
+
+``` shell
+    # 硬盘 sda 各个分区挂在情况
     sda
       sda1  /boot
       sda2  /
 ```
 
-``` bash
+``` shell
+    # 硬盘 sdb 各个分区挂在情况
     sdb
       sdb1  /mnt
 ```
-
-目的: 给 sda2 做快照 --> 保存 sda2 的快照到 sdb1 中
 
 #### 1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项)
 
@@ -64,5 +66,5 @@ mv /mnt/.curroot/* /mnt/
 ```shell
     - 大概修改行的内容为 root=UUID=xxxxxxxxxxxxxxxxxxxxxxxxx
     - 还有类似的行为 --set=root xxxxxxxxxxxxxxxxxxxxxxxxx
-    注意!!! 其中的 xxxxxxxxxxxxxxxxxxxxxxxx 为 sda2 的 UUID
+    注意!!! 其中的 xxxxxxxxxxxxxxxxxxxxxxxx 为 sda2 的 UUID 不要把其它的 UUID 改成 sdb1的
 ```
