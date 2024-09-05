@@ -5,49 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Btrfs - LQS 的树洞</title><meta name="author" content="">
-<meta name="description" content="给系统做快照
+    <title>内存分页 - LQS 的树洞</title><meta name="author" content="">
+<meta name="description" content="32 位操作系统内存分页
   
-    "><meta name="keywords" content='btrfs, 系统快照'>
-  <meta itemprop="name" content="Btrfs">
-  <meta itemprop="description" content="给系统做快照 ">
-  <meta itemprop="datePublished" content="2024-08-27T21:44:30+08:00">
-  <meta itemprop="dateModified" content="2024-08-27T21:44:30+08:00">
-  <meta itemprop="wordCount" content="300">
+    "><meta name="keywords" content='内存分页'>
+  <meta itemprop="name" content="内存分页">
+  <meta itemprop="description" content="32 位操作系统内存分页 ">
+  <meta itemprop="datePublished" content="2024-09-05T17:12:23+08:00">
+  <meta itemprop="dateModified" content="2024-09-05T17:12:23+08:00">
+  <meta itemprop="wordCount" content="153">
   <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
-  <meta itemprop="keywords" content="Btrfs,系统快照"><meta property="og:url" content="https://lingllqs.github.io/posts/btrfs/">
+  <meta itemprop="keywords" content="内存分页"><meta property="og:url" content="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/">
   <meta property="og:site_name" content="LQS 的树洞">
-  <meta property="og:title" content="Btrfs">
-  <meta property="og:description" content="给系统做快照 ">
+  <meta property="og:title" content="内存分页">
+  <meta property="og:description" content="32 位操作系统内存分页 ">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-08-27T21:44:30+08:00">
-    <meta property="article:modified_time" content="2024-08-27T21:44:30+08:00">
-    <meta property="article:tag" content="Btrfs">
-    <meta property="article:tag" content="系统快照">
+    <meta property="article:published_time" content="2024-09-05T17:12:23+08:00">
+    <meta property="article:modified_time" content="2024-09-05T17:12:23+08:00">
+    <meta property="article:tag" content="内存分页">
     <meta property="og:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
-  <meta name="twitter:title" content="Btrfs">
-  <meta name="twitter:description" content="给系统做快照 ">
+  <meta name="twitter:title" content="内存分页">
+  <meta name="twitter:description" content="32 位操作系统内存分页 ">
 <meta name="application-name" content="树洞">
 <meta name="apple-mobile-web-app-title" content="树洞"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/btrfs/" title="Btrfs - LQS 的树洞" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/math/" title="数学题" /><link rel="next" type="text/html" href="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" title="内存分页" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" title="内存分页 - LQS 的树洞" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/btrfs/" title="Btrfs" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Btrfs",
+    "headline": "内存分页",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/lingllqs.github.io\/posts\/btrfs\/"
-    },"genre": "posts","keywords": "btrfs, 系统快照","wordcount":  300 ,
-    "url": "https:\/\/lingllqs.github.io\/posts\/btrfs\/","datePublished": "2024-08-27T21:44:30+08:00","dateModified": "2024-08-27T21:44:30+08:00","publisher": {
+      "@id": "https:\/\/lingllqs.github.io\/posts\/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5\/"
+    },"genre": "posts","keywords": "内存分页","wordcount":  153 ,
+    "url": "https:\/\/lingllqs.github.io\/posts\/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5\/","datePublished": "2024-09-05T17:12:23+08:00","dateModified": "2024-09-05T17:12:23+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -152,17 +151,17 @@
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">Btrfs</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">内存分页</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Btrfs</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>内存分页</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-08-27 21:44:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span title="300 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/btrfs/" class="leancloud_visitors comment-visitors" data-flag-title="Btrfs"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
-          </span>&nbsp;<span class="comment-count" data-flag-title="Btrfs">
-              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/btrfs/" class="valine-comment-count">-</span>&nbsp;条评论
+      Anonymous</span></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-09-05 17:12:23"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="153 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="leancloud_visitors comment-visitors" data-flag-title="内存分页"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
+          </span>&nbsp;<span class="comment-count" data-flag-title="内存分页">
+              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="valine-comment-count">-</span>&nbsp;条评论
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -171,74 +170,42 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#给系统做快照">给系统做快照</a></li>
-      </ul>
-    </li>
+    <li><a href="#32-位操作系统内存分页">32 位操作系统内存分页</a></li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><h3 id="给系统做快照" class="heading-element"><span>给系统做快照</span>
-  <a href="#%e7%bb%99%e7%b3%bb%e7%bb%9f%e5%81%9a%e5%bf%ab%e7%85%a7" class="heading-mark">
+      </div><div class="content" id="content"><h2 id="32-位操作系统内存分页" class="heading-element"><span>32 位操作系统内存分页</span>
+  <a href="#32-%e4%bd%8d%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%86%85%e5%ad%98%e5%88%86%e9%a1%b5" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><p>目的: 给根目录(&rsquo;/&rsquo;)做快照</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#75715e"># 硬盘 sda 各个分区挂在情况</span>
-</span></span><span style="display:flex;"><span>    sda
-</span></span><span style="display:flex;"><span>      sda1  /boot
-</span></span><span style="display:flex;"><span>      sda2  /</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#75715e"># 硬盘 sdb 各个分区挂在情况</span>
-</span></span><span style="display:flex;"><span>    sdb
-</span></span><span style="display:flex;"><span>      sdb1  /mnt</span></span></code></pre></div><h4 id="1-给-sda2-做只读快照必须是只读快照才能后续的发送--r-选项" class="heading-element"><span>1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项)</span>
-  <a href="#1-%e7%bb%99-sda2-%e5%81%9a%e5%8f%aa%e8%af%bb%e5%bf%ab%e7%85%a7%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%aa%e8%af%bb%e5%bf%ab%e7%85%a7%e6%89%8d%e8%83%bd%e5%90%8e%e7%bb%ad%e7%9a%84%e5%8f%91%e9%80%81--r-%e9%80%89%e9%a1%b9" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot -r / /.newroot</span></span></code></pre></div><h4 id="2-发送快照-newroot-到-sdb1-上" class="heading-element"><span>2. 发送快照 /.newroot 到 sdb1 上</span>
-  <a href="#2-%e5%8f%91%e9%80%81%e5%bf%ab%e7%85%a7-newroot-%e5%88%b0-sdb1-%e4%b8%8a" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | btrfs receive /mnt/</span></span></code></pre></div><p>如果要发送到远程计算机上</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | ssh username@remote <span style="color:#e6db74">&#34;btrfs receive /mnt/&#34;</span></span></span></code></pre></div><h4 id="3-在-sdb1-上创建一个普通快照非只读的" class="heading-element"><span>3. 在 sdb1 上创建一个普通快照(非只读的)</span>
-  <a href="#3-%e5%9c%a8-sdb1-%e4%b8%8a%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%99%ae%e9%80%9a%e5%bf%ab%e7%85%a7%e9%9d%9e%e5%8f%aa%e8%af%bb%e7%9a%84" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot</span></span></code></pre></div><h4 id="4-把-mntcurroot-快照文件下的内容移动到-sdb1挂载在mnt-下" class="heading-element"><span>4. 把 /mnt/.curroot 快照文件下的内容移动到 sdb1(挂载在/mnt) 下</span>
-  <a href="#4-%e6%8a%8a-mntcurroot-%e5%bf%ab%e7%85%a7%e6%96%87%e4%bb%b6%e4%b8%8b%e7%9a%84%e5%86%85%e5%ae%b9%e7%a7%bb%e5%8a%a8%e5%88%b0-sdb1%e6%8c%82%e8%bd%bd%e5%9c%a8mnt-%e4%b8%8b" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot/* /mnt/</span></span></code></pre></div><h4 id="5-修改-etcfstab-文件以便后续系统启动时挂载的根目录是-sdb1" class="heading-element"><span>5. 修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1</span>
-  <a href="#5-%e4%bf%ae%e6%94%b9-etcfstab-%e6%96%87%e4%bb%b6%e4%bb%a5%e4%be%bf%e5%90%8e%e7%bb%ad%e7%b3%bb%e7%bb%9f%e5%90%af%e5%8a%a8%e6%97%b6%e6%8c%82%e8%bd%bd%e7%9a%84%e6%a0%b9%e7%9b%ae%e5%bd%95%e6%98%af-sdb1" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    - 使用 blkid 命令查看 sdb1 的 UUID
-</span></span><span style="display:flex;"><span>    - 修改 /etc/fstab 里 sda2 的 UUID 为 sdb1 的 UUID</span></span></code></pre></div><h4 id="6-修改-bootgrubgrubcfg-文件将关于-sda2-的-uuid-都替换为-sdb1-的-uuid" class="heading-element"><span>6. 修改 /boot/grub/grub.cfg 文件将关于 sda2 的 UUID 都替换为 sdb1 的 UUID</span>
-  <a href="#6-%e4%bf%ae%e6%94%b9-bootgrubgrubcfg-%e6%96%87%e4%bb%b6%e5%b0%86%e5%85%b3%e4%ba%8e-sda2-%e7%9a%84-uuid-%e9%83%bd%e6%9b%bf%e6%8d%a2%e4%b8%ba-sdb1-%e7%9a%84-uuid" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    - 大概修改行的内容为 root<span style="color:#f92672">=</span>UUID<span style="color:#f92672">=</span>xxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>    - 还有类似的行为 --set<span style="color:#f92672">=</span>root xxxxxxxxxxxxxxxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>    注意!!! 其中的 xxxxxxxxxxxxxxxxxxxxxxxx 为 sda2 的 UUID 不要把其它的 UUID 改成 sdb1的</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+</h2><ol>
+<li>32 位总共能访问 $ 2^{32} = 4G $ 内存</li>
+<li>分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页</li>
+<li>一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表</li>
+<li>4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页</li>
+<li>页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-08-27 21:44:30">更新于 2024-08-27&nbsp;</span>
+        <span title="更新于 2024-09-05 17:12:23">更新于 2024-09-05&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
         <div class="post-info-md"></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/btrfs/" data-title="Btrfs"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://lingllqs.github.io/posts/btrfs/" data-title="Btrfs"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" data-title="内存分页"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" data-title="内存分页"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/btrfs/" class="post-tag" title="标签 - Btrfs">Btrfs</a><a href="/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/" class="post-tag" title="标签 - 系统快照">系统快照</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="post-tag" title="标签 - 内存分页">内存分页</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/math/" class="post-nav-item" rel="prev" title="数学题"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>数学题</a>
-      <a href="/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="post-nav-item" rel="next" title="内存分页">内存分页<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/btrfs/" class="post-nav-item" rel="prev" title="Btrfs"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Btrfs</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/" rel="external nofollow noopener noreferrer">Valine</a>.
