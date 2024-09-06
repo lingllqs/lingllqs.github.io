@@ -38,11 +38,12 @@
   description = "lingllqs的分享站"
   keywords = ["Hugo", "ArchLinux", "技术", "编程", "IT", "网络", "操作系统"]
   defaultTheme = "dark"
-  fingerprint = ""
+  fingerprint = "sha256"
   dateFormat = "2006-01-02"
   images = ["/images/wallpaper/民族少女.jpg"]
   enablePWA = true
   externalIcon = true  
+  enableGitInfo = true
   navigationReverse = true
   disableThemeInject = false
   [params.app]
@@ -527,6 +528,16 @@
     enable = true
     color = "orange"
     theme = "minimal"
+  [params.author]
+    name = "lingllqs"
+    email = "lingllqs@163.com"
+    link = "https://github.com/lingllqs/lingllqs"
+
+  [params.gitInfo]
+    repo = ""
+    branch = "main"
+    dir = "content"
+    issueTpl = "title=[BUG]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|URL|{URL}|%0A|Filename|{sourceURL}|"
   
   [params.customFilePath]
   [params.dev]
