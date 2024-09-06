@@ -82,8 +82,9 @@
     desktopMode = "auto"
     mobileMode = "auto"
     [params.header.title]
-      logo = "/svg/滑稽.svg"
-      name = "王源中路封个烟"
+      # logo = "/svg/滑稽.svg"
+      logo = ""
+      name = "小李客栈"
       pre = ""
       post = ""
       typeit = true
@@ -534,7 +535,7 @@
     link = "https://github.com/lingllqs/lingllqs"
 
   [params.gitInfo]
-    repo = ""
+    repo = "https://github.com/lingllqs/lingllqs"
     branch = "main"
     dir = "content"
     issueTpl = "title=[BUG]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|URL|{URL}|%0A|Filename|{sourceURL}|"
