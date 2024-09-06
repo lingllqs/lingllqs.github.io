@@ -149,4 +149,3 @@ reboot                                      # 重启
 ## 安装桌面环境或者窗口管理器(Hyprland)
 
 [我的个人Hyprland配置](https://github.com/lingllqs/dotfiles)
-
