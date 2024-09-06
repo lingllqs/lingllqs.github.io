@@ -440,6 +440,7 @@
     [params.page.library]
       [params.page.library.css]
       [params.page.library.js]
+        flyfish = "/js/flyfish.js"
     [params.page.seo]
       images = []
       [params.page.seo.publisher]
