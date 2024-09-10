@@ -84,13 +84,13 @@
     [params.header.title]
       # logo = "/svg/滑稽.svg"
       logo = ""
-      name = "小李客栈"
+      name = "修仙者聚集地"
       pre = ""
       post = ""
       typeit = true
     [params.header.subtitle]
       name = ""
-      typeit = false
+      typeit = true
   [params.breadcrumb]
     enable = true
     sticky = false
