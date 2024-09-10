@@ -142,8 +142,8 @@
     [params.home.profile]
       enable = true
       gravatarEmail = ""
-      avatarURL = "https://github.com/lingllqs/crazysnake"
-      avatarMenu = ""
+      avatarURL = ""
+      avatarMenu = "https://github.com/lingllqs/crazysnake"
       title = ""
       subtitle = "窗前明月光\n疑似地上霜"
       typeit = true
