@@ -8,9 +8,18 @@
     <title>内存分页 - LQS 的树洞</title><meta name="author" content="lingllqs">
 <meta name="description" content="32 位操作系统内存分页
   
-    "><meta name="keywords" content='内存分页'>
+    
+  
+
+32 位总共能访问 $ 2^{32} = 4G $ 内存
+分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页
+一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表
+4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页
+页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页
+
+综述"><meta name="keywords" content='内存分页'>
   <meta itemprop="name" content="内存分页">
-  <meta itemprop="description" content="32 位操作系统内存分页 ">
+  <meta itemprop="description" content="32 位操作系统内存分页 32 位总共能访问 $ 2^{32} = 4G $ 内存 分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页 一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页 综述">
   <meta itemprop="datePublished" content="2024-09-05T17:12:23+08:00">
   <meta itemprop="dateModified" content="2024-09-05T17:12:23+08:00">
   <meta itemprop="wordCount" content="171">
@@ -18,7 +27,7 @@
   <meta itemprop="keywords" content="内存分页"><meta property="og:url" content="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/">
   <meta property="og:site_name" content="LQS 的树洞">
   <meta property="og:title" content="内存分页">
-  <meta property="og:description" content="32 位操作系统内存分页 ">
+  <meta property="og:description" content="32 位操作系统内存分页 32 位总共能访问 $ 2^{32} = 4G $ 内存 分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页 一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页 综述">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -30,7 +39,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
   <meta name="twitter:title" content="内存分页">
-  <meta name="twitter:description" content="32 位操作系统内存分页 ">
+  <meta name="twitter:description" content="32 位操作系统内存分页 32 位总共能访问 $ 2^{32} = 4G $ 内存 分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页 一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页 综述">
 <meta name="application-name" content="树洞">
 <meta name="apple-mobile-web-app-title" content="树洞"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -218,7 +227,7 @@
 
   <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.1"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.134.3"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://github.com/lingllqs/lingllqs"target="_blank" rel="external nofollow noopener noreferrer">lingllqs</a></span></div></div>
