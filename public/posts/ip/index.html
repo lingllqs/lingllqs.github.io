@@ -5,66 +5,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>ICMP - LQS 的树洞</title><meta name="author" content="lingllqs">
-<meta name="description" content="
-ICMP 报文类型
-  
-    
-  
-询问报文
-  
-    
-  
-差错报文
-  
-    
-  
-
-终点不可达
-源点抑制(source quench)
-时间超过
-参数问题
-改变路由(重定向)(redirect)
-"><meta name="keywords" content='Hugo, ArchLinux, 技术, 编程, IT, 网络, 操作系统'>
-  <meta itemprop="name" content="ICMP">
-  <meta itemprop="description" content="
-ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source quench) 时间超过 参数问题 改变路由(重定向)(redirect) ">
-  <meta itemprop="datePublished" content="2024-10-11T15:46:54+08:00">
-  <meta itemprop="dateModified" content="2024-10-11T15:46:54+08:00">
-  <meta itemprop="wordCount" content="57">
-  <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg"><meta property="og:url" content="https://lingllqs.github.io/posts/icmp/">
+    <title>IP - LQS 的树洞</title><meta name="author" content="lingllqs">
+<meta name="description" content=""><meta name="keywords" content='Hugo, ArchLinux, 技术, 编程, IT, 网络, 操作系统'>
+  <meta itemprop="name" content="IP">
+  <meta itemprop="datePublished" content="2024-10-11T17:43:44+08:00">
+  <meta itemprop="dateModified" content="2024-10-11T17:43:44+08:00">
+  <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg"><meta property="og:url" content="https://lingllqs.github.io/posts/ip/">
   <meta property="og:site_name" content="LQS 的树洞">
-  <meta property="og:title" content="ICMP">
-  <meta property="og:description" content="
-ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source quench) 时间超过 参数问题 改变路由(重定向)(redirect) ">
+  <meta property="og:title" content="IP">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-10-11T15:46:54+08:00">
-    <meta property="article:modified_time" content="2024-10-11T15:46:54+08:00">
+    <meta property="article:published_time" content="2024-10-11T17:43:44+08:00">
+    <meta property="article:modified_time" content="2024-10-11T17:43:44+08:00">
     <meta property="og:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
-  <meta name="twitter:title" content="ICMP">
-  <meta name="twitter:description" content="
-ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source quench) 时间超过 参数问题 改变路由(重定向)(redirect) ">
+  <meta name="twitter:title" content="IP">
 <meta name="application-name" content="树洞">
 <meta name="apple-mobile-web-app-title" content="树洞"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/icmp/" title="ICMP - LQS 的树洞" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" title="内存分页" /><link rel="next" type="text/html" href="https://lingllqs.github.io/posts/ip/" title="IP" /><link rel="stylesheet" href="/css/style.min.a44d485d0787e7e56899f12d2ccd83c54489c789b0627fdd0cf7fc2a1e3f8f93.css" integrity="sha256-pE1IXQeH5+VomfEtLM2DxUSJx4mwYn/dDPf8Kh4/j5M="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/ip/" title="IP - LQS 的树洞" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/icmp/" title="ICMP" /><link rel="stylesheet" href="/css/style.min.a44d485d0787e7e56899f12d2ccd83c54489c789b0627fdd0cf7fc2a1e3f8f93.css" integrity="sha256-pE1IXQeH5+VomfEtLM2DxUSJx4mwYn/dDPf8Kh4/j5M="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "ICMP",
+    "headline": "IP",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/lingllqs.github.io\/posts\/icmp\/"
-    },"genre": "posts","wordcount":  57 ,
-    "url": "https:\/\/lingllqs.github.io\/posts\/icmp\/","datePublished": "2024-10-11T15:46:54+08:00","dateModified": "2024-10-11T15:46:54+08:00","publisher": {
+      "@id": "https:\/\/lingllqs.github.io\/posts\/ip\/"
+    },"genre": "posts","wordcount":  0 ,
+    "url": "https:\/\/lingllqs.github.io\/posts\/ip\/","datePublished": "2024-10-11T17:43:44+08:00","dateModified": "2024-10-11T17:43:44+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -169,65 +143,31 @@ ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source 
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">ICMP</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">IP</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>ICMP</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>IP</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/lingllqs/lingllqs" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-    lingllqs</a></span></div><div class="post-meta-line"><span title="发布于 2024-10-11 15:46:54"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-11">2024-10-11</time></span>&nbsp;<span title="57 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/icmp/" class="leancloud_visitors comment-visitors" data-flag-title="ICMP"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
-          </span>&nbsp;<span class="comment-count" data-flag-title="ICMP">
-              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/icmp/" class="valine-comment-count">-</span>&nbsp;条评论
+    lingllqs</a></span></div><div class="post-meta-line"><span title="发布于 2024-10-11 17:43:44"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-11">2024-10-11</time></span>&nbsp;<span title="0 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 0 分钟</span>&nbsp;<span id="/posts/ip/" class="leancloud_visitors comment-visitors" data-flag-title="IP"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
+          </span>&nbsp;<span class="comment-count" data-flag-title="IP">
+              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/ip/" class="valine-comment-count">-</span>&nbsp;条评论
             </span>&nbsp;</div>
-    </div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span>目录</span>
-          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
-        </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#icmp-报文类型">ICMP 报文类型</a>
-      <ul>
-        <li><a href="#询问报文">询问报文</a></li>
-        <li><a href="#差错报文">差错报文</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-      </div><div class="content" id="content"><p><img loading="lazy" src="/images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png" alt="ICMP首部格式" srcset="/images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=small, /images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=medium 1.5x, /images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=large 2x" data-title="ICMP首部格式" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
-<h2 id="icmp-报文类型" class="heading-element"><span>ICMP 报文类型</span>
-  <a href="#icmp-%e6%8a%a5%e6%96%87%e7%b1%bb%e5%9e%8b" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><h3 id="询问报文" class="heading-element"><span>询问报文</span>
-  <a href="#%e8%af%a2%e9%97%ae%e6%8a%a5%e6%96%87" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><h3 id="差错报文" class="heading-element"><span>差错报文</span>
-  <a href="#%e5%b7%ae%e9%94%99%e6%8a%a5%e6%96%87" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><ul>
-<li>终点不可达</li>
-<li>源点抑制(source quench)</li>
-<li>时间超过</li>
-<li>参数问题</li>
-<li>改变路由(重定向)(redirect)</li>
-</ul>
+    </div><div class="content" id="content"><p><img loading="lazy" src="/images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/IP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png" alt="IP协议首部" srcset="/images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/IP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=small, /images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/IP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=medium 1.5x, /images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/IP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=large 2x" data-title="IP协议首部" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-10-11 15:46:54">更新于 2024-10-11&nbsp;</span>
+        <span title="更新于 2024-10-11 17:43:44">更新于 2024-10-11&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="https://github.com/lingllqs/lingllqs/blob/main/content/posts/ICMP.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/lingllqs/lingllqs/edit/main/content/posts/ICMP.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/lingllqs/lingllqs/issues/new?title=[BUG]%20ICMP&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cICMP%7c%0A%7cURL%7chttps://lingllqs.github.io/posts/icmp/%7c%0A%7cFilename%7chttps://github.com/lingllqs/lingllqs/blob/main/content/posts/ICMP.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
+        <div class="post-info-md"><span><a href="https://github.com/lingllqs/lingllqs/blob/main/content/posts/IP.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/lingllqs/lingllqs/edit/main/content/posts/IP.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/lingllqs/lingllqs/issues/new?title=[BUG]%20IP&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cIP%7c%0A%7cURL%7chttps://lingllqs.github.io/posts/ip/%7c%0A%7cFilename%7chttps://github.com/lingllqs/lingllqs/blob/main/content/posts/IP.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/icmp/" data-title="ICMP"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://lingllqs.github.io/posts/icmp/" data-title="ICMP"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/ip/" data-title="IP"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://lingllqs.github.io/posts/ip/" data-title="IP"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -237,15 +177,13 @@ ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source 
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="post-nav-item" rel="prev" title="内存分页"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>内存分页</a>
-      <a href="/posts/ip/" class="post-nav-item" rel="next" title="IP">IP<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/icmp/" class="post-nav-item" rel="prev" title="ICMP"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>ICMP</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/" rel="external nofollow noopener noreferrer">Valine</a>.
       </noscript></div></article>
 
-  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.135.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
