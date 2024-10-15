@@ -5,66 +5,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>ICMP - LQS 的树洞</title><meta name="author" content="lingllqs">
-<meta name="description" content="
-ICMP 报文类型
+    <title>Btrfs - LQS 的树洞</title><meta name="author" content="lingllqs">
+<meta name="description" content="给系统做快照
   
     
   
-询问报文
-  
-    
-  
-差错报文
-  
-    
-  
-
-终点不可达
-源点抑制(source quench)
-时间超过
-参数问题
-改变路由(重定向)(redirect)
-"><meta name="keywords" content='Hugo, ArchLinux, 技术, 编程, IT, 网络, 操作系统'>
-  <meta itemprop="name" content="ICMP">
-  <meta itemprop="description" content="
-ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source quench) 时间超过 参数问题 改变路由(重定向)(redirect) ">
-  <meta itemprop="datePublished" content="2024-10-11T15:46:54+08:00">
-  <meta itemprop="dateModified" content="2024-10-11T15:46:54+08:00">
-  <meta itemprop="wordCount" content="57">
-  <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg"><meta property="og:url" content="https://lingllqs.github.io/posts/icmp/">
+目的: 给根目录(&rsquo;/&rsquo;)做快照"><meta name="keywords" content='btrfs, 系统快照'>
+  <meta itemprop="name" content="Btrfs">
+  <meta itemprop="description" content="给系统做快照 目的: 给根目录(’/’)做快照">
+  <meta itemprop="datePublished" content="2024-08-27T21:44:30+08:00">
+  <meta itemprop="dateModified" content="2024-08-27T21:44:30+08:00">
+  <meta itemprop="wordCount" content="300">
+  <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
+  <meta itemprop="keywords" content="Btrfs,系统快照"><meta property="og:url" content="https://lingllqs.github.io/posts/btrfs_create_snapshot/">
   <meta property="og:site_name" content="LQS 的树洞">
-  <meta property="og:title" content="ICMP">
-  <meta property="og:description" content="
-ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source quench) 时间超过 参数问题 改变路由(重定向)(redirect) ">
+  <meta property="og:title" content="Btrfs">
+  <meta property="og:description" content="给系统做快照 目的: 给根目录(’/’)做快照">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-10-11T15:46:54+08:00">
-    <meta property="article:modified_time" content="2024-10-11T15:46:54+08:00">
+    <meta property="article:published_time" content="2024-08-27T21:44:30+08:00">
+    <meta property="article:modified_time" content="2024-08-27T21:44:30+08:00">
+    <meta property="article:tag" content="Btrfs">
+    <meta property="article:tag" content="系统快照">
     <meta property="og:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg">
-  <meta name="twitter:title" content="ICMP">
-  <meta name="twitter:description" content="
-ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source quench) 时间超过 参数问题 改变路由(重定向)(redirect) ">
+  <meta name="twitter:title" content="Btrfs">
+  <meta name="twitter:description" content="给系统做快照 目的: 给根目录(’/’)做快照">
 <meta name="application-name" content="树洞">
 <meta name="apple-mobile-web-app-title" content="树洞"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/icmp/" title="ICMP - LQS 的树洞" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/memory_paging/" title="内存分页" /><link rel="next" type="text/html" href="https://lingllqs.github.io/posts/ip/" title="IP" /><link rel="stylesheet" href="/css/style.min.a44d485d0787e7e56899f12d2ccd83c54489c789b0627fdd0cf7fc2a1e3f8f93.css" integrity="sha256-pE1IXQeH5+VomfEtLM2DxUSJx4mwYn/dDPf8Kh4/j5M="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/btrfs_create_snapshot/" title="Btrfs - LQS 的树洞" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/math_exercise/" title="数学题" /><link rel="next" type="text/html" href="https://lingllqs.github.io/posts/memory_paging/" title="内存分页" /><link rel="stylesheet" href="/css/style.min.a44d485d0787e7e56899f12d2ccd83c54489c789b0627fdd0cf7fc2a1e3f8f93.css" integrity="sha256-pE1IXQeH5+VomfEtLM2DxUSJx4mwYn/dDPf8Kh4/j5M="><link rel="preload" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.0934b1fc0d3a766d41d3adf5e7a115875e66e98ebba408d965a41cf3d2cb4ab5.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU="></noscript><link rel="preload" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "ICMP",
+    "headline": "Btrfs",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/lingllqs.github.io\/posts\/icmp\/"
-    },"genre": "posts","wordcount":  57 ,
-    "url": "https:\/\/lingllqs.github.io\/posts\/icmp\/","datePublished": "2024-10-11T15:46:54+08:00","dateModified": "2024-10-11T15:46:54+08:00","publisher": {
+      "@id": "https:\/\/lingllqs.github.io\/posts\/btrfs_create_snapshot\/"
+    },"genre": "posts","keywords": "btrfs, 系统快照","wordcount":  300 ,
+    "url": "https:\/\/lingllqs.github.io\/posts\/btrfs_create_snapshot\/","datePublished": "2024-08-27T21:44:30+08:00","dateModified": "2024-08-27T21:44:30+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -169,17 +154,17 @@ ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source 
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
   </div><nav aria-label="breadcrumb" class="breadcrumb-container">
-    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">ICMP</li>
+    <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/posts/" title="Posts">文章</a></li><li class="breadcrumb-item active" aria-current="page">Btrfs</li>
     </ol>
   </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"></aside>
 
   <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>ICMP</span>
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Btrfs</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://github.com/lingllqs/lingllqs" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-    lingllqs</a></span></div><div class="post-meta-line"><span title="发布于 2024-10-11 15:46:54"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-11">2024-10-11</time></span>&nbsp;<span title="57 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/icmp/" class="leancloud_visitors comment-visitors" data-flag-title="ICMP"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
-          </span>&nbsp;<span class="comment-count" data-flag-title="ICMP">
-              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/icmp/" class="valine-comment-count">-</span>&nbsp;条评论
+    lingllqs</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="发布于 2024-08-27 21:44:30"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-27">2024-08-27</time></span>&nbsp;<span title="300 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 1 分钟</span>&nbsp;<span id="/posts/btrfs_create_snapshot/" class="leancloud_visitors comment-visitors" data-flag-title="Btrfs"><i class="fa-regular fa-eye fa-fw me-1" aria-hidden="true"></i><span class="leancloud-visitors-count">-</span>&nbsp;次阅读
+          </span>&nbsp;<span class="comment-count" data-flag-title="Btrfs">
+              <i class="fa-regular fa-comments fa-fw me-1" aria-hidden="true"></i><span data-xid="/posts/btrfs_create_snapshot/" class="valine-comment-count">-</span>&nbsp;条评论
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
@@ -188,57 +173,74 @@ ICMP 报文类型 询问报文 差错报文 终点不可达 源点抑制(source 
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#icmp-报文类型">ICMP 报文类型</a>
+    <li>
       <ul>
-        <li><a href="#询问报文">询问报文</a></li>
-        <li><a href="#差错报文">差错报文</a></li>
+        <li><a href="#给系统做快照">给系统做快照</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-      </div><div class="content" id="content"><p><img loading="lazy" src="/images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png" alt="ICMP首部格式" srcset="/images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=small, /images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=medium 1.5x, /images/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%9b%b8%e5%85%b3/ICMP%e6%95%b0%e6%8d%ae%e5%8c%85%e5%a4%b4%e9%83%a8%e6%a0%bc%e5%bc%8f.png?size=large 2x" data-title="ICMP首部格式" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
-<h2 id="icmp-报文类型" class="heading-element"><span>ICMP 报文类型</span>
-  <a href="#icmp-%e6%8a%a5%e6%96%87%e7%b1%bb%e5%9e%8b" class="heading-mark">
+      </div><div class="content" id="content"><h3 id="给系统做快照" class="heading-element"><span>给系统做快照</span>
+  <a href="#%e7%bb%99%e7%b3%bb%e7%bb%9f%e5%81%9a%e5%bf%ab%e7%85%a7" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="询问报文" class="heading-element"><span>询问报文</span>
-  <a href="#%e8%af%a2%e9%97%ae%e6%8a%a5%e6%96%87" class="heading-mark">
+</h3><p>目的: 给根目录(&rsquo;/&rsquo;)做快照</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#75715e"># 硬盘 sda 各个分区挂在情况</span>
+</span></span><span style="display:flex;"><span>    sda
+</span></span><span style="display:flex;"><span>      sda1  /boot
+</span></span><span style="display:flex;"><span>      sda2  /</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    <span style="color:#75715e"># 硬盘 sdb 各个分区挂在情况</span>
+</span></span><span style="display:flex;"><span>    sdb
+</span></span><span style="display:flex;"><span>      sdb1  /mnt</span></span></code></pre></div><h4 id="1-给-sda2-做只读快照必须是只读快照才能后续的发送--r-选项" class="heading-element"><span>1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项)</span>
+  <a href="#1-%e7%bb%99-sda2-%e5%81%9a%e5%8f%aa%e8%af%bb%e5%bf%ab%e7%85%a7%e5%bf%85%e9%a1%bb%e6%98%af%e5%8f%aa%e8%af%bb%e5%bf%ab%e7%85%a7%e6%89%8d%e8%83%bd%e5%90%8e%e7%bb%ad%e7%9a%84%e5%8f%91%e9%80%81--r-%e9%80%89%e9%a1%b9" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><h3 id="差错报文" class="heading-element"><span>差错报文</span>
-  <a href="#%e5%b7%ae%e9%94%99%e6%8a%a5%e6%96%87" class="heading-mark">
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot -r / /.newroot</span></span></code></pre></div><h4 id="2-发送快照-newroot-到-sdb1-上" class="heading-element"><span>2. 发送快照 /.newroot 到 sdb1 上</span>
+  <a href="#2-%e5%8f%91%e9%80%81%e5%bf%ab%e7%85%a7-newroot-%e5%88%b0-sdb1-%e4%b8%8a" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h3><ul>
-<li>终点不可达</li>
-<li>源点抑制(source quench)</li>
-<li>时间超过</li>
-<li>参数问题</li>
-<li>改变路由(重定向)(redirect)</li>
-</ul>
-</div><div class="post-footer" id="post-footer">
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | btrfs receive /mnt/</span></span></code></pre></div><p>如果要发送到远程计算机上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs send /.newroot | ssh username@remote <span style="color:#e6db74">&#34;btrfs receive /mnt/&#34;</span></span></span></code></pre></div><h4 id="3-在-sdb1-上创建一个普通快照非只读的" class="heading-element"><span>3. 在 sdb1 上创建一个普通快照(非只读的)</span>
+  <a href="#3-%e5%9c%a8-sdb1-%e4%b8%8a%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%99%ae%e9%80%9a%e5%bf%ab%e7%85%a7%e9%9d%9e%e5%8f%aa%e8%af%bb%e7%9a%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>btrfs subvolume snapshot /mnt/.newroot /mnt/.curroot</span></span></code></pre></div><h4 id="4-把-mntcurroot-快照文件下的内容移动到-sdb1挂载在mnt-下" class="heading-element"><span>4. 把 /mnt/.curroot 快照文件下的内容移动到 sdb1(挂载在/mnt) 下</span>
+  <a href="#4-%e6%8a%8a-mntcurroot-%e5%bf%ab%e7%85%a7%e6%96%87%e4%bb%b6%e4%b8%8b%e7%9a%84%e5%86%85%e5%ae%b9%e7%a7%bb%e5%8a%a8%e5%88%b0-sdb1%e6%8c%82%e8%bd%bd%e5%9c%a8mnt-%e4%b8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv /mnt/.curroot/* /mnt/</span></span></code></pre></div><h4 id="5-修改-etcfstab-文件以便后续系统启动时挂载的根目录是-sdb1" class="heading-element"><span>5. 修改 /etc/fstab 文件以便后续系统启动时挂载的根目录是 sdb1</span>
+  <a href="#5-%e4%bf%ae%e6%94%b9-etcfstab-%e6%96%87%e4%bb%b6%e4%bb%a5%e4%be%bf%e5%90%8e%e7%bb%ad%e7%b3%bb%e7%bb%9f%e5%90%af%e5%8a%a8%e6%97%b6%e6%8c%82%e8%bd%bd%e7%9a%84%e6%a0%b9%e7%9b%ae%e5%bd%95%e6%98%af-sdb1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    - 使用 blkid 命令查看 sdb1 的 UUID
+</span></span><span style="display:flex;"><span>    - 修改 /etc/fstab 里 sda2 的 UUID 为 sdb1 的 UUID</span></span></code></pre></div><h4 id="6-修改-bootgrubgrubcfg-文件将关于-sda2-的-uuid-都替换为-sdb1-的-uuid" class="heading-element"><span>6. 修改 /boot/grub/grub.cfg 文件将关于 sda2 的 UUID 都替换为 sdb1 的 UUID</span>
+  <a href="#6-%e4%bf%ae%e6%94%b9-bootgrubgrubcfg-%e6%96%87%e4%bb%b6%e5%b0%86%e5%85%b3%e4%ba%8e-sda2-%e7%9a%84-uuid-%e9%83%bd%e6%9b%bf%e6%8d%a2%e4%b8%ba-sdb1-%e7%9a%84-uuid" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    - 大概修改行的内容为 root<span style="color:#f92672">=</span>UUID<span style="color:#f92672">=</span>xxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>    - 还有类似的行为 --set<span style="color:#f92672">=</span>root xxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>    注意!!! 其中的 xxxxxxxxxxxxxxxxxxxxxxxx 为 sda2 的 UUID 不要把其它的 UUID 改成 sdb1的</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title="更新于 2024-10-11 15:46:54">更新于 2024-10-11&nbsp;</span>
+        <span title="更新于 2024-08-27 21:44:30">更新于 2024-08-27&nbsp;</span>
       </div><div class="post-info-license">
             <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
           </div></div><div class="post-info-line">
-        <div class="post-info-md"><span><a href="https://github.com/lingllqs/lingllqs/blob/main/content/posts/ICMP.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/lingllqs/lingllqs/edit/main/content/posts/ICMP.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/lingllqs/lingllqs/issues/new?title=[BUG]%20ICMP&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cICMP%7c%0A%7cURL%7chttps://lingllqs.github.io/posts/icmp/%7c%0A%7cFilename%7chttps://github.com/lingllqs/lingllqs/blob/main/content/posts/ICMP.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
+        <div class="post-info-md"><span><a href="https://github.com/lingllqs/lingllqs/blob/main/content/posts/btrfs_create_snapshot.md?plain=1" title="查看源码"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-source">查看源码</a></span><span><a href="https://github.com/lingllqs/lingllqs/edit/main/content/posts/btrfs_create_snapshot.md" title="编辑此页"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-edit">编辑此页</a></span><span><a href="https://github.com/lingllqs/lingllqs/issues/new?title=[BUG]%20Btrfs&amp;body=%7cField%7cValue%7c%0A%7c-%7c-%7c%0A%7cTitle%7cBtrfs%7c%0A%7cURL%7chttps://lingllqs.github.io/posts/btrfs_create_snapshot/%7c%0A%7cFilename%7chttps://github.com/lingllqs/lingllqs/blob/main/content/posts/btrfs_create_snapshot.md?plain=1%7c" title="报告问题"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-report">报告问题</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/icmp/" data-title="ICMP"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://lingllqs.github.io/posts/icmp/" data-title="ICMP"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/btrfs_create_snapshot/" data-title="Btrfs"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://lingllqs.github.io/posts/btrfs_create_snapshot/" data-title="Btrfs"><i data-svg-src="/lib/simple-icons/icons/baidu.min.svg" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
 
   <div class="post-info-more">
-    <section class="post-tags"></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/btrfs/" class="post-tag" title="标签 - Btrfs">Btrfs</a><a href="/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/" class="post-tag" title="标签 - 系统快照">系统快照</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
-  </div><div class="post-nav"><a href="/posts/memory_paging/" class="post-nav-item" rel="prev" title="内存分页"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>内存分页</a>
-      <a href="/posts/ip/" class="post-nav-item" rel="next" title="IP">IP<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  </div><div class="post-nav"><a href="/posts/math_exercise/" class="post-nav-item" rel="prev" title="数学题"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>数学题</a>
+      <a href="/posts/memory_paging/" class="post-nav-item" rel="next" title="内存分页">内存分页<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
         Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/" rel="external nofollow noopener noreferrer">Valine</a>.

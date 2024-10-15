@@ -12,9 +12,9 @@
     <atom:link href="https://lingllqs.github.io/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内存分页</title>
-      <link>https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/</link>
+      <link>https://lingllqs.github.io/posts/memory_paging/</link>
       <pubDate>Thu, 05 Sep 2024 17:12:23 +0800</pubDate><author>lingllqs@163.com (lingllqs)</author>
-      <guid>https://lingllqs.github.io/posts/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/</guid>
+      <guid>https://lingllqs.github.io/posts/memory_paging/</guid>
       <category domain="https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/">文档</category>
       <description>&lt;h2 id=&#34;32-位操作系统内存分页&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;32 位操作系统内存分页&lt;/span&gt;&#xA;  &lt;a href=&#34;#32-%e4%bd%8d%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%86%85%e5%ad%98%e5%88%86%e9%a1%b5&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;ol&gt;&#xA;&lt;li&gt;32 位总共能访问 $ 2^{32} = 4G $ 内存&lt;/li&gt;&#xA;&lt;li&gt;分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页&lt;/li&gt;&#xA;&lt;li&gt;一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表&lt;/li&gt;&#xA;&lt;li&gt;4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页&lt;/li&gt;&#xA;&lt;li&gt;页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;综述&lt;/p&gt;</description>
     </item>

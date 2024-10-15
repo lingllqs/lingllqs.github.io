@@ -10,7 +10,9 @@ tags = ['English']
 | 英文缩写 | 英文全拼                                    | 中文描述           |
 | :-----:  | :-----:                                     | :-----:            |
 | ARQ      | Automatic Repeat reQuest                    | 自动重传请求       |
+| AS       | Autonomy System                             | 自治系统           |
 | BIOS     | Basic Input Output System                   | 基本输入输出系统   |
+| BGP      | Border Gateway Protocol                     | 边界网关协议       |
 | BSS      | Block Started by Symbol                     |                    |
 | CDM      | Code Divison Multiplexing                   | 码分复用           |
 | CIDR     | Classless Inter-Domain Routing              | 无类型域间路由     |
