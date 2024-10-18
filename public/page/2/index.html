@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <head>
-	<meta name="generator" content="Hugo 0.136.0">
+	<meta name="generator" content="Hugo 0.136.2">
     
       <meta name="theme" content='FixIt v0.3.10-08d4c12c'>
     
@@ -12,8 +12,8 @@
 <meta name="description" content="lingllqs的分享站"><meta name="keywords" content='Hugo, ArchLinux, 技术, 编程, IT, 网络, 操作系统'>
   <meta itemprop="name" content="LQS 的树洞">
   <meta itemprop="description" content="lingllqs的分享站">
-  <meta itemprop="datePublished" content="2024-10-11T17:43:44+08:00">
-  <meta itemprop="dateModified" content="2024-10-11T17:43:44+08:00">
+  <meta itemprop="datePublished" content="2024-10-16T21:41:38+08:00">
+  <meta itemprop="dateModified" content="2024-10-16T21:41:38+08:00">
   <meta itemprop="image" content="https://lingllqs.github.io/images/wallpaper/%E6%B0%91%E6%97%8F%E5%B0%91%E5%A5%B3.jpg"><meta property="og:url" content="https://lingllqs.github.io/">
   <meta property="og:site_name" content="LQS 的树洞">
   <meta property="og:title" content="LQS 的树洞">
@@ -142,6 +142,22 @@
 疑似地上霜</template></span></p><div class="links"><a href="https://github.com/lingllqs" title="GitHub"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-brands fa-github-alt fa-fw" aria-hidden="true"></i>
     </a><a href="/index.xml" title="RSS"target="_blank" rel="external nofollow noopener noreferrer me"><i class="fa-solid fa-rss fa-fw" aria-hidden="true"></i>
     </a></div></div>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/crc_check/">CRC校验</a>
+  </h2><div class="post-meta"><span class="post-author"><a href="https://github.com/lingllqs/lingllqs" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    lingllqs</a></span>&nbsp;<span class="post-publish" title='2023-11-08 21:22:11'>发布于 <time datetime="2023-11-08">2023-11-08</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content"><h3 id="crc-循环冗余校验" class="heading-element"><span>CRC 循环冗余校验</span>
+  <a href="#crc-%e5%be%aa%e7%8e%af%e5%86%97%e4%bd%99%e6%a0%a1%e9%aa%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#960050;background-color:#1e0010">选择一个生成多项式</span> G(x)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#960050;background-color:#1e0010">根据</span> G(x) <span style="color:#960050;background-color:#1e0010">得到除数</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#960050;background-color:#1e0010">计算除数的位数</span> n
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> <span style="color:#960050;background-color:#1e0010">被除数为原始数据的比特流左移</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#960050;background-color:#1e0010">位</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> <span style="color:#960050;background-color:#1e0010">被除数与除数相除得到余数</span>(<span style="color:#960050;background-color:#1e0010">异或运算</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6.</span> <span style="color:#960050;background-color:#1e0010">实际发送数据为原始数据的比特流后面附加上余数的比特流</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7.</span> <span style="color:#960050;background-color:#1e0010">接收方使用收到的数据的比特流与</span> G(x) <span style="color:#960050;background-color:#1e0010">得到的除数相除</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8.</span> <span style="color:#960050;background-color:#1e0010">判断余数，为</span> <span style="color:#ae81ff">0</span> <span style="color:#960050;background-color:#1e0010">则传输数据无误，否则表示数据传输过程出现错误</span></span></span></code></pre></div></div><div class="post-footer">
+    <a href="/posts/crc_check/">阅读全文</a><div class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href='/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' class="post-tag">计算机网络</a><a href='/tags/internet/' class="post-tag">Internet</a></div></div>
+</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/en_abbrev_2_zh/">英文缩写含义</a>
   </h2><div class="post-meta"><span class="post-author"><a href="https://github.com/lingllqs/lingllqs" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
     lingllqs</a></span>&nbsp;<span class="post-publish" title='2023-10-27 22:19:32'>发布于 <time datetime="2023-10-27">2023-10-27</time></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="分类 - 文档"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 文档</a></span></div><div class="content"><table>
@@ -355,7 +371,7 @@
             <a href="/page/2/">2</a>
           </span>
         </li></ul></div></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.136.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.136.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.10-08d4c12c"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
             <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
               <a href="https://github.com/lingllqs/lingllqs"target="_blank" rel="external nofollow noopener noreferrer">lingllqs</a></span></div></div>
