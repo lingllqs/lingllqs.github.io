@@ -11,6 +11,7 @@ tags = ['English']
 | :-----:  | :-----:                                     | :-----:            |
 | ARQ      | Automatic Repeat reQuest                    | 自动重传请求       |
 | AS       | Autonomy System                             | 自治系统           |
+| ASL      | Average Search Length                       | 平均查找长度       |
 | BIOS     | Basic Input Output System                   | 基本输入输出系统   |
 | BGP      | Border Gateway Protocol                     | 边界网关协议       |
 | BSS      | Block Started by Symbol                     |                    |
