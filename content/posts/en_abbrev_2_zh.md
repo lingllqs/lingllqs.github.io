@@ -8,7 +8,7 @@ tags = ['English']
 
 
 | 英文缩写 | 英文全拼                                    | 中文描述           |
-| :-----:  | :-----:                                     | :-----:            |
+|----------|---------------------------------------------|--------------------|
 | ARQ      | Automatic Repeat reQuest                    | 自动重传请求       |
 | AS       | Autonomy System                             | 自治系统           |
 | ASL      | Average Search Length                       | 平均查找长度       |
