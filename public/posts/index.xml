@@ -8,8 +8,16 @@
     <language>zh-CN</language>
     <managingEditor>lingllqs@163.com (lingllqs)</managingEditor>
     <webMaster>lingllqs@163.com (lingllqs)</webMaster>
-    <lastBuildDate>Wed, 16 Oct 2024 21:41:38 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Nov 2024 14:29:43 +0800</lastBuildDate>
     <atom:link href="https://lingllqs.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>勾股定理证明</title>
+      <link>https://lingllqs.github.io/posts/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/</link>
+      <pubDate>Sat, 16 Nov 2024 14:29:43 +0800</pubDate><author>lingllqs@163.com (lingllqs)</author>
+      <guid>https://lingllqs.github.io/posts/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/</guid>
+      <category domain="https://lingllqs.github.io/categories/math/">Math</category>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://lingllqs.github.io/images/math/%e5%8b%be%e8%82%a1%e5%ae%9a%e7%90%86.png&#34; alt=&#34;勾股定理示意图&#34; srcset=&#34;https://lingllqs.github.io/images/math/%e5%8b%be%e8%82%a1%e5%ae%9a%e7%90%86.png?size=small, https://lingllqs.github.io/images/math/%e5%8b%be%e8%82%a1%e5%ae%9a%e7%90%86.png?size=medium 1.5x, https://lingllqs.github.io/images/math/%e5%8b%be%e8%82%a1%e5%ae%9a%e7%90%86.png?size=large 2x&#34; data-title=&#34;勾股定理示意图&#34; style=&#34;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;&#xA;&lt;p&gt;$$ 证明 bc^2 + cg^2 = bg^2 $$&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;证:&#xA;$$&#xA;\because ab = bc, be = bg, \angle abg = \angle ebc&#xA;$$&#xA;$$&#xA;\therefore \triangle abg \cong \triangle ebc&#xA;$$&#xA;$$&#xA;\because 2 \times S\triangle abg = S\square abcd&#xA;$$&#xA;$$&#xA;2 \times S\triangle ebc = S\square bekj&#xA;$$&#xA;$$&#xA;\therefore S\square abcd = S\square bekj&#xA;$$&#xA;同理可得:&#xA;$$&#xA;S\square cghi = S\square gfkj&#xA;$$&#xA;$$&#xA;\therefore S\square abcd + S\square cghi = S\square befg&#xA;$$&#xA;$$&#xA;\therefore bc^2 + cg^2 = bg^2&#xA;$$&lt;/p&gt;</description>
+    </item>
     <item>
       <title>RIP</title>
       <link>https://lingllqs.github.io/posts/rip/</link>
