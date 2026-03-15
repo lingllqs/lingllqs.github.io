@@ -2,8 +2,16 @@
 title: {{ replace .TranslationBaseName "-" " " | title }}
 subtitle:
 date: {{ .Date }}
-slug: {{ substr .File.UniqueID 0 7 }}
+draft: false
+author:
+  name:
+  link:
+  email:
+  avatar:
 description:
 keywords:
-draft: true
+comment: false
+weight: 0
+tags:
+categories:
 ---
