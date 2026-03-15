@@ -1,31 +1,16 @@
 title = "起源大陆"
 baseURL = "http://localhost:1313"
 theme = ["FixIt"] # enable in your site config file
-# determines default content language ["en", "zh-cn", "fr", "pl", ...]
-defaultContentLanguage = "en"
-# language code ["en", "zh-CN", "fr", "pl", ...]
+defaultContentLanguage = "zh-cn"
 languageCode = "en"
-# language name ["English", "简体中文", "Français", "Polski", ...]
 languageName = "English"
-# whether to include Chinese/Japanese/Korean
 hasCJKLanguage = true
-# copyright description used only for seo schema
 copyright = ""
-# whether to use robots.txt
 enableRobotsTXT = true
-# whether to use git commit log
 enableGitInfo = true
-# whether to use emoji code
 enableEmoji = true
-# the main sections of a site
-# if set, the MainSections method on the Site object returns the given sections,
-# otherwise it returns the section with the most pages.
 # mainSections = ["posts"]
 
-# -------------------------------------------------------------------------------------
-# Front Matter Configuration
-# See: https://gohugo.io/configuration/front-matter/
-# -------------------------------------------------------------------------------------
 
 [frontmatter]
 _merge = "shallow"
@@ -36,32 +21,19 @@ lastmod = [
   ":default",
 ]
 
-# -------------------------------------------------------------------------------------
-# Imaging Configuration
-# See: https://gohugo.io/configuration/imaging/
-# -------------------------------------------------------------------------------------
-
 [imaging]
 _merge = "shallow"
 quality = 75
-
-# -------------------------------------------------------------------------------------
-# Menu Configuration
-# See: https://fixit.lruihao.cn/documentation/basics/#menu-configuration
-# -------------------------------------------------------------------------------------
 
 [menus]
 
 [[menus.main]]
 identifier = "archives"
 parent = ""
-# you can add extra information before the name (HTML format is supported), such as icons
 pre = ""
-# you can add extra information after the name (HTML format is supported), such as icons
 post = ""
-name = "归档"
+name = "合集"
 url = "/archives/"
-# title will be shown when you hover on this menu link
 title = ""
 weight = 1
 
@@ -385,21 +357,11 @@ term = [
   "rss"
 ]
 
-# -------------------------------------------------------------------------------------
-# Taxonomies Configuration
-# See: https://gohugo.io/configuration/taxonomies/
-# -------------------------------------------------------------------------------------
-
 [taxonomies]
 _merge = "shallow"
 category = "categories"
 tag = "tags"
 collection = "collections"
-
-# -------------------------------------------------------------------------------------
-# Theme Core Configuration
-# See: https://fixit.lruihao.cn/documentation/basics/#theme-configuration
-# -------------------------------------------------------------------------------------
 
 [params]
 # FixIt 0.2.15 | CHANGED FixIt theme version
