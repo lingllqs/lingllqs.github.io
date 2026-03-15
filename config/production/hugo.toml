@@ -1613,6 +1613,7 @@ lazyLoad = true
 # someCSS = "https://cdn.example.com/some.css"
 
 [params.page.library.js]
+flyfish = "/js/flyfish.js"
 # someJavascript = "some.js"
 # located in "assets/"
 # Or
