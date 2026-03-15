@@ -2,19 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>All Posts - 起源大陆</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://example.org/posts/</link>
     <description>起源大陆</description>
     <generator>Hugo 0.157.0 &amp; FixIt v0.4.4-20260308100717-fe7105a3</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2026 11:12:38 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Aboutme</title>
-      <link>http://localhost:1313/posts/0909328/</link>
-      <pubDate>Sun, 15 Mar 2026 11:12:38 +0800</pubDate>
-      <guid>http://localhost:1313/posts/0909328/</guid>
-      <category domain="http://localhost:1313/categories/draft/">Draft</category>
-      <description>Aboutme</description>
-    </item>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
