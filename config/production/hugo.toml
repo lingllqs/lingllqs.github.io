@@ -1,21 +1,6 @@
-# =====================================================================================
-# It's recommended to use Alternate Theme Config to configure FixIt
-# Modifying this file may result in merge conflict
-# There are currently some restrictions to what a theme component can configure:
-# params, menu(s), outputformats and mediatypes
-# =====================================================================================
-
-# -------------------------------------------------------------------------------------
-# Hugo Configuration
-# See: https://gohugo.io/configuration/all/
-# -------------------------------------------------------------------------------------
-
-# website title
-title = ""
-# Hostname (and path) to the root
+title = "九龙拉棺"
 baseURL = "http://localhost:1313"
-# theme list
-# theme = ["FixIt"] # enable in your site config file
+theme = ["FixIt"] # enable in your site config file
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
 defaultContentLanguage = "en"
 # language code ["en", "zh-CN", "fr", "pl", ...]
@@ -23,7 +8,7 @@ languageCode = "en"
 # language name ["English", "简体中文", "Français", "Polski", ...]
 languageName = "English"
 # whether to include Chinese/Japanese/Korean
-hasCJKLanguage = false
+hasCJKLanguage = true
 # copyright description used only for seo schema
 copyright = ""
 # whether to use robots.txt
@@ -74,7 +59,7 @@ parent = ""
 pre = ""
 # you can add extra information after the name (HTML format is supported), such as icons
 post = ""
-name = "Archives"
+name = "归档"
 url = "/archives/"
 # title will be shown when you hover on this menu link
 title = ""
@@ -98,7 +83,7 @@ identifier = "categories"
 parent = ""
 pre = ""
 post = ""
-name = "Categories"
+name = "分类"
 url = "/categories/"
 title = ""
 weight = 2
@@ -111,7 +96,7 @@ identifier = "tags"
 parent = ""
 pre = ""
 post = ""
-name = "Tags"
+name = "标签"
 url = "/tags/"
 title = ""
 weight = 3
