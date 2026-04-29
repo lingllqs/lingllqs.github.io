@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>内存分页 - 起源大陆</title><meta name="author" content="">
+<meta name="description" content="32 位操作系统内存分页 32 位总共能访问 232=4G 2^{32} = 4G 232=4G 内存 分页采用 4K 一页, 4G 内存总共 4G÷4K=1M 4G \div 4K = 1M 4G÷4K=1M 个页 一页内存使用 4B 大小表示，1M 个页需要 1M×4B=4M 1M \times 4B = 4M 1M×4B=4M 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 4M÷4K=1024 4M \div 4K = 1024 4M÷4K=1024 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 1024×4B=4K 1024 \times 4B = 4K 1024×4B=4K 内存，正好一页 综述
+"><meta name="keywords" content='内存分页'>
+  <meta itemprop="name" content="内存分页">
+  <meta itemprop="description" content="32 位操作系统内存分页 32 位总共能访问 232=4G 2^{32} = 4G 232=4G 内存 分页采用 4K 一页, 4G 内存总共 4G÷4K=1M 4G \div 4K = 1M 4G÷4K=1M 个页 一页内存使用 4B 大小表示，1M 个页需要 1M×4B=4M 1M \times 4B = 4M 1M×4B=4M 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 4M÷4K=1024 4M \div 4K = 1024 4M÷4K=1024 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 1024×4B=4K 1024 \times 4B = 4K 1024×4B=4K 内存，正好一页 综述">
+  <meta itemprop="datePublished" content="2024-09-05T17:12:23+08:00">
+  <meta itemprop="dateModified" content="2026-04-29T10:47:56+08:00">
+  <meta itemprop="wordCount" content="235">
+  <meta itemprop="keywords" content="内存分页"><meta property="og:url" content="http://localhost:1313/posts/memory_paging/">
+  <meta property="og:site_name" content="起源大陆">
+  <meta property="og:title" content="内存分页">
+  <meta property="og:description" content="32 位操作系统内存分页 32 位总共能访问 232=4G 2^{32} = 4G 232=4G 内存 分页采用 4K 一页, 4G 内存总共 4G÷4K=1M 4G \div 4K = 1M 4G÷4K=1M 个页 一页内存使用 4B 大小表示，1M 个页需要 1M×4B=4M 1M \times 4B = 4M 1M×4B=4M 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 4M÷4K=1024 4M \div 4K = 1024 4M÷4K=1024 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 1024×4B=4K 1024 \times 4B = 4K 1024×4B=4K 内存，正好一页 综述">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-05T17:12:23+08:00">
+    <meta property="article:modified_time" content="2026-04-29T10:47:56+08:00">
+    <meta property="article:tag" content="内存分页">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="内存分页">
+  <meta name="twitter:description" content="32 位操作系统内存分页 32 位总共能访问 232=4G 2^{32} = 4G 232=4G 内存 分页采用 4K 一页, 4G 内存总共 4G÷4K=1M 4G \div 4K = 1M 4G÷4K=1M 个页 一页内存使用 4B 大小表示，1M 个页需要 1M×4B=4M 1M \times 4B = 4M 1M×4B=4M 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 4M÷4K=1024 4M \div 4K = 1024 4M÷4K=1024 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 1024×4B=4K 1024 \times 4B = 4K 1024×4B=4K 内存，正好一页 综述">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/posts/memory_paging/" title="内存分页 - 起源大陆" /><link rel="prev" type="text/html" href="http://localhost:1313/posts/btrfs_create_snapshot/" title="Btrfs" /><link rel="next" type="text/html" href="http://localhost:1313/posts/icmp/" title="ICMP" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/memory_paging/index.md" title="内存分页 - 起源大陆"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "内存分页",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/memory_paging\/"
+    },"genre": "posts","keywords": "内存分页","wordcount":  235 ,
+    "url": "http:\/\/localhost:1313\/posts\/memory_paging\/","datePublished": "2024-09-05T17:12:23+08:00","dateModified": "2026-04-29T10:47:56+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Author"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="起源大陆"><span class="header-title-text">起源大陆</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" role="button" aria-label="Switch Theme" title="Switch Theme"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="起源大陆"><span class="header-title-text">起源大陆</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="Switch Theme"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>内存分页</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="Category - 文档"><i class="fa-regular fa-folder" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="published on 2024-09-05 17:12:23"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2024-09-05">2024-09-05</time></span>&nbsp;<span title="Updated on 2026-04-29 10:47:56"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i><time datetime="2026-04-29">2026-04-29</time></span>&nbsp;<span title="235 words"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#32-位操作系统内存分页">32 位操作系统内存分页</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 class="heading-element" id="32-位操作系统内存分页"><span>32 位操作系统内存分页</span>
+  <a href="#32-%e4%bd%8d%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%86%85%e5%ad%98%e5%88%86%e9%a1%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li>32 位总共能访问 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>32</mn></msup><mo>=</mo><mn>4</mn><mi>G</mi></mrow><annotation encoding="application/x-tex"> 2^{32} = 4G </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">32</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal">G</span></span></span></span> 内存</li>
+<li>分页采用 4K 一页, 4G 内存总共 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>G</mi><mo>÷</mo><mn>4</mn><mi>K</mi><mo>=</mo><mn>1</mn><mi>M</mi></mrow><annotation encoding="application/x-tex"> 4G \div 4K = 1M </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 个页</li>
+<li>一页内存使用 4B 大小表示，1M 个页需要 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>M</mi><mo>×</mo><mn>4</mn><mi>B</mi><mo>=</mo><mn>4</mn><mi>M</mi></mrow><annotation encoding="application/x-tex"> 1M \times 4B = 4M </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 内存，这就是页表</li>
+<li>4M 的页表太大，所以设置页目录，4M 大小占用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>M</mi><mo>÷</mo><mn>4</mn><mi>K</mi><mo>=</mo><mn>1024</mn></mrow><annotation encoding="application/x-tex"> 4M \div 4K = 1024 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1024</span></span></span></span> 个页</li>
+<li>页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1024</mn><mo>×</mo><mn>4</mn><mi>B</mi><mo>=</mo><mn>4</mn><mi>K</mi></mrow><annotation encoding="application/x-tex"> 1024 \times 4B = 4K </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1024</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">4</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span> 内存，正好一页</li>
+</ol>
+<p>综述</p>
+<ul>
+<li>页目录存放页表信息</li>
+<li>页表存放页信息</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Updated on 2026-04-29 10:47:56">Updated on 2026-04-29&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/memory_paging/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/memory_paging/" data-title="内存分页" data-hashtags="内存分页"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/memory_paging/" data-hashtag="内存分页"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/memory_paging/" data-title="内存分页"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i><a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="post-tag" title="Tags - 内存分页">内存分页</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/btrfs_create_snapshot/" class="post-nav-item" rel="prev" title="Btrfs"><i class="fa-solid fa-angle-left" aria-hidden="true"></i>Btrfs</a><a href="/posts/icmp/" class="post-nav-item" rel="next" title="ICMP">ICMP<i class="fa-solid fa-angle-right" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li><a href="#32-位操作系统内存分页">32 位操作系统内存分页</a></li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.3"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="Contents"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/js/flyfish.js" defer></script><script src="/js/config/c06bb3ad5ff3a8f4703aa1f64c52837d.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>CRC校验 - 起源大陆</title><meta name="author" content="">
+<meta name="description" content="CRC 循环冗余校验 1 2 3 4 5 6 7 8 1. 选择一个生成多项式 G(x) 2. 根据 G(x) 得到除数 3. 计算除数的位数 n 4. 被除数为原始数据的比特流左移 n - 1 位 5. 被除数与除数相除得到余数(异或运算) 6. 实际发送数据为原始数据的比特流后面附加上余数的比特流 7. 接收方使用收到的数据的比特流与 G(x) 得到的除数相除 8. 判断余数，为 0 则传输数据无误，否则表示数据传输过程出现错误 "><meta name="keywords" content='计算机网络, Internet'>
+  <meta itemprop="name" content="CRC校验">
+  <meta itemprop="description" content="CRC 循环冗余校验 1 2 3 4 5 6 7 8 1. 选择一个生成多项式 G(x) 2. 根据 G(x) 得到除数 3. 计算除数的位数 n 4. 被除数为原始数据的比特流左移 n - 1 位 5. 被除数与除数相除得到余数(异或运算) 6. 实际发送数据为原始数据的比特流后面附加上余数的比特流 7. 接收方使用收到的数据的比特流与 G(x) 得到的除数相除 8. 判断余数，为 0 则传输数据无误，否则表示数据传输过程出现错误">
+  <meta itemprop="datePublished" content="2023-11-08T21:22:11+08:00">
+  <meta itemprop="dateModified" content="2026-04-29T10:47:56+08:00">
+  <meta itemprop="wordCount" content="162">
+  <meta itemprop="keywords" content="计算机网络,Internet"><meta property="og:url" content="http://localhost:1313/posts/crc_check/">
+  <meta property="og:site_name" content="起源大陆">
+  <meta property="og:title" content="CRC校验">
+  <meta property="og:description" content="CRC 循环冗余校验 1 2 3 4 5 6 7 8 1. 选择一个生成多项式 G(x) 2. 根据 G(x) 得到除数 3. 计算除数的位数 n 4. 被除数为原始数据的比特流左移 n - 1 位 5. 被除数与除数相除得到余数(异或运算) 6. 实际发送数据为原始数据的比特流后面附加上余数的比特流 7. 接收方使用收到的数据的比特流与 G(x) 得到的除数相除 8. 判断余数，为 0 则传输数据无误，否则表示数据传输过程出现错误">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-11-08T21:22:11+08:00">
+    <meta property="article:modified_time" content="2026-04-29T10:47:56+08:00">
+    <meta property="article:tag" content="计算机网络">
+    <meta property="article:tag" content="Internet">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CRC校验">
+  <meta name="twitter:description" content="CRC 循环冗余校验 1 2 3 4 5 6 7 8 1. 选择一个生成多项式 G(x) 2. 根据 G(x) 得到除数 3. 计算除数的位数 n 4. 被除数为原始数据的比特流左移 n - 1 位 5. 被除数与除数相除得到余数(异或运算) 6. 实际发送数据为原始数据的比特流后面附加上余数的比特流 7. 接收方使用收到的数据的比特流与 G(x) 得到的除数相除 8. 判断余数，为 0 则传输数据无误，否则表示数据传输过程出现错误">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/posts/crc_check/" title="CRC校验 - 起源大陆" /><link rel="prev" type="text/html" href="http://localhost:1313/posts/en_abbrev_2_zh/" title="英文缩写含义" /><link rel="next" type="text/html" href="http://localhost:1313/posts/math_exercise/" title="数学题" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/crc_check/index.md" title="CRC校验 - 起源大陆"><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "CRC校验",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/crc_check\/"
+    },"genre": "posts","keywords": "计算机网络, Internet","wordcount":  162 ,
+    "url": "http:\/\/localhost:1313\/posts\/crc_check\/","datePublished": "2023-11-08T21:22:11+08:00","dateModified": "2026-04-29T10:47:56+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Author"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="起源大陆"><span class="header-title-text">起源大陆</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item">
+              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item">
+              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" role="button" aria-label="Switch Theme" title="Switch Theme"><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="起源大陆"><span class="header-title-text">起源大陆</span></a><span class="header-subtitle"></span></div>
+      <div class="theme-switch" role="button" aria-label="Switch Theme"><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
+      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-sm" aria-hidden="true"></i> 合集</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item menu-system"></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>CRC校验</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E6%96%87%E6%A1%A3/" class="post-category" title="Category - 文档"><i class="fa-regular fa-folder" aria-hidden="true"></i> 文档</a></span></div><div class="post-meta-line"><span title="published on 2023-11-08 21:22:11"><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2023-11-08">2023-11-08</time></span>&nbsp;<span title="Updated on 2026-04-29 10:47:56"><i class="fa-regular fa-calendar-check me-1" aria-hidden="true"></i><time datetime="2026-04-29">2026-04-29</time></span>&nbsp;<span title="162 words"><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i>About 200 words</span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#crc-循环冗余校验">CRC 循环冗余校验</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h3 class="heading-element" id="crc-循环冗余校验"><span>CRC 循环冗余校验</span>
+  <a href="#crc-%e5%be%aa%e7%8e%af%e5%86%97%e4%bd%99%e6%a0%a1%e9%aa%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><div class="code-block highlight" data-mode="classic" data-copyable="true"><div class="chroma">
+<div class="code-header language-c++"><span class="code-title"><i class="arrow fa-solid fa-chevron-down" aria-hidden="true"></i></span><span class="ellipses-btn" aria-label="Show more options" role="button"><i class="fa-solid fa-ellipsis-h" aria-hidden="true"></i></span><span class="line-nos-btn" aria-label="Toggle line numbers" role="button" title="Toggle line numbers"><i class="fa-solid fa-list-ol" aria-hidden="true"></i></span><span class="line-wrap-btn" aria-label="Toggle code wrap" role="button" title="Toggle code wrap"><i class="fa-solid fa-right-left" aria-hidden="true"></i></span><span class="copy-btn" aria-label="Copy to clipboard" role="button" title="Copy to clipboard"><i class="fa-regular fa-clone" aria-hidden="true"></i></span></div><div class="code-wrapper" data-max="10" data-line-digit="1" style="--fi-max-shown-lines:10;--fi-line-digit:1;--fi-line-start:1;"><table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mf">1.</span> <span class="err">选择一个生成多项式</span> <span class="n">G</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span> <span class="err">根据</span> <span class="n">G</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="err">得到除数</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.</span> <span class="err">计算除数的位数</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.</span> <span class="err">被除数为原始数据的比特流左移</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="err">位</span>
+</span></span><span class="line"><span class="cl"><span class="mf">5.</span> <span class="err">被除数与除数相除得到余数</span><span class="p">(</span><span class="err">异或运算</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mf">6.</span> <span class="err">实际发送数据为原始数据的比特流后面附加上余数的比特流</span>
+</span></span><span class="line"><span class="cl"><span class="mf">7.</span> <span class="err">接收方使用收到的数据的比特流与</span> <span class="n">G</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="err">得到的除数相除</span>
+</span></span><span class="line"><span class="cl"><span class="mf">8.</span> <span class="err">判断余数，为</span> <span class="mi">0</span> <span class="err">则传输数据无误，否则表示数据传输过程出现错误</span></span></span></code></pre></td></tr></table></div>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod"><span title="Updated on 2026-04-29 10:47:56">Updated on 2026-04-29&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/crc_check/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/crc_check/" data-title="CRC校验" data-hashtags="计算机网络,Internet"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/crc_check/" data-hashtag="计算机网络"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/crc_check/" data-title="CRC校验"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-tag" title="Tags - 计算机网络">计算机网络</a><a href="/tags/internet/" class="post-tag" title="Tags - Internet">Internet</a></section>
+    <section><span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/en_abbrev_2_zh/" class="post-nav-item" rel="prev" title="英文缩写含义"><i class="fa-solid fa-angle-left" aria-hidden="true"></i>英文缩写含义</a><a href="/posts/math_exercise/" class="post-nav-item" rel="next" title="数学题">数学题<i class="fa-solid fa-angle-right" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
+      <div class="toc">
+        <h2 class="toc-title">Contents</h2>
+        <div class="toc-content" id="toc-content-drawer"><nav >
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#crc-循环冗余校验">CRC 循环冗余校验</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div>
+    </dialog></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.161.0"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.4.3"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label="Contents"><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/js/flyfish.js" defer></script><script src="/js/config/f11269ee8389808ef72e8f81a8633a10.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+</html>

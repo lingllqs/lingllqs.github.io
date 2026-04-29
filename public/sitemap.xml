@@ -1,24 +1,158 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/archlinux/</loc>
-    <lastmod>2026-03-15T16:15:37+08:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/math/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-03-15T16:15:37+08:00</lastmod>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-03-15T16:15:37+08:00</lastmod>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/aboutme/</loc>
+    <loc>http://localhost:1313/posts/rip/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/posts/ip/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/icmp/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/memory_paging/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/btrfs_create_snapshot/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/btrfs/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/math/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/math_exercise/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/crc_check/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/internet/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/english/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/en_abbrev_2_zh/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/tags/archlinux/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/posts/archlinux_install/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-04-29T10:47:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/collections/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
