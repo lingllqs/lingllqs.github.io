@@ -1,5 +1,4 @@
 baseURL = 'https://ruster.com/'
-languageCode = 'en-us'
 title = '起源大陆'
 
 [module]

@@ -15,7 +15,7 @@ stick = 1000
 
 ```shell
 windows: 使用 rufus 工具
-linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progress
+linux: sudo dd if=/path/to/xxx.iso of=/dev/xxx bs=4M oflag=sync status=progress # xxx 是你的硬盘名我的是nvme0n1
 ```
 
 ## 进入 live 环境开始安装
@@ -26,6 +26,7 @@ linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progr
 1. 使用 `fdisk -l` 查看硬盘信息
 
 2. 使用 cfdisk 命令进行分区 `cfdisk /dev/nvme0n1`
+新硬盘选择gpt分区
 这里分两个区
 /dev/nvme0n1p1 # efi 引导分区(在 cfdisk 工具界面下方选择 type 进入类型选择界面,选择 efi 类型即可)
 /dev/nvme0n1p2 # linux system 分区
@@ -34,7 +35,7 @@ linux: sudo dd if=/path/to/xxx.iso of=/dev/nvme0n1 bs=4M oflag=sync status=progr
 ### 格式化分区
 
 ```shell
-mkfs.efi -F 32 /dev/nvme0n1p1
+mkfs.fat -F 32 /dev/nvme0n1p1
 mkfs.btrfs -L ARCH /dev/nvme0n1p2 (-L 表示要指定硬盘标签 ARCH 为标签名,可自行命名)
 --------------------------------
 使用 `lsblk -f` 命令查看分区信息
@@ -44,18 +45,18 @@ mkfs.btrfs -L ARCH /dev/nvme0n1p2 (-L 表示要指定硬盘标签 ARCH 为标签
 
 ```shell
 挂载系统分区进行子卷创建
-mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /tmp/btrfs-root
+mount --mkdir -t btrfs -o compress=zstd /dev/nvme0n1p2 /mnt
 -----
 创建子卷
-btrfs subvolume create /tmp/btrfs-root/@     # 根目录
-btrfs subvolume create /tmp/btrfs-root/@home # 家目录
-btrfs subvolume create /tmp/btrfs-root/@swap # 交换文件
+btrfs subvolume create /mnt/@     # 根目录
+btrfs subvolume create /mnt/@home # 家目录
+btrfs subvolume create /mnt/@swap # 交换文件
 -----
 把交换文件子卷写时复制(cow)功能关闭
-chattr +C /tmp/btrfs-root/@swap
+chattr +C /mnt/@swap
 -----
 卸载
-umount /tmp/btrfs-root
+umount /mnt
 ```
 
 ### 挂载分区准备系统安装
@@ -65,7 +66,7 @@ mount --mkdir -t btrfs -o compress=zstd,subvol=@ /dev/nvme0n1p2 /mnt # 注意要
 mount --mkdir -t btrfs -o subvol=@home /dev/nvme0n1p2 /mnt/home      # 挂载根目录下的home目录
 mount --mkdir -t btrfs -o subvol=@swap /dev/nvme0n1p2 /mnt/swap
 -----------------------------
-mount --mkdir /dev/nvme0n1p1 /mnt/boot/efi # 挂载引导分区目录(注意是 nvme0n1p1)
+mount --mkdir /dev/nvme0n1p1 /mnt/boot # 挂载引导分区目录(注意是 nvme0n1p1)
 -----------------------------
 创建交换文件
 btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G # 大小自行确定
@@ -134,10 +135,10 @@ echo -e "127.0.0.1\\tlocalhost\\n::1\\t\\tlocalhost\\n127.0.1.1\\t主机名.doma
 passwd root                             # 设置管理员用户密码
 useradd -m -G wheel -s /bin/bash 用户名 # 创建普通用户指定加入 wheel 组
 passwd 用户名                           # 给新用户设置密码
-编辑 /etc/sudoers 文件把# %wheel ALL=(ALL:ALL) ALL 这一行前面的#去掉
+编辑 /etc/sudoers 文件把# %wheel ALL=(ALL:ALL) ALL 这一行前面的#去掉(取消注释)
 ------------------------------------
 配置 grub
-grub-install --target=x86_64-efi --efi-directory=/boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot/
 grub-mkconfig -o /boot/grub/grub.cfg # 生成 grub 配置
 ------------------------------------
 systemctl enable NetworkManager sshd dhcpcd # 设置一些开机启动的服务
@@ -146,6 +147,6 @@ umount -R /mnt                              # 卸载
 reboot                                      # 重启
 ```
 
-## 安装桌面环境或者窗口管理器(Hyprland)
+## 安装桌面环境(KDE/GNOME)或者窗口管理器(Hyprland/mangowm/niri)
 
-[我的个人Hyprland配置](https://github.com/lingllqs/dotfiles)
+[我的个人配置](https://github.com/lingllqs/dotfiles)

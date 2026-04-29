@@ -35,6 +35,6 @@
 
 ---
 
-> Author:   
+> 作者:   
 > URL: http://localhost:1313/posts/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/  
 

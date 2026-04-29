@@ -67,6 +67,6 @@ mv /mnt/.curroot/* /mnt/
 
 ---
 
-> Author:   
+> 作者:   
 > URL: http://localhost:1313/posts/btrfs_create_snapshot/  
 
