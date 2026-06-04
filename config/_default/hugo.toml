@@ -1,7 +1,6 @@
-baseURL = 'https://ruster.com/'
+baseURL = 'https://lingllqs.github.io/'
 title = '起源大陆'
-
-[module]
-
-[[module.imports]]
-path = "github.com/hugo-fixit/FixIt"
+copyright = "https://github.com/lingllqs"
+defaultContentLanguage = "zh"
+hasCJKLanguage = true
+theme = 'ananke'
