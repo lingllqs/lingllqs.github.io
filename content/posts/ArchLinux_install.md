@@ -3,8 +3,9 @@ title = 'ArchLinux安装'
 date = 2023-10-26T12:08:52+08:00
 draft = false
 categories = ['教程']
+summary = "ArchLinux安装教程"
 tags = ['ArchLinux']
-stick = 1000
+weight = 1
 +++
 
 ## 下载 archlinux ISO 镜像

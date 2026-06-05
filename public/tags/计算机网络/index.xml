@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>计算机网络 on 起源大陆</title>
-		<link>https://lingllqs.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+		<link>http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
 		<description>Recent content in 计算机网络 on 起源大陆</description>
 		<generator>Hugo</generator>
-		<language>zh</language>
+		<language>en</language>
 		
 		
 		
@@ -14,12 +14,12 @@
 		
 			<lastBuildDate>Wed, 08 Nov 2023 21:22:11 +0800</lastBuildDate>
 		
-			<atom:link href="https://lingllqs.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>CRC校验</title>
-				<link>https://lingllqs.github.io/posts/crc_check/</link>
+				<link>http://localhost:1313/posts/crc_check/</link>
 				<pubDate>Wed, 08 Nov 2023 21:22:11 +0800</pubDate>
-				<guid>https://lingllqs.github.io/posts/crc_check/</guid>
+				<guid>http://localhost:1313/posts/crc_check/</guid>
 				<description>&lt;h3 id=&#34;crc-循环冗余校验&#34;&gt;CRC 循环冗余校验&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;选择一个生成多项式&lt;/span&gt; G(x)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;根据&lt;/span&gt; G(x) &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;得到除数&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;3.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;计算除数的位数&lt;/span&gt; n&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;被除数为原始数据的比特流左移&lt;/span&gt; n &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;位&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;被除数与除数相除得到余数&lt;/span&gt;(&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;异或运算&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;6.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;实际发送数据为原始数据的比特流后面附加上余数的比特流&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;7.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;接收方使用收到的数据的比特流与&lt;/span&gt; G(x) &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;得到的除数相除&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;8.&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;判断余数，为&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;则传输数据无误，否则表示数据传输过程出现错误&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
 			</item>
 	</channel>

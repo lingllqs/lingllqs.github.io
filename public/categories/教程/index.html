@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -11,11 +11,11 @@
     
     
     
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
-    <link rel="stylesheet" href="/ananke/css/main.fe543ec729f225f1a33caed07775c832a416476900d82ba51765d6ead9de6758.css" integrity="sha256-/lQ&#43;xynyJfGjPK7Qd3XIMqQWR2kA2CulF2XW6tneZ1g=" crossorigin="anonymous">
+    <link rel="stylesheet" href="/ananke/css/main.css">
     
 
 
@@ -32,12 +32,12 @@
     
 
     
-      <link rel="canonical" href="https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/">
+      <link rel="canonical" href="http://localhost:1313/categories/%E6%95%99%E7%A8%8B/">
     
 
     
     
-    <meta property="og:url" content="https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/">
+    <meta property="og:url" content="http://localhost:1313/categories/%E6%95%99%E7%A8%8B/">
 	<meta property="og:site_name" content="起源大陆">
 	<meta property="og:title" content="教程">
 	<meta property="og:locale" content="zh">
@@ -49,11 +49,8 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="教程">
 
-      
-      
-    
 	
-  </head><body class="ma0 avenir bg-near-white production is-term">
+  </head><body class="ma0 avenir bg-near-white development is-term">
     
 
   <header>
@@ -101,109 +98,7 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <h2 id="下载-archlinux-iso-镜像">下载 archlinux ISO 镜像</h2>
-<p><a href="https://mirrors.ustc.edu.cn/archlinux/iso/">中科大镜像地址</a></p>
-<h2 id="制作启动盘">制作启动盘</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>windows: 使用 rufus 工具
-</span></span><span style="display:flex;"><span>linux: sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/xxx.iso of<span style="color:#f92672">=</span>/dev/xxx bs<span style="color:#f92672">=</span>4M oflag<span style="color:#f92672">=</span>sync status<span style="color:#f92672">=</span>progress <span style="color:#75715e"># xxx 是你的硬盘名我的是nvme0n1</span>
-</span></span></code></pre></div><h2 id="进入-live-环境开始安装">进入 live 环境开始安装</h2>
-<h3 id="分区">分区</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>1. 使用 <span style="color:#e6db74">`</span>fdisk -l<span style="color:#e6db74">`</span> 查看硬盘信息
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>2. 使用 cfdisk 命令进行分区 <span style="color:#e6db74">`</span>cfdisk /dev/nvme0n1<span style="color:#e6db74">`</span>
-</span></span><span style="display:flex;"><span>新硬盘选择gpt分区
-</span></span><span style="display:flex;"><span>这里分两个区
-</span></span><span style="display:flex;"><span>/dev/nvme0n1p1 <span style="color:#75715e"># efi 引导分区(在 cfdisk 工具界面下方选择 type 进入类型选择界面,选择 efi 类型即可)</span>
-</span></span><span style="display:flex;"><span>/dev/nvme0n1p2 <span style="color:#75715e"># linux system 分区</span>
-</span></span></code></pre></div><h3 id="格式化分区">格式化分区</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/nvme0n1p1
-</span></span><span style="display:flex;"><span>mkfs.btrfs -L ARCH /dev/nvme0n1p2 <span style="color:#f92672">(</span>-L 表示要指定硬盘标签 ARCH 为标签名,可自行命名<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>--------------------------------
-</span></span><span style="display:flex;"><span>使用 <span style="color:#e6db74">`</span>lsblk -f<span style="color:#e6db74">`</span> 命令查看分区信息
-</span></span></code></pre></div><h3 id="创建-btrfs-子卷">创建 btrfs 子卷</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>挂载系统分区进行子卷创建
-</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd /dev/nvme0n1p2 /mnt
-</span></span><span style="display:flex;"><span>-----
-</span></span><span style="display:flex;"><span>创建子卷
-</span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@     <span style="color:#75715e"># 根目录</span>
-</span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@home <span style="color:#75715e"># 家目录</span>
-</span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@swap <span style="color:#75715e"># 交换文件</span>
-</span></span><span style="display:flex;"><span>-----
-</span></span><span style="display:flex;"><span>把交换文件子卷写时复制<span style="color:#f92672">(</span>cow<span style="color:#f92672">)</span>功能关闭
-</span></span><span style="display:flex;"><span>chattr +C /mnt/@swap
-</span></span><span style="display:flex;"><span>-----
-</span></span><span style="display:flex;"><span>卸载
-</span></span><span style="display:flex;"><span>umount /mnt
-</span></span></code></pre></div><h3 id="挂载分区准备系统安装">挂载分区准备系统安装</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd,subvol<span style="color:#f92672">=</span>@ /dev/nvme0n1p2 /mnt <span style="color:#75715e"># 注意要先挂载根目录</span>
-</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o subvol<span style="color:#f92672">=</span>@home /dev/nvme0n1p2 /mnt/home      <span style="color:#75715e"># 挂载根目录下的home目录</span>
-</span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o subvol<span style="color:#f92672">=</span>@swap /dev/nvme0n1p2 /mnt/swap
-</span></span><span style="display:flex;"><span>-----------------------------
-</span></span><span style="display:flex;"><span>mount --mkdir /dev/nvme0n1p1 /mnt/boot <span style="color:#75715e"># 挂载引导分区目录(注意是 nvme0n1p1)</span>
-</span></span><span style="display:flex;"><span>-----------------------------
-</span></span><span style="display:flex;"><span>创建交换文件
-</span></span><span style="display:flex;"><span>btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G <span style="color:#75715e"># 大小自行确定</span>
-</span></span><span style="display:flex;"><span>swapon /swap/swapfile <span style="color:#75715e"># 启用交换文件</span>
-</span></span></code></pre></div><h3 id="正式安装前先配置好网络">正式安装前先配置好网络</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>timedatectl         <span style="color:#75715e"># 同步系统时间</span>
-</span></span><span style="display:flex;"><span>ip link             <span style="color:#75715e"># 查看网卡信息</span>
-</span></span><span style="display:flex;"><span>rfkill list         <span style="color:#75715e"># 查看蓝牙和 wifi 功能是否被关闭</span>
-</span></span><span style="display:flex;"><span>rfkill unblock wlan <span style="color:#75715e"># 如果 wifi 功能被关闭就启用(或者用`rfkill unblock all`启用所有被关闭功能)</span>
-</span></span><span style="display:flex;"><span>---------------------------------
-</span></span><span style="display:flex;"><span>1. 如果是有线网络则会自动联网无需配置
-</span></span><span style="display:flex;"><span>2. 无线网络则输入 iwctl 命令进入 iw 工具的命令行
-</span></span><span style="display:flex;"><span>device list                  <span style="color:#75715e"># 列出可用网卡</span>
-</span></span><span style="display:flex;"><span>station wlan0 scan           <span style="color:#75715e"># 扫描可用网络(wlan0 为网卡名,通过上一步的 `ip link` 命令可知)</span>
-</span></span><span style="display:flex;"><span>station wlan0 get-network    <span style="color:#75715e"># 获取可用 wifi</span>
-</span></span><span style="display:flex;"><span>station wlan0 connect wifi名 <span style="color:#75715e"># 连接 wifi，有密码则会提示输入密码</span>
-</span></span><span style="display:flex;"><span>-----
-</span></span><span style="display:flex;"><span>ctrl + d       <span style="color:#75715e"># 退出 iw 工具命令行</span>
-</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> t.cn <span style="color:#75715e"># 测试网络是否通畅</span>
-</span></span></code></pre></div><h3 id="换源">换源</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>自动配置: 使用 Python 脚本工具 reflector 配置源
-</span></span><span style="display:flex;"><span>reflector --country China --latest <span style="color:#ae81ff">5</span> --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-</span></span><span style="display:flex;"><span>----------------------------
-</span></span><span style="display:flex;"><span>手动配置: 编使 vim 工具用辑 /etc/pacman.d/mirrorlist 文件
-</span></span><span style="display:flex;"><span>vim /etc/pacman.d/mirrorlist
-</span></span><span style="display:flex;"><span>在最上面一行添加以下内容:
-</span></span><span style="display:flex;"><span>Server <span style="color:#f92672">=</span> https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
-</span></span><span style="display:flex;"><span>----------------------------
-</span></span><span style="display:flex;"><span>systemctl stop reflector <span style="color:#75715e"># 关闭 reflector 服务防止刷新配置</span>
-</span></span><span style="display:flex;"><span>pacman -S archlinux-keyring
-</span></span><span style="display:flex;"><span>pacman -Syy
-</span></span></code></pre></div><h3 id="开始安装">开始安装</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pacstrap -K /mnt base linux linux-firmware btrfs-progs <span style="color:#75715e"># 安装基本的工具，内核和驱动</span>
-</span></span><span style="display:flex;"><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab                     <span style="color:#75715e"># 生成 fstab 文件</span>
-</span></span><span style="display:flex;"><span>arch-chroot /mnt                                       <span style="color:#75715e"># 进入新系统</span>
-</span></span><span style="display:flex;"><span>-----------------------------------
-</span></span><span style="display:flex;"><span>安装额外的软件和工具
-</span></span><span style="display:flex;"><span>pacman -S   base-devel sof-firmware vim
-</span></span><span style="display:flex;"><span>            grub efibootmgr intel-ucode/amd-ucode
-</span></span><span style="display:flex;"><span>            firefox networkmanager chcpcd openssh
-</span></span><span style="display:flex;"><span>            noto-fonts-cjk noto-fonts-emoji nerd-fonts-complete bash-completion
-</span></span><span style="display:flex;"><span>注意: inter-ucode 和 amd-ucode 根据电脑的实际 CPU 选择安装
-</span></span></code></pre></div><h3 id="配置">配置</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime                            <span style="color:#75715e"># 设置时区</span>
-</span></span><span style="display:flex;"><span>hwclock --systohc                                                                  <span style="color:#75715e"># 将系统时钟同步到硬件时钟</span>
-</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;s/^#\(en_US\.UTF-8\|zh_CN\.UTF-8\)/\1/g&#39;</span> /etc/locale.gen                   <span style="color:#75715e"># 设置区域信息</span>
-</span></span><span style="display:flex;"><span>locale-gen <span style="color:#f92672">&amp;&amp;</span> touch /etc/locale.conf <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;LANG=en_US.UTF-8&#34;</span> &gt; /etc/locale.conf <span style="color:#75715e"># 生成 locale 信息并设置语言为中文</span>
-</span></span><span style="display:flex;"><span>touch /etc/hostname <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;喜欢的主机名&#34;</span> &gt; /etc/hostname                         <span style="color:#75715e"># 设置主机名</span>
-</span></span><span style="display:flex;"><span>echo -e <span style="color:#e6db74">&#34;127.0.0.1\\tlocalhost\\n::1\\t\\tlocalhost\\n127.0.1.1\\t主机名.domain\\t主机名&#34;</span> &gt;&gt; /etc/hosts
-</span></span><span style="display:flex;"><span>passwd root                             <span style="color:#75715e"># 设置管理员用户密码</span>
-</span></span><span style="display:flex;"><span>useradd -m -G wheel -s /bin/bash 用户名 <span style="color:#75715e"># 创建普通用户指定加入 wheel 组</span>
-</span></span><span style="display:flex;"><span>passwd 用户名                           <span style="color:#75715e"># 给新用户设置密码</span>
-</span></span><span style="display:flex;"><span>编辑 /etc/sudoers 文件把# %wheel ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> ALL 这一行前面的#去掉<span style="color:#f92672">(</span>取消注释<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>------------------------------------
-</span></span><span style="display:flex;"><span>配置 grub
-</span></span><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/boot/
-</span></span><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg <span style="color:#75715e"># 生成 grub 配置</span>
-</span></span><span style="display:flex;"><span>------------------------------------
-</span></span><span style="display:flex;"><span>systemctl enable NetworkManager sshd dhcpcd <span style="color:#75715e"># 设置一些开机启动的服务</span>
-</span></span><span style="display:flex;"><span>exit 或者 ctrl + d                          <span style="color:#75715e"># 回到 live 环境</span>
-</span></span><span style="display:flex;"><span>umount -R /mnt                              <span style="color:#75715e"># 卸载</span>
-</span></span><span style="display:flex;"><span>reboot                                      <span style="color:#75715e"># 重启</span>
-</span></span></code></pre></div><h2 id="安装桌面环境kdegnome或者窗口管理器hyprlandmangowmniri">安装桌面环境(KDE/GNOME)或者窗口管理器(Hyprland/mangowm/niri)</h2>
-<p><a href="https://github.com/lingllqs/dotfiles">我的个人配置</a></p>
+      ArchLinux安装教程
     </div>
     <a href="/posts/archlinux_install/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">继续阅读</a>
   </div>
@@ -217,7 +112,7 @@
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lingllqs.github.io/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
     &copy;  https://github.com/lingllqs 2026 
   </a>
     <div><div class="ananke-socials"></div>

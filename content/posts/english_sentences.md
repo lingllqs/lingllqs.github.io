@@ -2,8 +2,9 @@
 title = 'English_sentences'
 date = 2026-06-02T15:29:10+08:00
 draft = false
+summary = "English_sentences"
 comment = false
-weight = 0
+weight = 2
 tags = ['English']
 categories = ['English']
 +++

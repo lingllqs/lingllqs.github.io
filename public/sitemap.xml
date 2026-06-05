@@ -3,85 +3,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lingllqs.github.io/categories/</loc>
+    <loc>http://localhost:1313/posts/archlinux_install/</loc>
+    <lastmod>2023-10-26T12:08:52+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/english_sentences/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/categories/english/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/english/</loc>
+    <loc>http://localhost:1313/categories/english/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/english_sentences/</loc>
+    <loc>http://localhost:1313/tags/english/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-06-02T15:29:10+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/categories/math/</loc>
+    <loc>http://localhost:1313/categories/math/</loc>
     <lastmod>2024-11-16T14:29:43+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/</loc>
+    <loc>http://localhost:1313/posts/%E5%8B%BE%E8%82%A1%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/</loc>
     <lastmod>2024-11-16T14:29:43+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/rip/</loc>
+    <loc>http://localhost:1313/posts/rip/</loc>
     <lastmod>2024-10-16T21:41:38+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/ip/</loc>
+    <loc>http://localhost:1313/posts/ip/</loc>
     <lastmod>2024-10-11T17:43:44+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/icmp/</loc>
+    <loc>http://localhost:1313/posts/icmp/</loc>
     <lastmod>2024-10-11T15:46:54+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/memory_paging/</loc>
+    <loc>http://localhost:1313/posts/memory_paging/</loc>
     <lastmod>2024-09-05T17:12:23+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/</loc>
+    <loc>http://localhost:1313/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/</loc>
     <lastmod>2024-09-05T17:12:23+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/</loc>
+    <loc>http://localhost:1313/categories/%E6%96%87%E6%A1%A3/</loc>
     <lastmod>2024-09-05T17:12:23+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/btrfs_create_snapshot/</loc>
+    <loc>http://localhost:1313/posts/btrfs_create_snapshot/</loc>
     <lastmod>2024-08-27T21:44:30+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/btrfs/</loc>
+    <loc>http://localhost:1313/tags/btrfs/</loc>
     <lastmod>2024-08-27T21:44:30+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/</loc>
+    <loc>http://localhost:1313/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/</loc>
     <lastmod>2024-08-27T21:44:30+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/math/</loc>
+    <loc>http://localhost:1313/tags/math/</loc>
     <lastmod>2023-11-17T11:52:58+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/math_exercise/</loc>
+    <loc>http://localhost:1313/posts/math_exercise/</loc>
     <lastmod>2023-11-17T11:52:58+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/crc_check/</loc>
+    <loc>http://localhost:1313/posts/crc_check/</loc>
     <lastmod>2023-11-08T21:22:11+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/internet/</loc>
+    <loc>http://localhost:1313/tags/internet/</loc>
     <lastmod>2023-11-08T21:22:11+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+    <loc>http://localhost:1313/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2023-11-08T21:22:11+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/en_abbrev_2_zh/</loc>
+    <loc>http://localhost:1313/posts/en_abbrev_2_zh/</loc>
     <lastmod>2023-10-27T22:19:32+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/tags/archlinux/</loc>
+    <loc>http://localhost:1313/tags/archlinux/</loc>
     <lastmod>2023-10-26T12:08:52+08:00</lastmod>
   </url><url>
-    <loc>https://lingllqs.github.io/posts/archlinux_install/</loc>
-    <lastmod>2023-10-26T12:08:52+08:00</lastmod>
-  </url><url>
-    <loc>https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2023-10-26T12:08:52+08:00</lastmod>
   </url>
 </urlset>
