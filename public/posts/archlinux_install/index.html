@@ -1,143 +1,130 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <meta name="robots" content="noodp" />
-    <title>ArchLinux安装 - 起源大陆</title><meta name="author" content="">
-<meta name="description" content="ArchLinux安装教程"><meta name="keywords" content='ArchLinux'>
-	<meta itemprop="name" content="ArchLinux安装">
-	<meta itemprop="description" content="ArchLinux安装教程">
-	<meta itemprop="datePublished" content="2023-10-26T12:08:52+08:00">
-	<meta itemprop="dateModified" content="2023-10-26T12:08:52+08:00">
-	<meta itemprop="wordCount" content="1146">
-	<meta itemprop="keywords" content="ArchLinux"><meta property="og:url" content="https://lingllqs.github.io/posts/archlinux_install/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ArchLinux安装 | 起源大陆</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="ArchLinux安装教程">
+    <meta name="generator" content="Hugo 0.162.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    <link rel="stylesheet" href="/ananke/css/main.fe543ec729f225f1a33caed07775c832a416476900d82ba51765d6ead9de6758.css" integrity="sha256-/lQ&#43;xynyJfGjPK7Qd3XIMqQWR2kA2CulF2XW6tneZ1g=" crossorigin="anonymous">
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://lingllqs.github.io/posts/archlinux_install/">
+    
+
+    
+    
+    <meta property="og:url" content="https://lingllqs.github.io/posts/archlinux_install/">
 	<meta property="og:site_name" content="起源大陆">
 	<meta property="og:title" content="ArchLinux安装">
 	<meta property="og:description" content="ArchLinux安装教程">
-	<meta property="og:locale" content="zh">
+	<meta property="og:locale" content="en">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="posts">
 		<meta property="article:published_time" content="2023-10-26T12:08:52+08:00">
 		<meta property="article:modified_time" content="2023-10-26T12:08:52+08:00">
 		<meta property="article:tag" content="ArchLinux">
 
+	<meta itemprop="name" content="ArchLinux安装">
+	<meta itemprop="description" content="ArchLinux安装教程">
+	<meta itemprop="datePublished" content="2023-10-26T12:08:52+08:00">
+	<meta itemprop="dateModified" content="2023-10-26T12:08:52+08:00">
+	<meta itemprop="wordCount" content="1140">
+	<meta itemprop="keywords" content="ArchLinux">
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="ArchLinux安装">
 	<meta name="twitter:description" content="ArchLinux安装教程">
-<meta name="application-name" content="FixIt">
-<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="https://lingllqs.github.io/posts/archlinux_install/" title="ArchLinux安装 - 起源大陆" /><link rel="prev" type="text/html" href="https://lingllqs.github.io/posts/english_sentences/" title="English_sentences" /><link rel="stylesheet" href="/css/config.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "headline": "ArchLinux安装",
-    "inLanguage": "zh",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https:\/\/lingllqs.github.io\/posts\/archlinux_install\/"
-    },"genre": "posts","keywords": "ArchLinux","wordcount":  1146 ,
-    "url": "https:\/\/lingllqs.github.io\/posts\/archlinux_install\/","datePublished": "2023-10-26T12:08:52+08:00","dateModified": "2023-10-26T12:08:52+08:00","license": "https://github.com/lingllqs","publisher": {
-      "@type": "Organization",
-      "name": ""},"description": ""
-  }
-  </script><script src="/js/head/color-scheme.min.js"></script></head>
-  <body data-instant-intensity="viewport" data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
-  <div class="header-wrapper">
-    <div class="header-title">
-      <a href="/" title="起源大陆"><span class="header-title-text">起源大陆</span></a><span class="header-subtitle"></span></div>
-    <nav>
-      <ul class="menu"><li class="menu-item">
-              <a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
-              <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
-              <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" role="button" aria-label="" title=""><i class="fa-solid fa-adjust" aria-hidden="true"></i></li></ul>
-    </nav>
-  </div>
-</header><header class="mobile animate__faster" id="header-mobile">
-  <div class="header-container">
-    <div class="header-wrapper">
-      <div class="header-title">
-        <a href="/" title="起源大陆"><span class="header-title-text">起源大陆</span></a><span class="header-subtitle"></span></div>
-      <div class="theme-switch" role="button" aria-label=""><i class="fa-solid fa-adjust" aria-hidden="true"></i></div>
-      <div class="menu-toggle" id="menu-toggle-mobile" role="button" aria-labelledby="menu-mobile">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-    <nav>
-      <ul class="menu" id="menu-mobile"><li class="menu-item"><a class="menu-link" href="/archives/"><i class="fa-solid fa-archive fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item"><a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item"><a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system"></li>
-      </ul>
-    </nav>
-  </div>
-</header><main class="fi-container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label=""></aside>
 
-  <article class="page single">
-    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>ArchLinux安装</span>
-      </h1></div><div class="post-meta">
-      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;</span></div><div class="post-meta-line"><span title=""><i class="fa-solid fa-calendar-days me-1" aria-hidden="true"></i><time datetime="2023-10-26">2023-10-26</time></span>&nbsp;<span title=""><i class="fa-solid fa-pencil-alt me-1" aria-hidden="true"></i></span>&nbsp;<span><i class="fa-regular fa-clock me-1" aria-hidden="true"></i></span>&nbsp;</div>
-    </div><div class="details toc" id="toc-static" data-kept="false">
-        <div class="details-summary toc-title">
-          <span></span>
-          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
-        </div>
-        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#下载-archlinux-iso-镜像">下载 archlinux ISO 镜像</a></li>
-    <li><a href="#制作启动盘">制作启动盘</a></li>
-    <li><a href="#进入-live-环境开始安装">进入 live 环境开始安装</a>
-      <ul>
-        <li><a href="#分区">分区</a></li>
-        <li><a href="#格式化分区">格式化分区</a></li>
-        <li><a href="#创建-btrfs-子卷">创建 btrfs 子卷</a></li>
-        <li><a href="#挂载分区准备系统安装">挂载分区准备系统安装</a></li>
-        <li><a href="#正式安装前先配置好网络">正式安装前先配置好网络</a></li>
-        <li><a href="#换源">换源</a></li>
-        <li><a href="#开始安装">开始安装</a></li>
-        <li><a href="#配置">配置</a></li>
-      </ul>
-    </li>
-    <li><a href="#安装桌面环境kdegnome或者窗口管理器hyprlandmangowmniri">安装桌面环境(KDE/GNOME)或者窗口管理器(Hyprland/mangowm/niri)</a></li>
-  </ul>
-</nav></div>
-      </div><div class="content" id="content"><h2 class="heading-element" id="下载-archlinux-iso-镜像"><span>下载 archlinux ISO 镜像</span>
-  <a href="#%e4%b8%8b%e8%bd%bd-archlinux-iso-%e9%95%9c%e5%83%8f" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><p><a href="https://mirrors.ustc.edu.cn/archlinux/iso/" target="_blank" rel="external nofollow noopener noreferrer">中科大镜像地址</a></p>
-<h2 class="heading-element" id="制作启动盘"><span>制作启动盘</span>
-  <a href="#%e5%88%b6%e4%bd%9c%e5%90%af%e5%8a%a8%e7%9b%98" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>windows: 使用 rufus 工具
-</span></span><span style="display:flex;"><span>linux: sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/xxx.iso of<span style="color:#f92672">=</span>/dev/xxx bs<span style="color:#f92672">=</span>4M oflag<span style="color:#f92672">=</span>sync status<span style="color:#f92672">=</span>progress <span style="color:#75715e"># xxx 是你的硬盘名我的是nvme0n1</span></span></span></code></pre></div><h2 class="heading-element" id="进入-live-环境开始安装"><span>进入 live 环境开始安装</span>
-  <a href="#%e8%bf%9b%e5%85%a5-live-%e7%8e%af%e5%a2%83%e5%bc%80%e5%a7%8b%e5%ae%89%e8%a3%85" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><h3 class="heading-element" id="分区"><span>分区</span>
-  <a href="#%e5%88%86%e5%8c%ba" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>1. 使用 <span style="color:#e6db74">`</span>fdisk -l<span style="color:#e6db74">`</span> 查看硬盘信息
+      
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production is-page is-page page-ArchLinux_install">
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        起源大陆
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+
+  <article class="page-ArchLinux_install flex-l mw7 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
+    Posts
+</aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">ArchLinux安装</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-10-26T12:08:52+08:00">October 26, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h2 id="下载-archlinux-iso-镜像">下载 archlinux ISO 镜像</h2>
+<p><a href="https://mirrors.ustc.edu.cn/archlinux/iso/">中科大镜像地址</a></p>
+<h2 id="制作启动盘">制作启动盘</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>windows: 使用 rufus 工具
+</span></span><span style="display:flex;"><span>linux: sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/path/to/xxx.iso of<span style="color:#f92672">=</span>/dev/xxx bs<span style="color:#f92672">=</span>4M oflag<span style="color:#f92672">=</span>sync status<span style="color:#f92672">=</span>progress <span style="color:#75715e"># xxx 是你的硬盘名我的是nvme0n1</span>
+</span></span></code></pre></div><h2 id="进入-live-环境开始安装">进入 live 环境开始安装</h2>
+<h3 id="分区">分区</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>1. 使用 <span style="color:#e6db74">`</span>fdisk -l<span style="color:#e6db74">`</span> 查看硬盘信息
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>2. 使用 cfdisk 命令进行分区 <span style="color:#e6db74">`</span>cfdisk /dev/nvme0n1<span style="color:#e6db74">`</span>
 </span></span><span style="display:flex;"><span>新硬盘选择gpt分区
 </span></span><span style="display:flex;"><span>这里分两个区
 </span></span><span style="display:flex;"><span>/dev/nvme0n1p1 <span style="color:#75715e"># efi 引导分区(在 cfdisk 工具界面下方选择 type 进入类型选择界面,选择 efi 类型即可)</span>
-</span></span><span style="display:flex;"><span>/dev/nvme0n1p2 <span style="color:#75715e"># linux system 分区</span></span></span></code></pre></div><h3 class="heading-element" id="格式化分区"><span>格式化分区</span>
-  <a href="#%e6%a0%bc%e5%bc%8f%e5%8c%96%e5%88%86%e5%8c%ba" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/nvme0n1p1
+</span></span><span style="display:flex;"><span>/dev/nvme0n1p2 <span style="color:#75715e"># linux system 分区</span>
+</span></span></code></pre></div><h3 id="格式化分区">格式化分区</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/nvme0n1p1
 </span></span><span style="display:flex;"><span>mkfs.btrfs -L ARCH /dev/nvme0n1p2 <span style="color:#f92672">(</span>-L 表示要指定硬盘标签 ARCH 为标签名,可自行命名<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>--------------------------------
-</span></span><span style="display:flex;"><span>使用 <span style="color:#e6db74">`</span>lsblk -f<span style="color:#e6db74">`</span> 命令查看分区信息</span></span></code></pre></div><h3 class="heading-element" id="创建-btrfs-子卷"><span>创建 btrfs 子卷</span>
-  <a href="#%e5%88%9b%e5%bb%ba-btrfs-%e5%ad%90%e5%8d%b7" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>挂载系统分区进行子卷创建
+</span></span><span style="display:flex;"><span>使用 <span style="color:#e6db74">`</span>lsblk -f<span style="color:#e6db74">`</span> 命令查看分区信息
+</span></span></code></pre></div><h3 id="创建-btrfs-子卷">创建 btrfs 子卷</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>挂载系统分区进行子卷创建
 </span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd /dev/nvme0n1p2 /mnt
 </span></span><span style="display:flex;"><span>-----
 </span></span><span style="display:flex;"><span>创建子卷
@@ -149,11 +136,9 @@
 </span></span><span style="display:flex;"><span>chattr +C /mnt/@swap
 </span></span><span style="display:flex;"><span>-----
 </span></span><span style="display:flex;"><span>卸载
-</span></span><span style="display:flex;"><span>umount /mnt</span></span></code></pre></div><h3 class="heading-element" id="挂载分区准备系统安装"><span>挂载分区准备系统安装</span>
-  <a href="#%e6%8c%82%e8%bd%bd%e5%88%86%e5%8c%ba%e5%87%86%e5%a4%87%e7%b3%bb%e7%bb%9f%e5%ae%89%e8%a3%85" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd,subvol<span style="color:#f92672">=</span>@ /dev/nvme0n1p2 /mnt <span style="color:#75715e"># 注意要先挂载根目录</span>
+</span></span><span style="display:flex;"><span>umount /mnt
+</span></span></code></pre></div><h3 id="挂载分区准备系统安装">挂载分区准备系统安装</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mount --mkdir -t btrfs -o compress<span style="color:#f92672">=</span>zstd,subvol<span style="color:#f92672">=</span>@ /dev/nvme0n1p2 /mnt <span style="color:#75715e"># 注意要先挂载根目录</span>
 </span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o subvol<span style="color:#f92672">=</span>@home /dev/nvme0n1p2 /mnt/home      <span style="color:#75715e"># 挂载根目录下的home目录</span>
 </span></span><span style="display:flex;"><span>mount --mkdir -t btrfs -o subvol<span style="color:#f92672">=</span>@swap /dev/nvme0n1p2 /mnt/swap
 </span></span><span style="display:flex;"><span>-----------------------------
@@ -161,11 +146,9 @@
 </span></span><span style="display:flex;"><span>-----------------------------
 </span></span><span style="display:flex;"><span>创建交换文件
 </span></span><span style="display:flex;"><span>btrfs filesystem mkswapfile /mnt/swap/swapfile --uuid clear --size 16G <span style="color:#75715e"># 大小自行确定</span>
-</span></span><span style="display:flex;"><span>swapon /swap/swapfile <span style="color:#75715e"># 启用交换文件</span></span></span></code></pre></div><h3 class="heading-element" id="正式安装前先配置好网络"><span>正式安装前先配置好网络</span>
-  <a href="#%e6%ad%a3%e5%bc%8f%e5%ae%89%e8%a3%85%e5%89%8d%e5%85%88%e9%85%8d%e7%bd%ae%e5%a5%bd%e7%bd%91%e7%bb%9c" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>timedatectl         <span style="color:#75715e"># 同步系统时间</span>
+</span></span><span style="display:flex;"><span>swapon /swap/swapfile <span style="color:#75715e"># 启用交换文件</span>
+</span></span></code></pre></div><h3 id="正式安装前先配置好网络">正式安装前先配置好网络</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>timedatectl         <span style="color:#75715e"># 同步系统时间</span>
 </span></span><span style="display:flex;"><span>ip link             <span style="color:#75715e"># 查看网卡信息</span>
 </span></span><span style="display:flex;"><span>rfkill list         <span style="color:#75715e"># 查看蓝牙和 wifi 功能是否被关闭</span>
 </span></span><span style="display:flex;"><span>rfkill unblock wlan <span style="color:#75715e"># 如果 wifi 功能被关闭就启用(或者用`rfkill unblock all`启用所有被关闭功能)</span>
@@ -178,11 +161,9 @@
 </span></span><span style="display:flex;"><span>station wlan0 connect wifi名 <span style="color:#75715e"># 连接 wifi，有密码则会提示输入密码</span>
 </span></span><span style="display:flex;"><span>-----
 </span></span><span style="display:flex;"><span>ctrl + d       <span style="color:#75715e"># 退出 iw 工具命令行</span>
-</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> t.cn <span style="color:#75715e"># 测试网络是否通畅</span></span></span></code></pre></div><h3 class="heading-element" id="换源"><span>换源</span>
-  <a href="#%e6%8d%a2%e6%ba%90" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>自动配置: 使用 Python 脚本工具 reflector 配置源
+</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> t.cn <span style="color:#75715e"># 测试网络是否通畅</span>
+</span></span></code></pre></div><h3 id="换源">换源</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>自动配置: 使用 Python 脚本工具 reflector 配置源
 </span></span><span style="display:flex;"><span>reflector --country China --latest <span style="color:#ae81ff">5</span> --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 </span></span><span style="display:flex;"><span>----------------------------
 </span></span><span style="display:flex;"><span>手动配置: 编使 vim 工具用辑 /etc/pacman.d/mirrorlist 文件
@@ -192,11 +173,9 @@
 </span></span><span style="display:flex;"><span>----------------------------
 </span></span><span style="display:flex;"><span>systemctl stop reflector <span style="color:#75715e"># 关闭 reflector 服务防止刷新配置</span>
 </span></span><span style="display:flex;"><span>pacman -S archlinux-keyring
-</span></span><span style="display:flex;"><span>pacman -Syy</span></span></code></pre></div><h3 class="heading-element" id="开始安装"><span>开始安装</span>
-  <a href="#%e5%bc%80%e5%a7%8b%e5%ae%89%e8%a3%85" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pacstrap -K /mnt base linux linux-firmware btrfs-progs <span style="color:#75715e"># 安装基本的工具，内核和驱动</span>
+</span></span><span style="display:flex;"><span>pacman -Syy
+</span></span></code></pre></div><h3 id="开始安装">开始安装</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pacstrap -K /mnt base linux linux-firmware btrfs-progs <span style="color:#75715e"># 安装基本的工具，内核和驱动</span>
 </span></span><span style="display:flex;"><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab                     <span style="color:#75715e"># 生成 fstab 文件</span>
 </span></span><span style="display:flex;"><span>arch-chroot /mnt                                       <span style="color:#75715e"># 进入新系统</span>
 </span></span><span style="display:flex;"><span>-----------------------------------
@@ -205,11 +184,9 @@
 </span></span><span style="display:flex;"><span>            grub efibootmgr intel-ucode/amd-ucode
 </span></span><span style="display:flex;"><span>            firefox networkmanager chcpcd openssh
 </span></span><span style="display:flex;"><span>            noto-fonts-cjk noto-fonts-emoji nerd-fonts-complete bash-completion
-</span></span><span style="display:flex;"><span>注意: inter-ucode 和 amd-ucode 根据电脑的实际 CPU 选择安装</span></span></code></pre></div><h3 class="heading-element" id="配置"><span>配置</span>
-  <a href="#%e9%85%8d%e7%bd%ae" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h3><div class="code-block highlight line-nos-hidden" data-mode="classic" data-copyable="true"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime                            <span style="color:#75715e"># 设置时区</span>
+</span></span><span style="display:flex;"><span>注意: inter-ucode 和 amd-ucode 根据电脑的实际 CPU 选择安装
+</span></span></code></pre></div><h3 id="配置">配置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime                            <span style="color:#75715e"># 设置时区</span>
 </span></span><span style="display:flex;"><span>hwclock --systohc                                                                  <span style="color:#75715e"># 将系统时钟同步到硬件时钟</span>
 </span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;s/^#\(en_US\.UTF-8\|zh_CN\.UTF-8\)/\1/g&#39;</span> /etc/locale.gen                   <span style="color:#75715e"># 设置区域信息</span>
 </span></span><span style="display:flex;"><span>locale-gen <span style="color:#f92672">&amp;&amp;</span> touch /etc/locale.conf <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;LANG=en_US.UTF-8&#34;</span> &gt; /etc/locale.conf <span style="color:#75715e"># 生成 locale 信息并设置语言为中文</span>
@@ -227,66 +204,33 @@
 </span></span><span style="display:flex;"><span>systemctl enable NetworkManager sshd dhcpcd <span style="color:#75715e"># 设置一些开机启动的服务</span>
 </span></span><span style="display:flex;"><span>exit 或者 ctrl + d                          <span style="color:#75715e"># 回到 live 环境</span>
 </span></span><span style="display:flex;"><span>umount -R /mnt                              <span style="color:#75715e"># 卸载</span>
-</span></span><span style="display:flex;"><span>reboot                                      <span style="color:#75715e"># 重启</span></span></span></code></pre></div><h2 class="heading-element" id="安装桌面环境kdegnome或者窗口管理器hyprlandmangowmniri"><span>安装桌面环境(KDE/GNOME)或者窗口管理器(Hyprland/mangowm/niri)</span>
-  <a href="#%e5%ae%89%e8%a3%85%e6%a1%8c%e9%9d%a2%e7%8e%af%e5%a2%83kdegnome%e6%88%96%e8%80%85%e7%aa%97%e5%8f%a3%e7%ae%a1%e7%90%86%e5%99%a8hyprlandmangowmniri" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+</span></span><span style="display:flex;"><span>reboot                                      <span style="color:#75715e"># 重启</span>
+</span></span></code></pre></div><h2 id="安装桌面环境kdegnome或者窗口管理器hyprlandmangowmniri">安装桌面环境(KDE/GNOME)或者窗口管理器(Hyprland/mangowm/niri)</h2>
+<p><a href="https://github.com/lingllqs/dotfiles">我的个人配置</a></p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/archlinux/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">ArchLinux</a>
+   </li>
+  
+</ul>
+
+      
+    </div></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lingllqs.github.io/" >
+    &copy;  https://github.com/lingllqs 2026 
   </a>
-</h2><p><a href="https://github.com/lingllqs/dotfiles" target="_blank" rel="external nofollow noopener noreferrer">我的个人配置</a></p>
-</div><div class="post-footer" id="post-footer">
-  <div class="post-info">
-    <div class="post-info-line">
-      <div class="post-info-mod"><span title="">&nbsp;</span>
-      </div><div class="post-info-license">
-            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
-          </div></div><div class="post-info-line">
-        <div class="post-info-md"></div>
-        <div class="post-info-share">
-          <span><a href="javascript:void(0);" title=" X" data-sharer="twitter" data-url="https://lingllqs.github.io/posts/archlinux_install/" data-title="ArchLinux安装" data-hashtags="ArchLinux"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title=" Facebook" data-sharer="facebook" data-url="https://lingllqs.github.io/posts/archlinux_install/" data-hashtag="ArchLinux"><i class="fa-brands fa-facebook-square" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title=" 微博" data-sharer="weibo" data-url="https://lingllqs.github.io/posts/archlinux_install/" data-title="ArchLinux安装"><i class="fa-brands fa-weibo" aria-hidden="true"></i></a>
-  </span>
-        </div>
-      </div></div>
-
-  <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags me-1" aria-hidden="true"></i><a href="/tags/archlinux/" class="post-tag" title=" - ArchLinux">ArchLinux</a></section>
-    <section><span><a href="javascript:void(0);" onclick="window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="/"></a></span>
-    </section>
-  </div><div class="post-nav"><a href="/posts/english_sentences/" class="post-nav-item" rel="prev" title="English_sentences"><i class="fa-solid fa-angle-left" aria-hidden="true"></i>English_sentences</a></div>
+    <div><div class="ananke-socials"></div>
 </div>
-</article>
+  </div>
+</footer>
 
-  <aside class="toc" id="toc-auto" aria-label=""><h2 class="toc-title">&nbsp;<i class="toc-icon fa-solid fa-angle-down" aria-hidden="true"></i></h2>
-      <div class="toc-content" id="toc-content-auto"></div></aside><dialog id="toc-dialog" aria-labelledby="toc-dialog-title" role="dialog">
-      <div class="toc">
-        <h2 class="toc-title"></h2>
-        <div class="toc-content" id="toc-content-drawer"><nav >
-  <ul>
-    <li><a href="#下载-archlinux-iso-镜像">下载 archlinux ISO 镜像</a></li>
-    <li><a href="#制作启动盘">制作启动盘</a></li>
-    <li><a href="#进入-live-环境开始安装">进入 live 环境开始安装</a>
-      <ul>
-        <li><a href="#分区">分区</a></li>
-        <li><a href="#格式化分区">格式化分区</a></li>
-        <li><a href="#创建-btrfs-子卷">创建 btrfs 子卷</a></li>
-        <li><a href="#挂载分区准备系统安装">挂载分区准备系统安装</a></li>
-        <li><a href="#正式安装前先配置好网络">正式安装前先配置好网络</a></li>
-        <li><a href="#换源">换源</a></li>
-        <li><a href="#开始安装">开始安装</a></li>
-        <li><a href="#配置">配置</a></li>
-      </ul>
-    </li>
-    <li><a href="#安装桌面环境kdegnome或者窗口管理器hyprlandmangowmniri">安装桌面环境(KDE/GNOME)或者窗口管理器(Hyprland/mangowm/niri)</a></li>
-  </ul>
-</nav></div>
-      </div>
-    </dialog></main><footer class="footer">
-    <div class="footer-container"><div class="footer-line powered">
-        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2026</span><span class="author" itemprop="copyrightHolder">
-              <a href="/"></a></span></div></div>
-  </footer></div><div class="widgets"><div class="fixed-buttons"><div class="fixed-button back-to-top animate__faster d-none" role="button" aria-label=""><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></div><div id="toc-drawer-button" class="fixed-button toc-drawer-button d-none" role="button" aria-label=""><i class="fa-solid fa-bars" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
-    <div class="noscript-warning"></div>
-  </noscript>
-</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/cell-tooltip/cell-tooltip.umd.js" defer></script><script src="/js/config/4d3251d642b6fbe110a0b3092c69e90a.js" defer></script><script src="/js/theme.min.js" defer></script></body>
+  </body>
 </html>
+
+
+

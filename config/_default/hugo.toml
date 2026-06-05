@@ -3,4 +3,4 @@ title = '起源大陆'
 copyright = "https://github.com/lingllqs"
 defaultContentLanguage = "en"
 hasCJKLanguage = true
-# theme = 'ananke'
+theme = 'ananke'
