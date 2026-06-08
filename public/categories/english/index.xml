@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>English on 起源大陆</title>
-		<link>https://lingllqs.github.io/categories/english/</link>
+		<link>http://localhost:1313/categories/english/</link>
 		<description>Recent content in English on 起源大陆</description>
 		<generator>Hugo</generator>
 		<language>en</language>
@@ -14,12 +14,12 @@
 		
 			<lastBuildDate>Tue, 02 Jun 2026 15:29:10 +0800</lastBuildDate>
 		
-			<atom:link href="https://lingllqs.github.io/categories/english/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/categories/english/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>English_sentences</title>
-				<link>https://lingllqs.github.io/posts/english_sentences/</link>
+				<link>http://localhost:1313/posts/english_sentences/</link>
 				<pubDate>Tue, 02 Jun 2026 15:29:10 +0800</pubDate>
-				<guid>https://lingllqs.github.io/posts/english_sentences/</guid>
+				<guid>http://localhost:1313/posts/english_sentences/</guid>
 				<description>English_sentences</description>
 			</item>
 	</channel>
