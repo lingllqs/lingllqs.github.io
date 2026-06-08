@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>系统快照 on 起源大陆</title>
-		<link>http://localhost:1313/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/</link>
+		<link>https://lingllqs.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/</link>
 		<description>Recent content in 系统快照 on 起源大陆</description>
 		<generator>Hugo</generator>
 		<language>en</language>
@@ -14,12 +14,12 @@
 		
 			<lastBuildDate>Tue, 27 Aug 2024 21:44:30 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://lingllqs.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%BF%AB%E7%85%A7/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Btrfs</title>
-				<link>http://localhost:1313/posts/btrfs_create_snapshot/</link>
+				<link>https://lingllqs.github.io/posts/btrfs_create_snapshot/</link>
 				<pubDate>Tue, 27 Aug 2024 21:44:30 +0800</pubDate>
-				<guid>http://localhost:1313/posts/btrfs_create_snapshot/</guid>
+				<guid>https://lingllqs.github.io/posts/btrfs_create_snapshot/</guid>
 				<description>&lt;h3 id=&#34;给系统做快照&#34;&gt;给系统做快照&lt;/h3&gt;&#xA;&lt;p&gt;目的: 给根目录(&amp;rsquo;/&amp;rsquo;)做快照&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 硬盘 sda 各个分区挂在情况&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sda&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      sda1  /boot&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      sda2  /&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 硬盘 sdb 各个分区挂在情况&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sdb&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      sdb1  /mnt&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;1-给-sda2-做只读快照必须是只读快照才能后续的发送--r-选项&#34;&gt;1. 给 sda2 做只读快照(必须是只读快照才能后续的发送 -r 选项)&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;btrfs subvolume snapshot -r / /.newroot&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2-发送快照-newroot-到-sdb1-上&#34;&gt;2. 发送快照 /.newroot 到 sdb1 上&lt;/h4&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;btrfs send /.newroot | btrfs receive /mnt/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果要发送到远程计算机上&lt;/p&gt;</description>
 			</item>
 	</channel>

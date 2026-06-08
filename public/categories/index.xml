@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Categories on 起源大陆</title>
-		<link>http://localhost:1313/categories/</link>
+		<link>https://lingllqs.github.io/categories/</link>
 		<description>Recent content in Categories on 起源大陆</description>
 		<generator>Hugo</generator>
 		<language>en</language>
@@ -14,47 +14,47 @@
 		
 			<lastBuildDate>Mon, 08 Jun 2026 12:16:19 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://lingllqs.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Story</title>
-				<link>http://localhost:1313/categories/story/</link>
+				<link>https://lingllqs.github.io/categories/story/</link>
 				<pubDate>Mon, 08 Jun 2026 12:16:19 +0800</pubDate>
-				<guid>http://localhost:1313/categories/story/</guid>
+				<guid>https://lingllqs.github.io/categories/story/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>故事</title>
-				<link>http://localhost:1313/categories/%E6%95%85%E4%BA%8B/</link>
+				<link>https://lingllqs.github.io/categories/%E6%95%85%E4%BA%8B/</link>
 				<pubDate>Mon, 08 Jun 2026 12:16:19 +0800</pubDate>
-				<guid>http://localhost:1313/categories/%E6%95%85%E4%BA%8B/</guid>
+				<guid>https://lingllqs.github.io/categories/%E6%95%85%E4%BA%8B/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>English</title>
-				<link>http://localhost:1313/categories/english/</link>
+				<link>https://lingllqs.github.io/categories/english/</link>
 				<pubDate>Tue, 02 Jun 2026 15:29:10 +0800</pubDate>
-				<guid>http://localhost:1313/categories/english/</guid>
+				<guid>https://lingllqs.github.io/categories/english/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Math</title>
-				<link>http://localhost:1313/categories/math/</link>
+				<link>https://lingllqs.github.io/categories/math/</link>
 				<pubDate>Sat, 16 Nov 2024 14:29:43 +0800</pubDate>
-				<guid>http://localhost:1313/categories/math/</guid>
+				<guid>https://lingllqs.github.io/categories/math/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>文档</title>
-				<link>http://localhost:1313/categories/%E6%96%87%E6%A1%A3/</link>
+				<link>https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/</link>
 				<pubDate>Thu, 05 Sep 2024 17:12:23 +0800</pubDate>
-				<guid>http://localhost:1313/categories/%E6%96%87%E6%A1%A3/</guid>
+				<guid>https://lingllqs.github.io/categories/%E6%96%87%E6%A1%A3/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>教程</title>
-				<link>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</link>
+				<link>https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/</link>
 				<pubDate>Thu, 26 Oct 2023 12:08:52 +0800</pubDate>
-				<guid>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</guid>
+				<guid>https://lingllqs.github.io/categories/%E6%95%99%E7%A8%8B/</guid>
 				<description></description>
 			</item>
 	</channel>
