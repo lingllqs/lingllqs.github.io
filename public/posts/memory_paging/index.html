@@ -1,118 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>内存分页 | 起源大陆</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="32 位操作系统内存分页
-
-32 位总共能访问 $ 2^{32} = 4G $ 内存
-分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页
-一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表
-4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页
-页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页
-
-综述">
-    <meta name="generator" content="Hugo 0.162.0">
-    
-    
-    
-      <meta name="robots" content="index, follow">
-    
-    
-
-    <link rel="stylesheet" href="/ananke/css/main.fe543ec729f225f1a33caed07775c832a416476900d82ba51765d6ead9de6758.css" integrity="sha256-/lQ&#43;xynyJfGjPK7Qd3XIMqQWR2kA2CulF2XW6tneZ1g=" crossorigin="anonymous">
-    
-
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="https://lingllqs.github.io/posts/memory_paging/">
-    
-
-    
-    
-    <meta property="og:url" content="https://lingllqs.github.io/posts/memory_paging/">
-	<meta property="og:site_name" content="起源大陆">
-	<meta property="og:title" content="内存分页">
-	<meta property="og:description" content="32 位操作系统内存分页 32 位总共能访问 $ 2^{32} = 4G $ 内存 分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页 一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页 综述">
-	<meta property="og:locale" content="en">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2024-09-05T17:12:23+08:00">
-		<meta property="article:modified_time" content="2024-09-05T17:12:23+08:00">
-		<meta property="article:tag" content="内存分页">
-
-	<meta itemprop="name" content="内存分页">
-	<meta itemprop="description" content="32 位操作系统内存分页 32 位总共能访问 $ 2^{32} = 4G $ 内存 分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页 一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页 综述">
-	<meta itemprop="datePublished" content="2024-09-05T17:12:23+08:00">
-	<meta itemprop="dateModified" content="2024-09-05T17:12:23+08:00">
-	<meta itemprop="wordCount" content="171">
-	<meta itemprop="keywords" content="内存分页">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="内存分页">
-	<meta name="twitter:description" content="32 位操作系统内存分页 32 位总共能访问 $ 2^{32} = 4G $ 内存 分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页 一页内存使用 4B 大小表示，1M 个页需要 $ 1M \times 4B = 4M $ 内存，这就是页表 4M 的页表太大，所以设置页目录，4M 大小占用 $ 4M \div 4K = 1024 $ 个页 页目录就是用来描述这 1024 个页，一页需要 4B 来描述，所以 页目录占用 $ 1024 \times 4B = 4K $ 内存，正好一页 综述">
-
-      
-      
-    
-	
-  </head><body class="ma0 avenir bg-near-white production is-page is-page page-memory_paging">
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
-    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
-      
-        起源大陆
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      <div class="ananke-socials"></div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-
-  <article class="page-memory_paging flex-l mw7 center ph3 flex-wrap justify-between">
-    <header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">
-    Posts
-</aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">内存分页</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2024-09-05T17:12:23+08:00">September 5, 2024</time>
-      
-
-      
-      
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">首页</a>
+        </nav>
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-100-l"><h2 id="32-位操作系统内存分页">32 位操作系统内存分页</h2>
+    <main>
+        
+<article>
+    <h1>内存分页</h1>
+    
+    <time>2024-09-05</time>
+    
+    <div>
+        <h2 id="32-位操作系统内存分页">32 位操作系统内存分页</h2>
 <ol>
 <li>32 位总共能访问 $ 2^{32} = 4G $ 内存</li>
 <li>分页采用 4K 一页, 4G 内存总共 $ 4G \div 4K = 1M $ 个页</li>
@@ -125,30 +32,13 @@
 <li>页目录存放页表信息</li>
 <li>页表存放页信息</li>
 </ul>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">内存分页</a>
-   </li>
-  
-</ul>
 
-      
-    </div></article>
+    </div>
+</article>
 
     </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lingllqs.github.io/" >
-    &copy;  https://github.com/lingllqs 2026 
-  </a>
-    <div><div class="ananke-socials"></div>
-</div>
-  </div>
-</footer>
-
-  </body>
+    <footer>
+        <p>&copy; 2026 起源大陆</p>
+    </footer>
+</body>
 </html>
-
-
-

@@ -6,4 +6,4 @@ categories = []
 tags = []
 +++
 
-![IP协议首部](/images/计算机相关/IP数据包头部格式.png)
+![IP协议首部](images/计算机相关/IP数据包头部格式.png)

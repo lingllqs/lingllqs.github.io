@@ -34,7 +34,7 @@
 				<link>https://lingllqs.github.io/posts/story/</link>
 				<pubDate>Mon, 08 Jun 2026 12:16:19 +0800</pubDate>
 				<guid>https://lingllqs.github.io/posts/story/</guid>
-				<description>&lt;h3 id=&#34;豪门千金历险记&#34;&gt;豪门千金历险记&lt;/h3&gt;&#xA;&lt;p&gt;林婉儿是林家的独女，家世显赫，闲来无事突发奇想体验送外卖。&#xA;她偷偷注册账号，换上外卖服，骑着电动车穿梭在城市的大街小巷，没人知道她是豪门千金。&lt;/p&gt;</description>
+				<description>&lt;h3 id=&#34;豪门千金历险记&#34;&gt;豪门千金历险记&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;林婉儿是林家的独女，家世显赫，闲来无事突发奇想体验送外卖。&#xA;她偷偷注册账号，换上外卖服，骑着电动车穿梭在城市的大街小巷，没人知道她是豪门千金。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>勾股定理证明</title>
@@ -55,14 +55,14 @@
 				<link>https://lingllqs.github.io/posts/ip/</link>
 				<pubDate>Fri, 11 Oct 2024 17:43:44 +0800</pubDate>
 				<guid>https://lingllqs.github.io/posts/ip/</guid>
-				<description>&lt;p&gt;&lt;img src=&#34;https://lingllqs.github.io/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/IP%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4%E9%83%A8%E6%A0%BC%E5%BC%8F.png&#34; alt=&#34;IP协议首部&#34;&gt;&lt;/p&gt;</description>
+				<description>&lt;p&gt;&lt;img src=&#34;images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/IP%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4%E9%83%A8%E6%A0%BC%E5%BC%8F.png&#34; alt=&#34;IP协议首部&#34;&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>ICMP</title>
 				<link>https://lingllqs.github.io/posts/icmp/</link>
 				<pubDate>Fri, 11 Oct 2024 15:46:54 +0800</pubDate>
 				<guid>https://lingllqs.github.io/posts/icmp/</guid>
-				<description>&lt;p&gt;&lt;img src=&#34;https://lingllqs.github.io/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/ICMP%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4%E9%83%A8%E6%A0%BC%E5%BC%8F.png&#34; alt=&#34;ICMP首部格式&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;icmp-报文类型&#34;&gt;ICMP 报文类型&lt;/h2&gt;&#xA;&lt;h3 id=&#34;询问报文&#34;&gt;询问报文&lt;/h3&gt;&#xA;&lt;h3 id=&#34;差错报文&#34;&gt;差错报文&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;终点不可达&lt;/li&gt;&#xA;&lt;li&gt;源点抑制(source quench)&lt;/li&gt;&#xA;&lt;li&gt;时间超过&lt;/li&gt;&#xA;&lt;li&gt;参数问题&lt;/li&gt;&#xA;&lt;li&gt;改变路由(重定向)(redirect)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<description>&lt;p&gt;&lt;img src=&#34;images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/ICMP%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4%E9%83%A8%E6%A0%BC%E5%BC%8F.png&#34; alt=&#34;ICMP首部格式&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;icmp-报文类型&#34;&gt;ICMP 报文类型&lt;/h2&gt;&#xA;&lt;h3 id=&#34;询问报文&#34;&gt;询问报文&lt;/h3&gt;&#xA;&lt;h3 id=&#34;差错报文&#34;&gt;差错报文&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;终点不可达&lt;/li&gt;&#xA;&lt;li&gt;源点抑制(source quench)&lt;/li&gt;&#xA;&lt;li&gt;时间超过&lt;/li&gt;&#xA;&lt;li&gt;参数问题&lt;/li&gt;&#xA;&lt;li&gt;改变路由(重定向)(redirect)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>内存分页</title>

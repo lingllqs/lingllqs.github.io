@@ -6,7 +6,7 @@ categories = []
 tags = []
 +++
 
-![ICMP首部格式](/images/计算机相关/ICMP数据包头部格式.png)
+![ICMP首部格式](images/计算机相关/ICMP数据包头部格式.png)
 
 ## ICMP 报文类型
 

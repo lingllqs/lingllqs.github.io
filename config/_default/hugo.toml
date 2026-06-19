@@ -1,6 +1,6 @@
-baseURL = 'https://lingllqs.github.io/'
 title = '起源大陆'
+baseURL = 'https://lingllqs.github.io/'
 copyright = "https://github.com/lingllqs"
 defaultContentLanguage = "en"
 hasCJKLanguage = true
-theme = 'ananke'
+# theme = 'FixIt'

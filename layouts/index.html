@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1>{{ .Site.Title }}</h1>
+{{ .Content }}
+<h2>最新文章</h2>
+<ul>
+    {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time>{{ .Date.Format "2006-01-02" }}</time>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
